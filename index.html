@@ -71,7 +71,7 @@
   </body>
   <script>
     function loadSong(artist, file) {
-      document.getElementById("title").innerHTML = file.slice(0, file.length - 5);
+      document.getElementById("title").innerHTML = ("" + file).slice(0, ("" + file).length - 5);
       document.getElementById("artist").innerHTML = artist;
       var song = new Audio(file);
       song.pause();
