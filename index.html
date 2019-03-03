@@ -5,68 +5,98 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,600i,900">
     <style>
       body {font-family: Montserrat;}
-      h1 {font-weight: 900;}
-      h2 {font-weight: 400;}
-      h1, h2 {margin: 0;}
+      h1 {font-weight: 900; font-size: 40px;}
+      h2 {font-weight: 400; font-size: 30px;}
+      h1, h2, div {margin: 0; text-align: center;}
+      button {font-family: Montserrat; width: 600px;}
     </style>
   </head>
   <body>
-    <audio controls>
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-      <source src=".mp3" type="audio/mpeg">
-    </audio>
+    <div>Currently playing</div>
     <h1 id="title"></h1>
-    <h2>by <em style="font-weight: 600;" id="artist"></em></h2>
-    <button onclick="toggle()" id="playBtn">Play</button><br>
-    <button onclick="skipForward()">Skip current song</button><br>
+    <div>- by -</div>
+    <h2 id="artist"></h2>
+    <div>
+      <span style="font-size: 50px; font-weight: 900;" id="currentPos">0:00</span>
+      /
+      <span style="font-size: 30px;" id="length">0:00</span>
+    </div>
+    <button onclick="loadSong(Noisestorm, Barracuda.mp3)">Play Barracuda</button>
+    <button onclick="loadSong(Kubbi, Cascade.mp3)">Play Cascade</button>
+    <button onclick="loadSong(Nitro Fun, Cheat Codes.mp3)">Play Cheat Codes</button>
+    <button onclick="loadSong(Nitro Fun & Hyper Potions, Checkpoint.mp3)">Play Checkpoint</button>
+    <button onclick="loadSong(Big Giant Circles, Chip Zeal.mp3)">Play Chip Zeal</button>
+    <button onclick="loadSong(Danimal Cannon & Zef, Chronos.mp3)">Play Chronos</button>
+    <button onclick="loadSong(Bossfight, Commando Steve.mp3)">Play Commando Steve</button>
+    <button onclick="loadSong(Silva Hound, Cool Friends.mp3)">Play Cool Friends</button>
+    <button onclick="loadSong(Zef, Core.mp3)">Play Core</button>
+    <button onclick="loadSong(Danimal Cannon & Zef, Corrupted.mp3)">Play Corrupted</button>
+    <button onclick="loadSong(chipzel, Courtesy.mp3)">Play Courtesy</button>
+    <button onclick="loadSong(Zef, Cruise Control.mp3)">Play Cruise Control</button>
+    <button onclick="loadSong(FantomenK, Dance of the Incognizant.mp3)">Play Dance of the Incognizant</button>
+    <button onclick="loadSong(Excision & Space Laces, Destroid 10 - Funk Hole.mp3)">Play Destroid 10 - Funk Hole</button>
+    <button onclick="loadSong(Excision & Far Too Loud, Destroid 8 - Annihilate.mp3)">Play Destroid 8 - Annihilate</button>
+    <button onclick="loadSong(Nitro Fun, Final Boss.mp3)">Play Final Boss</button>
+    <button onclick="loadSong(chipzel, Focus.mp3)">Play Focus</button>
+    <button onclick="loadSong(Shirobon, FOX.mp3)">Play FOX</button>
+    <button onclick="loadSong(Lets Be Friends, FTW.mp3)">Play FTW</button>
+    <button onclick="loadSong(Big Giant Circles, Houston.mp3)">Play Houston</button>
+    <button onclick="loadSong(Tokyo Machine, HYPE.mp3)">Play HYPE</button>
+    <button onclick="loadSong(Shirobon, Into The Zone.mp3)">Play Into The Zone</button>
+    <button onclick="loadSong(Danimal Cannon & Zef, Legacy.mp3)">Play Legacy</button>
+    <button onclick="loadSong(Danimal Cannon & Zef, Logic Gatekeeper.mp3)">Play Logic Gatekeeper</button>
+    <button onclick="loadSong(Danimal Cannon, Long Live The New Fresh.mp3)">Play Long Live The New Fresh</button>
+    <button onclick="loadSong(Bossfight, Milky Ways.mp3)">Play Milky Ways</button>
+    <button onclick="loadSong(Nitro Fun, New Game.mp3)">Play New Game</button>
+    <button onclick="loadSong(Shirobon, On The Run.mp3)">Play On The Run</button>
+    <button onclick="loadSong(Tristam, Once Again.mp3)">Play Once Again</button>
+    <button onclick="loadSong(chipzel, Otis.mp3)">Play Otis</button>
+    <button onclick="loadSong(Shawn Daley, Paper Dolls.mp3)">Play Paper Dolls</button>
+    <button onclick="loadSong(Danimal Cannon & Zef, Parallel Processing.mp3)">Play Parallel Processing</button>
+    <button onclick="loadSong(cYsmix, Peer Gynt.mp3)">Play Peer Gynt</button>
+    <button onclick="loadSong(nanobii, Rainbow Road.mp3)">Play Rainbow Road</button>
+    <button onclick="loadSong(Big Giant Circles, Sevcon.mp3)">Play Sevcon</button>
+    <button onclick="loadSong(chipzel, Spectra.mp3)">Play Spectra</button>
+    <button onclick="loadSong(PIXL, Sugar Rush.mp3)">Play Sugar Rush</button>
+    <button onclick="loadSong(Zef, Tension.mp3)">Play Tension</button>
+    <button onclick="loadSong(Sabrepulse, Termination Shock.mp3)">Play Termination Shock</button>
+    <button onclick="loadSong(chipzel, The Art of War.mp3)">Play The Art of War</button>
+    <button onclick="loadSong(Danimal Cannon & Zef, The Lunar Whale.mp3)">Play The Lunar Whale</button>
+    <button onclick="loadSong(Tristam, Till It's Over.mp3)">Play Till It's Over</button>
+    <button onclick="loadSong(chipzel, Tokyo Skies.mp3)">Play Tokyo Skies</button>
+    <button onclick="loadSong(Pegboard Nerds, Try This.mp3)">Play Try This</button>
+    <button onclick="loadSong(Plesco, Unlocked.mp3)">Play Unlocked</button>
+    <button onclick="loadSong(Big Giant Circles, Vindicate Me.mp3)">Play Vindicate Me</button>
+    <button onclick="loadSong(Avenza, Wicked.mp3)">Play Wicked</button>
   </body>
   <script>
-    var song = -1;
-    
+    function loadSong(artist, file) {
+      document.getElementById("title").innerHTML = file.slice(0, file.length - 5);
+      document.getElementById("artist").innerHTML = artist;
+      var song = new Audio(file);
+      song.pause();
+      song.load();
+      song.play();
+      var length = Math.floor(song.duration),
+          length_m = Math.floor(length / 60),
+          length_s = Math.floor(length % 60),
+          currentPos,
+          currentPos_m,
+          currentPos_s;
+      document.getElementById("length").innerHTML = length_m + ":" + ("0" + length_s).slice(-2);
+      var a = setInterval(function() {
+        currentPos = Math.floor(song.currentTime);
+        currentPos_m = Math.floor(currentPos / 60);
+        currentPos_s = Math.floor(currentPos % 60);
+        document.getElementById("currentPos").innerHTML = currentPos_m + ":" + ("0" + currentPos_s).slice(-2);
+        if (song.ended == true) {
+          clearInterval(a);
+          document.getElementById("length").innerHTML = "0:00";
+          document.getElementById("currentPos").innerHTML = "0:00";
+          document.getElementById("title").innerHTML = "";
+          document.getElementById("artist").innerHTML = "";
+        }
+      }, 0);
+    }
   </script>
 <html>
