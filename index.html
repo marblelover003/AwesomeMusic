@@ -210,7 +210,7 @@
 			var c_m = Math.floor(currentPos / 60);
 			var c_s = Math.floor(currentPos % 60);
 			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
-			var progress = currentPos / length;
+			var progress = currentPos / document.getElementById("audio").duration;
 			document.getElementById("progress").value = progress;
 		}
 	</script>
