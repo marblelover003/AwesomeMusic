@@ -9,8 +9,8 @@
 			body {
 				font-family: Montserrat;
 			}
-			h1 {font-weight: 900; font-size: 60px;}
-			h2 {font-weight: 600; font-size: 40px;}
+			h1 {font-weight: 900; font-size: 60px; margin: 0;}
+			h2 {font-weight: 600; font-size: 40px; margin: 0;}
 			#currentPos, #length {
 				font-family: Overlock;
 				width: 10%;
@@ -73,7 +73,7 @@
       <option value="Vindicate Me">Vindicate Me</option>
       <option value="Wicked">Wicked</option>
     </select><br>
-		<audio controls id="audio">
+		<audio controls id="audio" style="visibility: hidden;>
 			<source src="">
 		</audio>
 		<button onclick="nextSong()">
