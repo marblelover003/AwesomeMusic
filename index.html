@@ -14,12 +14,12 @@
 			div {text-align: center;}
 			#currentPos, #length {
 				font-family: Overlock;
-				width: 10%;
+				width: 5%;
 				font-size: 24px;
 				text-align: left;
 			}
 			#currentPos {text-align: right;}
-			progress {-webkit-appearance: none; width: 80%; height: 24px;}
+			progress {-webkit-appearance: none; width: 90%; height: 24px;}
 			progress::-webkit-progress-bar {background: white; border: 1px solid black;}
 			progress::-webkit-progress-value {background: black;}
 		</style>
@@ -85,23 +85,15 @@
 			<source src="">
 		</audio>
 		<div>Currently playing:</div>
-		<h1 id="title"></h1>
+		<h1 id="title">&nbsp;</h1>
 		<div>- by -</div>
-		<h2 id="artist"></h2>
+		<h2 id="artist">&nbsp;</h2>
 		<div>
 			<span id="currentPos">0:00</span><progress value="0" max="1" id="progress"></progress><span id="length">0:00</span>
 		</div>
   </body>
 	<script>
 		var length;
-		setInterval(function() {
-			var currentPos = document.getElementById("audio").currentTime;
-			var c_m = Math.floor(currentPos / 60);
-			var c_s = Math.floor(currentPos % 60);
-			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
-			var progress = currentPos / length;
-			document.getElementById("progress").value = progress;
-		}, 0);
 		function change() {
 			var audio = document.getElementById("audio");
 			audio.src = document.getElementById("song").value + ".mp3";
@@ -209,5 +201,13 @@
 				nextSong();
 			});
 		}
+		setInterval(function() {
+			var currentPos = document.getElementById("audio").currentTime;
+			var c_m = Math.floor(currentPos / 60);
+			var c_s = Math.floor(currentPos % 60);
+			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
+			var progress = currentPos / length;
+			document.getElementById("progress").value = progress;
+		}, 0);
 	</script>
 </html>
