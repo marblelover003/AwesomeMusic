@@ -382,5 +382,8 @@
 			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
 			document.getElementById("progress").value = currentPos;
 		}
+		function toggle() {
+			if (audio.paused == true) {audio.play();} else if (audio.paused == false) {audio.pause();}
+		}
 	</script>
 </html>
