@@ -82,18 +82,25 @@
 				<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
 			</svg>
 		</button>
-		<audio id="audio">
+		<audio id="audio" style="visibility: hidden;" preload="metadata">
 			<source src="">
 		</audio>
 		<div>Currently playing:</div>
 		<h1 id="title">&nbsp;</h1>
 		<div>- by -</div>
 		<h2 id="artist">&nbsp;</h2>
+		<div>
+			<span id="currentPos">0:00</span><progress value="0" max="1" id="progress"></progress>
+		</div>
   </body>
 	<script>
-		var audio = document.getElementById("audio");
+		var length = 0, audio = document.getElementById("audio");
+		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
+			audio.addEventListener('loadedmetadata', function(event) {
+				length = audio.duration;
+			});
 			audio.load();
 			audio.play();
 			playing();
@@ -103,6 +110,9 @@
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
 			audio.load();
+			audio.addEventListener('loadedmetadata', function(event) {
+				length = audio.duration;
+			});
 			audio.play();
 			playing();
 		}
@@ -194,6 +204,14 @@
 			audio.addEventListener("ended", function() {
 				nextSong();
 			});
+		}
+		function playProgress() {
+			var currentPos = document.getElementById("audio").currentTime;
+			var c_m = Math.floor(currentPos / 60);
+			var c_s = Math.floor(currentPos % 60);
+			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
+			var progress = currentPos / length;
+			document.getElementById("progress").value = progress;
 		}
 	</script>
 </html>
