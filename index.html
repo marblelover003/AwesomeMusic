@@ -108,19 +108,17 @@
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
-			audio.load();
+		        audio.pause();
 			audio.play();
 			playing();
-			document.getElementById("playBtn").innerHTML = "Pause";
 		}
 		function nextSong() {
 			var songId = Math.ceil(Math.random() * 47);
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
-			audio.load();
+			audio.pause();
 			audio.play();
 			playing();
-			document.getElementById("playBtn").innerHTML = "Pause";
 		}
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
