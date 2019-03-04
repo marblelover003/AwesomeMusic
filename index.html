@@ -33,7 +33,7 @@
 	</head>
 	<body>
 	  <select id="song" onchange="change()">
-			<option selected>Select a song</option>
+			<option>Choose a song to play!</option>
 	    <option value="Barracuda">Barracuda</option>
 	    <option value="Cascade">Cascade</option>
 	    <option value="Cheat Codes">Cheat Codes</option>
@@ -104,22 +104,57 @@
   </body>
 	<script>
 		var length = 0, audio = document.getElementById("audio");
+		document.getElementById("playBtnCanvas").getContext("2d").fillStyle = "black";
+		document.getElementById("playBtnCanvas").getContext("2d").beginPath();
+		document.getElementById("playBtnCanvas").getContext("2d").moveTo(5,5);
+		document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,20);
+		document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,35);
+		document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,5);
+		document.getElementById("playBtnCanvas").getContext("2d").fill();
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
-			length = audio.duration;
 			audio.load();
 			audio.play();
+			length = audio.duration;
 			playing();
+			document.getElementById("playBtnCanvas").getContext("2d").clearRect(0, 0, 40, 40);
+			document.getElementById("playBtnCanvas").getContext("2d").fillStyle = "black";
+			document.getElementById("playBtnCanvas").getContext("2d").beginPath();
+			document.getElementById("playBtnCanvas").getContext("2d").moveTo(5,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,5);
+			document.getElementById("playBtnCanvas").getContext("2d").moveTo(25,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,5);
+			document.getElementById("playBtnCanvas").getContext("2d").fill();
 		}
 		function nextSong() {
 			var songId = Math.ceil(Math.random() * 47);
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
 			audio.load();
-			length = audio.duration;
 			audio.play();
+			length = audio.duration;
 			playing();
+			document.getElementById("playBtnCanvas").getContext("2d").clearRect(0, 0, 40, 40);
+			document.getElementById("playBtnCanvas").getContext("2d").fillStyle = "black";
+			document.getElementById("playBtnCanvas").getContext("2d").beginPath();
+			document.getElementById("playBtnCanvas").getContext("2d").moveTo(5,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,5);
+			document.getElementById("playBtnCanvas").getContext("2d").moveTo(25,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,5);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,35);
+			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,5);
+			document.getElementById("playBtnCanvas").getContext("2d").fill();
 		}
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
@@ -165,71 +200,137 @@
 					artist.innerHTML = "Danimal Cannon & Zef";
 					if (index == 5) {
 						lenElem.innerHTML = "4:29";
+					} else if (index == 9) {
+						lenElem.innerHTML = "6:16";
+					} else if (index == 22) {
+						lenElem.innerHTML = "5:17";
+					} else if (index == 23) {
+						lenElem.innerHTML = "4:58";
+					} else if (index == 31) {
+						lenElem.innerHTML = "8:29";
+					} else if (index == 40) {
+						lenElem.innerHTML = "4:35";
 					}
 					break;
 				case 6: case 25:
 					artist.innerHTML = "Bossfight";
+					if (index == 6) {
+						lenElem.innerHTML = "3:26";
+					} else if (index == 25) {
+						lenElem.innerHTML = "3:07";
+					}
 					break;
 				case 7:
 					artist.innerHTML = "Silva Hound";
+					document.getElementById("title").innerHTML += " (Murtagh & Veschell Remix)";
+					lenElem.innerHTML = "3:59";
 					break;
 				case 8: case 11: case 37:
 					artist.innerHTML = "Zef";
+					if (index == 8) {
+						lenElem.innerHTML = "4:33";
+					} else if (index == 11) {
+						lenElem.innerHTML = "4:01";
+					} else if (index == 37) {
+						lenElem.innerHTML = "4:58";
+					}
 					break;
 				case 10: case 16: case 29: case 35: case 39: case 42:
 					artist.innerHTML = "chipzel";
+					if (index == 10) {
+						lenElem.innerHTML = "3:11";
+						document.getElementById("title").innerHTML = " (Super Hexagon - Hexagon)";
+					} else if (index == 16) {
+						lenElem.innerHTML = "2:42";
+						document.getElementById("title").innerHTML = " (Super Hexagon - Hexagonest)";
+					} else if (index == 29) {
+						lenElem.innerHTML = "2:36";
+						document.getElementById("title").innerHTML = " (Super Hexagon - Hexagoner)";
+					} else if (index == 35) {
+						lenElem.innerHTML = "4:00";
+					} else if (index == 39) {
+						lenElem.innerHTML = "3:13";
+					} else if (index == 42) {
+						lenElem.innerHTML = "3:52";
+					}
 					break;
 				case 12:
 					artist.innerHTML = "FantomenK";
+					lenElem.innerHTML = "7:10";
 					break;
 				case 13:
 					artist.innerHTML = "Excision & Space Laces";
+					lenElem.innerHTML = "4:30";
 					break;
 				case 14:
 					artist.innerHTML = "Excision & Far Too Loud";
+					lenElem.innerHTML = "5:10";
 					break;
 				case 17: case 21: case 27:
 					artist.innerHTML = "Shirobon";
+					if (index == 17) {
+						lenElem.innerHTML = "5:17";
+					} else if (index == 21) {
+						lenElem.innerHTML = "2:41";
+					} else if (index == 27) {
+						lenElem.innerHTML = "4:28";
+					}
 					break;
 				case 18:
 					artist.innerHTML = "Lets Be Friends";
+					lenElem.innerHTML = "4:17";
 					break;
 				case 20:
 					artist.innerHTML = "Tokyo Machine";
+					lenElem.innerHTML = "3:02";
 					break;
 				case 24:
 					artist.innerHTML = "Danimal Cannon";
+					lenElem.innerHTML = "4:27";
 					break;
 				case 28: case 41:
 					artist.innerHTML = "Tristam";
+					if (index == 28) {
+						lenElem.innerHTML = "3:46";
+					} else if (index == 41) {
+						lenElem.innerHTML = "4:30";
+					}
 					break;
 				case 30:
 					artist.innerHTML = "Shawn Daley";
+					lenElem.innerHTML = "2:55";
 					break;
 				case 32:
 					artist.innerHTML = "cYsmix";
+					lenElem.innerHTML = "2:21";
 					break;
 				case 33:
 					artist.innerHTML = "nanobii";
+					lenElem.innerHTML = "2:53";
 					break;
 				case 36:
 					artist.innerHTML = "PIXL";
+					lenElem.innerHTML = "4:44";
 					break;
 				case 38:
 					artist.innerHTML = "Sabrepulse";
+					lenElem.innerHTML = "4:50";
 					break;
 				case 43:
 					artist.innerHTML = "Pegboard Nerds";
+					lenElem.innerHTML = "3:49";
 					break;
 				case 44:
 					artist.innerHTML = "Plesco";
+					lenElem.innerHTML = "3:47";
 					break;
 				case 46:
 					artist.innerHTML = "Avenza";
+					lenElem.innerHTML = "3:41";
 					break;
 			}
 			document.title = document.getElementById("song").value + " by " + artist.innerHTML;
-			document.getElementById("song").selectedIndex = 47;
+			document.getElementById("song").selectedIndex = 0;
 			audio.addEventListener("ended", function() {
 				nextSong();
 			});
