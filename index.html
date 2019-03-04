@@ -108,7 +108,6 @@
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
-			audio.pause();
 			audio.load();
 			audio.play();
 			playing();
@@ -118,7 +117,6 @@
 			var songId = Math.ceil(Math.random() * 47);
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
-			audio.pause();
 			audio.load();
 			audio.play();
 			playing();
