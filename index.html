@@ -95,6 +95,9 @@
 		function change() {
 			audio = new Audio(document.getElementById("song").value + ".mp3");
 			audio.load();
+			audio.addEventListener('loadedmetadata', function(event) {
+				length = audio.duration;
+			});
 			audio.play();
 			setInterval(playProgress, 0);
 			playing();
@@ -105,7 +108,7 @@
 			audio.pause();
 			audio = new Audio(document.getElementById("song").value + ".mp3");
 			audio.load();
-			audio.addEventListener('loadedmetadata', function() {
+			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
 			audio.play();
