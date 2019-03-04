@@ -82,9 +82,7 @@
       <option value="Vindicate Me">Vindicate Me</option>
       <option value="Wicked">Wicked</option>
     </select><br>
-		<button onclick="toggle()">
-			<canvas id="playBtnCanvas" width="40" height="40"></canvas>
-		</button>
+		<button onclick="toggle()" id="playBtn">Play</button>
 		<button onclick="nextSong()">
 			<svg width="40" height="40">
 				<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
@@ -104,13 +102,6 @@
   </body>
 	<script>
 		var length = 0, audio = document.getElementById("audio");
-		document.getElementById("playBtnCanvas").getContext("2d").fillStyle = "black";
-		document.getElementById("playBtnCanvas").getContext("2d").beginPath();
-		document.getElementById("playBtnCanvas").getContext("2d").moveTo(5,5);
-		document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,20);
-		document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,35);
-		document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,5);
-		document.getElementById("playBtnCanvas").getContext("2d").fill();
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
@@ -118,20 +109,7 @@
 			audio.play();
 			length = audio.duration;
 			playing();
-			document.getElementById("playBtnCanvas").getContext("2d").clearRect(0, 0, 40, 40);
-			document.getElementById("playBtnCanvas").getContext("2d").fillStyle = "black";
-			document.getElementById("playBtnCanvas").getContext("2d").beginPath();
-			document.getElementById("playBtnCanvas").getContext("2d").moveTo(5,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,5);
-			document.getElementById("playBtnCanvas").getContext("2d").moveTo(25,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,5);
-			document.getElementById("playBtnCanvas").getContext("2d").fill();
+			document.getElementById("playBtn").innerHTML = "Pause";
 		}
 		function nextSong() {
 			var songId = Math.ceil(Math.random() * 47);
@@ -141,20 +119,7 @@
 			audio.play();
 			length = audio.duration;
 			playing();
-			document.getElementById("playBtnCanvas").getContext("2d").clearRect(0, 0, 40, 40);
-			document.getElementById("playBtnCanvas").getContext("2d").fillStyle = "black";
-			document.getElementById("playBtnCanvas").getContext("2d").beginPath();
-			document.getElementById("playBtnCanvas").getContext("2d").moveTo(5,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(15,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(5,5);
-			document.getElementById("playBtnCanvas").getContext("2d").moveTo(25,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,5);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(35,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,35);
-			document.getElementById("playBtnCanvas").getContext("2d").lineTo(25,5);
-			document.getElementById("playBtnCanvas").getContext("2d").fill();
+			document.getElementById("playBtn").innerHTML = "Pause";
 		}
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
@@ -344,31 +309,12 @@
 			document.getElementById("progress").value = progress;
 		}
 		function toggle() {
-			var c = document.getElementById("playBtnCanvas").getContext("2d");
-			c.clearRect(0, 0, 40, 40);
-			c.fillStyle = "black";
 			if (audio.paused == false) {
 				audio.pause();
-				c.beginPath();
-				c.moveTo(5,5);
-				c.lineTo(35,20);
-				c.lineTo(5,35);
-				c.lineTo(5,5);
-				c.fill();
+				document.getElementById("playBtn").innerHTML = "Play";
 			} else if (audio.paused == true) {
 				audio.play();
-				c.beginPath();
-				c.moveTo(5,5);
-				c.lineTo(15,5);
-				c.lineTo(15,35);
-				c.lineTo(5,35);
-				c.lineTo(5,5);
-				c.moveTo(25,5);
-				c.lineTo(35,5);
-				c.lineTo(35,35);
-				c.lineTo(25,35);
-				c.lineTo(25,5);
-				c.fill();
+				document.getElementById("playBtn").innerHTML = "Pause";
 			}
 		}
 	</script>
