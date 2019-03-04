@@ -201,6 +201,7 @@
 					break;
 			}
 			document.title = document.getElementById("song").value + " by " + artist.innerHTML;
+			document.getElementById("song").selectedIndex = 47;
 			audio.addEventListener("ended", function() {
 				nextSong();
 			});
