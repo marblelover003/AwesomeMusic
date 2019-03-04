@@ -13,8 +13,6 @@
 			button {
 				height: 50px;
 				width: 50px;
-				line-height: 50px;
-				text-align: center;
 			}
 			h1 {font-weight: 900; font-size: 60px; margin: 0; text-align: center;}
 			h2 {font-weight: 600; font-size: 40px; margin: 0; text-align: center;}
@@ -289,7 +287,7 @@
 					length = [3,41];
 					break;
 			}
-			document.title = document.getElementById("song").value + " by " + artist.innerHTML;
+			document.title = artist.innerHTML + " - " + document.getElementById("song").value;
 			document.getElementById("song").selectedIndex = 0;
 			document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2);
 			seconds = (length[0] * 60) + length[1];
