@@ -104,7 +104,7 @@
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
 			audio.load();
-			audio.play();
+			if (audio.playing == true) {toggle();}
 			playing();
 			document.getElementById("playBtn").innerHTML = "Pause";
 		}
@@ -113,7 +113,7 @@
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
 			audio.load();
-			audio.play();
+			if (audio.playing == true) {toggle();}
 			playing();
 			document.getElementById("playBtn").innerHTML = "Pause";
 		}
