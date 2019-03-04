@@ -82,7 +82,7 @@
 				<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
 			</svg>
 		</button>
-		<audio id="audio" style="visibility: hidden;">
+		<audio id="audio" style="visibility: hidden;" preload="metadata">
 			<source src="">
 		</audio>
 		<div>Currently playing:</div>
@@ -94,26 +94,25 @@
 		</div>
   </body>
 	<script>
-		var length = 0, audio;
+		var length = 0, audio = document.getElementById("audio");
 		setInterval(playProgress, 0);
 		function change() {
-			audio = new Audio(document.getElementById("song").value + ".mp3");
+			audio.src = document.getElementById("song").value + ".mp3";
 			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
-			document.getElementById("audio").src = document.getElementById("song").value + ".mp3";
+			audio.load();
 			audio.play();
 			playing();
 		}
 		function nextSong() {
 			var songId = Math.ceil(Math.random() * 47);
 			document.getElementById("song").selectedIndex = songId;
-			audio.pause();
-			audio = new Audio(document.getElementById("song").value + ".mp3");
+			audio.src = document.getElementById("song").value + ".mp3";
+			audio.load();
 			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
-			document.getElementById("audio").src = document.getElementById("song").value + ".mp3";
 			audio.play();
 			playing();
 		}
