@@ -10,24 +10,30 @@
 			body {
 				font-family: Montserrat;
 			}
+			button {
+				height: 50px;
+				width: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
 			h1 {font-weight: 900; font-size: 60px; margin: 0; text-align: center;}
 			h2 {font-weight: 600; font-size: 40px; margin: 0; text-align: center;}
 			div {text-align: center;}
 			#currentPos, #length {
 				font-family: Overlock;
-				width: 7%;
-				margin-right: 3%;
+				width: 6%;
 				font-size: 24px;
-				text-align: left;
 			}
-			#currentPos {text-align: right;}
-			progress {-webkit-appearance: none; width: 90%; height: 24px;}
+			#currentPos {text-align: right; padding-right: 1%;}
+			#length {text-align: left; padding-left: 1%;}
+			progress {-webkit-appearance: none; width: 86%; height: 24px;}
 			progress::-webkit-progress-bar {background: white; border: 1px solid black;}
 			progress::-webkit-progress-value {background: black;}
 		</style>
 	</head>
 	<body>
 	  <select id="song" onchange="change()">
+			<option selected>Select a song</option>
 	    <option value="Barracuda">Barracuda</option>
 	    <option value="Cascade">Cascade</option>
 	    <option value="Cheat Codes">Cheat Codes</option>
@@ -75,8 +81,10 @@
       <option value="Unlocked">Unlocked</option>
       <option value="Vindicate Me">Vindicate Me</option>
       <option value="Wicked">Wicked</option>
-			<option selected>Select a song</option>
     </select><br>
+		<button onclick="toggle()">
+			<canvas id="playBtnCanvas" width="40" height="40"></canvas>
+		</button>
 		<button onclick="nextSong()">
 			<svg width="40" height="40">
 				<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
@@ -91,7 +99,7 @@
 		<div>- by -</div>
 		<h2 id="artist">&nbsp;</h2>
 		<div>
-			<span id="currentPos">0:00</span><progress value="0" max="1" id="progress"></progress>
+			<span id="currentPos">0:00</span><progress value="0" max="1" id="progress"></progress><span id="length">0:00</span>
 		</div>
   </body>
 	<script>
@@ -99,9 +107,7 @@
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
-			audio.addEventListener('loadedmetadata', function(event) {
-				length = audio.duration;
-			});
+			length = audio.duration;
 			audio.load();
 			audio.play();
 			playing();
@@ -111,34 +117,54 @@
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
 			audio.load();
-			audio.addEventListener('loadedmetadata', function(event) {
-				length = audio.duration;
-			});
+			length = audio.duration;
 			audio.play();
 			playing();
 		}
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
 			var artist = document.getElementById("artist");
-			var index = document.getElementById("song").selectedIndex;
+			var index = (document.getElementById("song").selectedIndex) - 1;
+			var lenElem = document.getElementById("length");
 			switch (index) {
 				case 0:
 					artist.innerHTML = "Noisestorm";
+					lenElem.innerHTML = "4:22";
 					break;
 				case 1:
 					artist.innerHTML = "Kubbi";
+					lenElem.innerHTML = "4:20";
 					break;
 				case 2: case 15: case 26:
 					artist.innerHTML = "Nitro Fun";
+					if (index == 2) {
+						lenElem.innerHTML = "3:32";
+					} else if (index == 15) {
+						lenElem.innerHTML = "5:16";
+					} else if (index == 26) {
+						lenElem.innerHTML = "4:19";
+					}
 					break;
 				case 3:
 					artist.innerHTML = "Nitro Fun & Hyper Potions";
+					lenElem.innerHTML = "3:43";
 					break;
 				case 4: case 19: case 34: case 45:
 					artist.innerHTML = "Big Giant Circles";
+					if (index == 4) {
+						lenElem.innerHTML = "3:29";
+					} else if (index == 19) {
+						lenElem.innerHTML = "5:23";
+					} else if (index == 34) {
+						lenElem.innerHTML = "4:34";
+					} else if (index == 45) {
+						lenElem.innerHTML = "3:26";
+					}
 					break;
 				case 5: case 9: case 22: case 23: case 31: case 40:
 					artist.innerHTML = "Danimal Cannon & Zef";
+					if (index == 5) {
+					}
 					break;
 				case 6: case 25:
 					artist.innerHTML = "Bossfight";
@@ -214,6 +240,34 @@
 			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
 			var progress = currentPos / length;
 			document.getElementById("progress").value = progress;
+		}
+		function toggle() {
+			var c = document.getElementById("playBtnCanvas").getContext("2d");
+			c.clearRect(0, 0, 40, 40);
+			c.fillStyle = "black";
+			if (audio.paused == false) {
+				audio.pause();
+				c.beginPath();
+				c.moveTo(5,5);
+				c.lineTo(35,20);
+				c.lineTo(5,35);
+				c.lineTo(5,5);
+				c.fill();
+			} else if (audio.paused == true) {
+				audio.play();
+				c.beginPath();
+				c.moveTo(5,5);
+				c.lineTo(15,5);
+				c.lineTo(15,35);
+				c.lineTo(5,35);
+				c.lineTo(5,5);
+				c.moveTo(25,5);
+				c.lineTo(35,5);
+				c.lineTo(35,35);
+				c.lineTo(25,35);
+				c.lineTo(25,5);
+				c.fill();
+			}
 		}
 	</script>
 </html>
