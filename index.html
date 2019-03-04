@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Music Player</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
 		<style>
 			select {
@@ -203,6 +204,7 @@
 			});
 		}
 		setInterval(function() {
+			length = document.getElementById("audio").duration;
 			var currentPos = document.getElementById("audio").currentTime;
 			var c_m = Math.floor(currentPos / 60);
 			var c_s = Math.floor(currentPos % 60);
