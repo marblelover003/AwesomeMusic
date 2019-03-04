@@ -26,6 +26,7 @@
 	</head>
 	<body>
 	  <select id="song" onchange="change()">
+			<option selected>Select a song</option>
 	    <option value="Barracuda">Barracuda</option>
 	    <option value="Cascade">Cascade</option>
 	    <option value="Cheat Codes">Cheat Codes</option>
@@ -109,7 +110,7 @@
 			playing();
 		}
 		function nextSong() {
-			var songId = Math.floor(Math.random() * 47);
+			var songId = Math.ceil(Math.random() * 47);
 			document.getElementById("song").selectedIndex = songId;
 			var audio = document.getElementById("audio");
 			audio.src = document.getElementById("song").value + ".mp3";
