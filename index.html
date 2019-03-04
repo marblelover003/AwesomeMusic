@@ -26,7 +26,6 @@
 	</head>
 	<body>
 	  <select id="song" onchange="change()">
-			<option selected>Select a song</option>
 	    <option value="Barracuda">Barracuda</option>
 	    <option value="Cascade">Cascade</option>
 	    <option value="Cheat Codes">Cheat Codes</option>
@@ -74,6 +73,7 @@
       <option value="Unlocked">Unlocked</option>
       <option value="Vindicate Me">Vindicate Me</option>
       <option value="Wicked">Wicked</option>
+			<option selected>Select a song</option>
     </select><br>
 		<button onclick="nextSong()">
 			<svg width="40" height="40">
@@ -117,7 +117,7 @@
 			var l_m = Math.floor(length / 60);
 			var l_s = Math.floor(length % 60);
 			document.getElementById("length").innerHTML = l_m + ":" + ("0" + l_s).slice(-2);
-			var index = document.getElementById("song").selectedIndex - 1;
+			var index = document.getElementById("song").selectedIndex;
 			switch (index) {
 				case 0:
 					artist.innerHTML = "Noisestorm";
