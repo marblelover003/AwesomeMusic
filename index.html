@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
 		<style>
 			select {
 				font-family: Overlock;
@@ -9,8 +9,8 @@
 			body {
 				font-family: Montserrat;
 			}
-			h1 {font-weight: 900; font-size: 60px; margin: 0;}
-			h2 {font-weight: 600; font-size: 40px; margin: 0;}
+			h1 {font-weight: 900; font-size: 60px;}
+			h2 {font-weight: 600; font-size: 40px;}
 			#currentPos, #length {
 				font-family: Overlock;
 				width: 10%;
@@ -73,7 +73,7 @@
       <option value="Vindicate Me">Vindicate Me</option>
       <option value="Wicked">Wicked</option>
     </select><br>
-		<audio controls id="audio" style="visibility: hidden;>
+		<audio controls id="audio">
 			<source src="">
 		</audio>
 		<button onclick="nextSong()">
@@ -120,7 +120,7 @@
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
 			var artist = document.getElementById("artist");
-			var length = document.getElementById("audio").duration;
+			var length = parseInt(document.getElementById("audio").duration);
 			var l_m = Math.floor(length / 60);
 			var l_s = Math.floor(length % 60);
 			document.getElementById("length").innerHTML = l_m + ":" + ("0" + l_s).slice(-2);
