@@ -118,7 +118,7 @@
 			var l_s = Math.floor(length % 60);
 			document.getElementById("length").innerHTML = l_m + ":" + ("0" + l_s).slice(-2);
 			var index = document.getElementById("song").selectedIndex - 1;
-			switch (document.getElementById("song").selectedIndex) {
+			switch (index) {
 				case 0:
 					artist.innerHTML = "Noisestorm";
 					break;
