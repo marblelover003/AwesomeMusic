@@ -82,6 +82,9 @@
 				<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
 			</svg>
 		</button>
+		<audio id="audio" style="visibility: hidden;">
+			<source src="">
+		</audio>
 		<div>Currently playing:</div>
 		<h1 id="title">&nbsp;</h1>
 		<div>- by -</div>
@@ -98,6 +101,7 @@
 			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
+			document.getElementById("audio").src = document.getElementById("song").value + ".mp3";
 			audio.play();
 			playing();
 		}
@@ -109,6 +113,7 @@
 			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
+			document.getElementById("audio").src = document.getElementById("song").value + ".mp3";
 			audio.play();
 			playing();
 		}
