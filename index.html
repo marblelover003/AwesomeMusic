@@ -91,15 +91,14 @@
 		</div>
   </body>
 	<script>
-		var length, audio;
+		var length = 0, audio;
+		setInterval(playProgress, 0);
 		function change() {
 			audio = new Audio(document.getElementById("song").value + ".mp3");
-			audio.load();
 			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
 			audio.play();
-			setInterval(playProgress, 0);
 			playing();
 		}
 		function nextSong() {
@@ -107,7 +106,6 @@
 			document.getElementById("song").selectedIndex = songId;
 			audio.pause();
 			audio = new Audio(document.getElementById("song").value + ".mp3");
-			audio.load();
 			audio.addEventListener('loadedmetadata', function(event) {
 				length = audio.duration;
 			});
