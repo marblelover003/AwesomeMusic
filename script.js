@@ -3,16 +3,11 @@ var canvas, ctx, center_x, center_y, radius, bars,
     frequency_array;
 bars = 200;
 bar_width = 2;
-var file = document.getElementById("fileUpload"), files;
-file.onchange = function() {
-    files = this.files;
-    initPage();
-}
 function initPage(){
     audio = new Audio();
     context = new (window.AudioContext || window.webkitAudioContext)();
     analyser = context.createAnalyser();
-    audio.src = URL.createObjectURL(files[0]);
+    audio.src = "Tension.mp3";
     source = context.createMediaElementSource(audio);
     source.connect(analyser);
     analyser.connect(context.destination);
