@@ -81,7 +81,7 @@
       <option value="Vindicate Me">Vindicate Me (ID 45)</option>
       <option value="Wicked">Wicked (ID 46)</option>
     </select><br>
-		<button onclick="toggle()" id="playBtn">Play</button>
+		<button onclick="toggle()">Play/Pause</button>
 		<button onclick="nextSong()">
 			<svg width="40" height="40">
 				<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
@@ -105,8 +105,9 @@
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
+			audio.pause();
 			audio.load();
-			if (audio.playing == true) {toggle();}
+			audio.play();
 			playing();
 			document.getElementById("playBtn").innerHTML = "Pause";
 		}
@@ -114,8 +115,9 @@
 			var songId = Math.ceil(Math.random() * 47);
 			document.getElementById("song").selectedIndex = songId;
 			audio.src = document.getElementById("song").value + ".mp3";
+			audio.pause();
 			audio.load();
-			if (audio.playing == true) {toggle();}
+			audio.play();
 			playing();
 			document.getElementById("playBtn").innerHTML = "Pause";
 		}
@@ -376,15 +378,6 @@
 			var c_s = Math.floor(currentPos % 60);
 			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
 			document.getElementById("progress").value = currentPos;
-		}
-		function toggle() {
-			if (audio.paused == false) {
-				audio.pause();
-				document.getElementById("playBtn").innerHTML = "Play";
-			} else if (audio.paused == true) {
-				audio.play();
-				document.getElementById("playBtn").innerHTML = "Pause";
-			}
 		}
 	</script>
 </html>
