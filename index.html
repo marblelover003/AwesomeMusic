@@ -7,11 +7,11 @@
 		<style>
 			select {
 				font-family: Overlock;
-				font-size: 20px;
 			}
 			body {
 				font-family: Montserrat;
 				margin: 0;
+				overflow: hidden;
 			}
 			button {
 				-webkit-appearance: none;
@@ -36,10 +36,17 @@
 			progress::-webkit-progress-value {background: black;}
 			#albumImg {
 				display: inline-block;
-				width: 320px;
-				height: 320px;
+				width: 384px;
+				height: 384px;
 				background-image: url("Album-Art/Music Albums/Unknown.jpg");
-				background-size: 320px;
+				background-size: 384px;
+			}
+			@media screen and (max-width: 520px) {
+				#albumImg {
+					width: 300px;
+					height: 300px;
+					background-size: 300px;
+				}
 			}
 		</style>
 	</head>
