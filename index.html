@@ -7,9 +7,11 @@
 		<style>
 			select {
 				font-family: Overlock;
+				font-size: 20px;
 			}
 			body {
 				font-family: Montserrat;
+				margin: 0;
 			}
 			button {
 				-webkit-appearance: none;
@@ -18,79 +20,100 @@
 				min-width: 50px;
 				border-radius: 0;
 			}
-			h1 {font-weight: 900; font-size: 60px; margin: 0; text-align: center;}
-			h2 {font-weight: 600; font-size: 40px; margin: 0; text-align: center;}
+			h1 {font-weight: 900; font-size: 40px; margin: 0; text-align: center;}
+			h2 {font-weight: 600; font-size: 30px; margin: 0; text-align: center;}
 			div {text-align: center;}
 			#currentPos, #length {
+				display: inline-block;
 				font-family: Overlock;
-				width: 4%;
+				width: 13%;
 				font-size: 24px;
 			}
-			#currentPos {text-align: right; padding-right: 1%;}
-			#length {text-align: left; padding-left: 1%;}
-			progress {-webkit-appearance: none; width: 75%; height: 24px;}
+			#currentPos {text-align: right;}
+			#length {text-align: left;}
+			progress {-webkit-appearance: none; width: 73%; height: 30px; position: relative; top: 2px;}
 			progress::-webkit-progress-bar {background: white; border: 1px solid black;}
 			progress::-webkit-progress-value {background: black;}
+			#albumImg {
+				display: inline-block;
+				width: 320px;
+				height: 320px;
+				background-image: url("Album-Art/Music Albums/Unknown.jpg");
+				background-size: 320px;
+			}
 		</style>
 	</head>
 	<body>
-	  <select id="song" onchange="change()">
+		<select id="song" onchange="change()">
 			<option>Choose a song to play!</option>
-	    <option value="Barracuda">Barracuda (ID 00)</option>
-	    <option value="Cascade">Cascade (ID 01)</option>
-	    <option value="Cheat Codes">Cheat Codes (ID 02)</option>
-	    <option value="Checkpoint">Checkpoint (ID 03)</option>
-	    <option value="Chip Zeal">Chip Zeal (ID 04)</option>
-	    <option value="Chronos">Chronos (ID 05)</option>
-	    <option value="Commando Steve">Commando Steve (ID 06)</option>
-	    <option value="Cool Friends">Cool Friends (ID 07)</option>
-	    <option value="Core">Core (ID 08)</option>
-	    <option value="Corrupted">Corrupted (ID 09)</option>
-	    <option value="Courtesy">Courtesy (ID 10)</option>
-	    <option value="Cruise Control">Cruise Control (ID 11)</option>
-	    <option value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
-	    <option value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
-	    <option value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
-	    <option value="Final Boss">Final Boss (ID 15)</option>
-	    <option value="Focus">Focus (ID 16)</option>
-	    <option value="FOX">FOX (ID 17)</option>
-	    <option value="FTW">FTW (ID 18)</option>
-	    <option value="Houston">Houston (ID 19)</option>
-	    <option value="HYPE">HYPE (ID 20)</option>
-	    <option value="Into The Zone">Into The Zone (ID 21)</option>
-	    <option value="Legacy">Legacy (ID 22)</option>
-	    <option value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
-	    <option value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
-	    <option value="Milky Ways">Milky Ways (ID 25)</option>
-	    <option value="New Game">New Game (ID 26)</option>
-	    <option value="On The Run">On The Run (ID 27)</option>
-	    <option value="Once Again">Once Again (ID 28)</option>
-	    <option value="Otis">Otis (ID 29)</option>
-	    <option value="Paper Dolls">Paper Dolls (ID 30)</option>
-	    <option value="Parallel Processing">Parallel Processing (ID 31)</option>
-	    <option value="Peer Gynt">Peer Gynt (ID 32)</option>
-	    <option value="Rainbow Road">Rainbow Road (ID 33)</option>
-	    <option value="Sevcon">Sevcon (ID 34)</option>
-	    <option value="Spectra">Spectra (ID 35)</option>
-	    <option value="Sugar Rush">Sugar Rush (ID 36)</option>
-	    <option value="Tension">Tension (ID 37)</option>
-	    <option value="Termination Shock">Termination Shock (ID 38)</option>
-	    <option value="The Art of War">The Art of War (ID 39)</option>
-	    <option value="The Lunar Whale">The Lunar Whale (ID 40)</option>
-      <option value="Till It's Over">Till It's Over (ID 41)</option>
-      <option value="Tokyo Skies">Tokyo Skies (ID 42)</option>
-      <option value="Try This">Try This (ID 43)</option>
-      <option value="Unlocked">Unlocked (ID 44)</option>
-      <option value="Vindicate Me">Vindicate Me (ID 45)</option>
-      <option value="Wicked">Wicked (ID 46)</option>
-    </select><br>
-		<button onclick="toggle()">Play/Pause</button>
-		<button onclick="nextSong()">
-			<svg width="40" height="40">
-				<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
-				<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
-			</svg>
-		</button>
+			<option value="Barracuda">Barracuda (ID 00)</option>
+			<option value="Cascade">Cascade (ID 01)</option>
+			<option value="Cheat Codes">Cheat Codes (ID 02)</option>
+			<option value="Checkpoint">Checkpoint (ID 03)</option>
+			<option value="Chip Zeal">Chip Zeal (ID 04)</option>
+			<option value="Chronos">Chronos (ID 05)</option>
+			<option value="Commando Steve">Commando Steve (ID 06)</option>
+			<option value="Cool Friends">Cool Friends (ID 07)</option>
+			<option value="Core">Core (ID 08)</option>
+			<option value="Corrupted">Corrupted (ID 09)</option>
+			<option value="Courtesy">Courtesy (ID 10)</option>
+			<option value="Cruise Control">Cruise Control (ID 11)</option>
+			<option value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
+			<option value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
+			<option value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
+			<option value="Final Boss">Final Boss (ID 15)</option>
+			<option value="Focus">Focus (ID 16)</option>
+			<option value="FOX">FOX (ID 17)</option>
+			<option value="FTW">FTW (ID 18)</option>
+			<option value="Houston">Houston (ID 19)</option>
+			<option value="HYPE">HYPE (ID 20)</option>
+			<option value="Into The Zone">Into The Zone (ID 21)</option>
+			<option value="Legacy">Legacy (ID 22)</option>
+			<option value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
+			<option value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
+			<option value="Milky Ways">Milky Ways (ID 25)</option>
+			<option value="New Game">New Game (ID 26)</option>
+			<option value="On The Run">On The Run (ID 27)</option>
+			<option value="Once Again">Once Again (ID 28)</option>
+			<option value="Otis">Otis (ID 29)</option>
+			<option value="Paper Dolls">Paper Dolls (ID 30)</option>
+			<option value="Parallel Processing">Parallel Processing (ID 31)</option>
+			<option value="Peer Gynt">Peer Gynt (ID 32)</option>
+			<option value="Rainbow Road">Rainbow Road (ID 33)</option>
+			<option value="Sevcon">Sevcon (ID 34)</option>
+			<option value="Spectra">Spectra (ID 35)</option>
+			<option value="Sugar Rush">Sugar Rush (ID 36)</option>
+			<option value="Tension">Tension (ID 37)</option>
+			<option value="Termination Shock">Termination Shock (ID 38)</option>
+			<option value="The Art of War">The Art of War (ID 39)</option>
+			<option value="The Lunar Whale">The Lunar Whale (ID 40)</option>
+			<option value="Till It's Over">Till It's Over (ID 41)</option>
+			<option value="Tokyo Skies">Tokyo Skies (ID 42)</option>
+			<option value="Try This">Try This (ID 43)</option>
+			<option value="Unlocked">Unlocked (ID 44)</option>
+			<option value="Vindicate Me">Vindicate Me (ID 45)</option>
+			<option value="Wicked">Wicked (ID 46)</option>
+		</select><br>
+		<div>
+			<span id="currentPos">0:00.000</span><progress value="0" max="1" id="progress"></progress><span id="length">0:00.000</span><br>
+			<button onclick="restart()">
+				<svg width="40" height="40">
+					<polyline style="stroke: none; fill: black;" points="35,5 10,20 35,35 35,5" />
+					<polyline style="stroke: none; fill: black;" points="5,5 10,5 10,35 5,35 5,5" />
+				</svg>
+			</button>
+			<button onclick="skip(-15)" style="position: relative; top: -21px;">Rewind<br>15 sec</button>
+			<button onclick="skip(-5)" style="position: relative; top: -21px;">Rewind<br>5 sec</button>
+			<button onclick="toggle()" style="position: relative; top: -14px;">Play/Pause</button>
+			<button onclick="skip(5)" style="position: relative; top: -21px;">Skip<br>5 sec</button>
+			<button onclick="skip(15)" style="position: relative; top: -21px;">Skip<br>15 sec</button>
+			<button onclick="nextSong()">
+				<svg width="40" height="40">
+					<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
+					<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
+				</svg>
+			</button>
+		</div>
 		<audio id="audio" style="visibility: hidden;" preload="metadata">
 			<source src="">
 		</audio>
@@ -99,18 +122,27 @@
 		<div>- by -</div>
 		<h2 id="artist">&nbsp;</h2>
 		<div>
-			<span id="currentPos">0:00</span><progress value="0" max="1" id="progress"></progress><span id="length">0:00</span><br>
-			<span style="display: inline-block; width: 320px; height: 320px; background-image: url(Unknown.jpg); background-size: 320px 320px;" id="albumImg"></span>
+			<span id="albumImg"></span>
 		</div>
-  </body>
+	</body>
 	<script>
-		var length = 0, audio = document.getElementById("audio");
+		var length = 0, audio = document.getElementById("audio"), p = false, currentSong;
 		setInterval(playProgress, 0);
 		function change() {
 			audio.src = document.getElementById("song").value + ".mp3";
 			audio.pause();
 			audio.play();
 			playing();
+			if (p == false) {
+				p = true;
+				setInterval(changeTitle, 1000);
+			}
+		}
+		function restart() {
+			audio.currentTime = 0;
+		}
+		function skip(sec) {
+			audio.currentTime += sec;
 		}
 		function nextSong() {
 			var songId = Math.ceil(Math.random() * 47);
@@ -119,9 +151,14 @@
 			audio.pause();
 			audio.play();
 			playing();
+			if (p == false) {
+				p = true;
+				setInterval(changeTitle, 1000);
+			}
 		}
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
+			currentSong = document.getElementById("song").value;
 			var artist = document.getElementById("artist");
 			var index = (document.getElementById("song").selectedIndex) - 1;
 			var lenElem = document.getElementById("length");
@@ -200,183 +237,190 @@
 			switch (index) {
 				case 0:
 					artist.innerHTML = "Noisestorm";
-					length = [4,22];
+					length = [4,22,661];
 					break;
 				case 1:
 					artist.innerHTML = "Kubbi";
-					length = [4,20];
+					length = [4,20,48];
 					break;
 				case 2: case 15: case 26:
 					artist.innerHTML = "Nitro Fun";
 					if (index == 2) {
-						length = [3,32];
+						length = [3,32,349];
 					} else if (index == 15) {
-						length = [5,16];
+						length = [5,16,813];
 					} else if (index == 26) {
-						length = [4,19];
+						length = [4,19,317];
 					}
 					break;
 				case 3:
-					artist.innerHTML = "Nitro Fun & Hyper Potions";
-					length = [3,43];
+					artist.innerHTML = "Nitro Fun and Hyper Potions";
+					length = [3,43,895];
 					break;
 				case 4: case 19: case 34: case 45:
 					artist.innerHTML = "Big Giant Circles";
 					if (index == 4) {
-						length = [3,29];
+						length = [3,29,920];
 					} else if (index == 19) {
-						length = [5,23];
+						length = [5,23,500];
 					} else if (index == 34) {
-						length = [4,34];
+						length = [4,34,755];
 					} else if (index == 45) {
-						length = [3,26];
+						length = [3,26,471];
 					}
 					break;
 				case 5: case 9: case 22: case 23: case 31: case 40:
-					artist.innerHTML = "Danimal Cannon & Zef";
+					artist.innerHTML = "Danimal Cannon and Zef";
 					if (index == 5) {
-						length = [4,29];
+						length = [4,29,740];
 					} else if (index == 9) {
-						length = [6,16];
+						length = [6,16,737];
 					} else if (index == 22) {
-						length = [5,17];
+						length = [5,17,74];
 					} else if (index == 23) {
-						length = [4,58];
+						length = [4,58,736];
 					} else if (index == 31) {
-						length = [8,29];
+						length = [8,29,22];
 					} else if (index == 40) {
-						length = [4,35];
+						length = [4,35,826];
 					}
 					break;
 				case 6: case 25:
 					artist.innerHTML = "Bossfight";
 					if (index == 6) {
-						length = [3,26];
+						length = [3,26,942];
 					} else if (index == 25) {
-						length = [3,7];
+						length = [3,7,611];
 					}
 					break;
 				case 7:
 					artist.innerHTML = "Silva Hound";
 					document.getElementById("title").innerHTML += " (Murtagh & Veschell Remix)";
-					length = [3,59];
+					length = [3,59,72];
 					break;
 				case 8: case 11: case 37:
 					artist.innerHTML = "Zef";
 					if (index == 8) {
-						length = [4,33];
+						length = [4,33,371];
 					} else if (index == 11) {
-						length = [4,1];
+						length = [4,1,606];
 					} else if (index == 37) {
-						length = [4,58];
+						length = [4,58,109];
 					}
 					break;
 				case 10: case 16: case 29: case 35: case 39: case 42:
 					artist.innerHTML = "chipzel";
 					if (index == 10) {
-						length = [3,11];
+						length = [3,11,164];
 					} else if (index == 16) {
-						length = [2,42];
+						length = [2,42,847];
 					} else if (index == 29) {
-						length = [2,36];
+						length = [2,36,81];
 					} else if (index == 35) {
-						length = [4,0];
+						length = [4,0,117];
 					} else if (index == 39) {
-						length = [3,13];
+						length = [3,13,280];
 					} else if (index == 42) {
-						length = [3,52];
+						length = [3,52,463];
 					}
 					break;
 				case 12:
 					artist.innerHTML = "FantomenK";
-					length = [7,10];
+					length = [7,10,158];
 					break;
 				case 13:
-					artist.innerHTML = "Excision & Space Laces";
-					length = [4,30];
+					artist.innerHTML = "Excision and Space Laces";
+					length = [4,30,706];
 					break;
 				case 14:
-					artist.innerHTML = "Excision & Far Too Loud";
-					length = [5,10];
+					artist.innerHTML = "Excision and Far Too Loud";
+					length = [5,10,177];
 					break;
 				case 17: case 21: case 27:
 					artist.innerHTML = "Shirobon";
 					if (index == 17) {
-						length = [5,17];
+						length = [5,17,178];
 					} else if (index == 21) {
-						length = [2,41];
+						length = [2,41,462];
 					} else if (index == 27) {
-						length = [4,28];
+						length = [4,28,564];
 					}
 					break;
 				case 18:
 					artist.innerHTML = "Lets Be Friends";
-					length = [4,17];
+					length = [4,17,671];
 					break;
 				case 20:
 					artist.innerHTML = "Tokyo Machine";
-					length = [3,2];
+					length = [3,2,909];
 					break;
 				case 24:
 					artist.innerHTML = "Danimal Cannon";
-					length = [4,27];
+					length = [4,27,049];
 					break;
 				case 28: case 41:
 					artist.innerHTML = "Tristam";
 					if (index == 28) {
-						length = [3,46];
+						length = [3,46,351];
 					} else if (index == 41) {
-						length = [4,30];
+						length = [4,30,863];
 					}
 					break;
 				case 30:
 					artist.innerHTML = "Shawn Daley";
-					length = [2,55];
+					length = [2,55,777];
 					break;
 				case 32:
 					artist.innerHTML = "cYsmix";
-					length = [2,21];
+					length = [2,21,557];
 					break;
 				case 33:
 					artist.innerHTML = "nanobii";
-					length = [2,53];
+					length = [2,53,61];
 					break;
 				case 36:
 					artist.innerHTML = "PIXL";
-					length = [4,44];
+					length = [4,44,865];
 					break;
 				case 38:
 					artist.innerHTML = "Sabrepulse";
-					length = [4,50];
+					length = [4,50,272];
 					break;
 				case 43:
 					artist.innerHTML = "Pegboard Nerds";
-					length = [3,49];
+					length = [3,49,694];
 					break;
 				case 44:
 					artist.innerHTML = "Plesco";
-					length = [3,47];
+					length = [3,47,683];
 					break;
 				case 46:
 					artist.innerHTML = "Avenza";
-					length = [3,41];
+					length = [3,41,126];
 					break;
 			}
-			document.title = artist.innerHTML + " - " + document.getElementById("song").value;
+			if (index == 7) {
+				document.title += " (Murtagh and Veschell Remix)";
+			}
 			document.getElementById("song").selectedIndex = 0;
-			document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2);
-			var seconds = (length[0] * 60) + length[1];
-			document.getElementById("progress").max = seconds;
+			document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2) + "." + ("00" + length[2]).slice(-3);
+			var millis = (length[0] * 60000) + (length[1] * 1000) + length[2];
+			document.getElementById("progress").max = millis;
 			audio.addEventListener("ended", function() {
+				audio.pause();
 				nextSong();
 			});
 		}
 		function playProgress() {
-			var currentPos = document.getElementById("audio").currentTime;
-			var c_m = Math.floor(currentPos / 60);
-			var c_s = Math.floor(currentPos % 60);
-			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2);
+			var currentPos = Math.floor(document.getElementById("audio").currentTime * 1000);
+			var c_m = Math.floor(currentPos / 60000);
+			var c_s = Math.floor((currentPos % 60000) / 1000);
+			var c_ms= Math.floor(currentPos % 1000);
+			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2) + "." + ("00" + c_ms).slice(-3);
 			document.getElementById("progress").value = currentPos;
+		}
+		function changeTitle() {
+			document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + " / " + (document.getElementById("length").innerHTML).slice(0,4) + "] " + currentSong;
 		}
 		function toggle() {
 			if (audio.paused == true) {audio.play();} else if (audio.paused == false) {audio.pause();}
