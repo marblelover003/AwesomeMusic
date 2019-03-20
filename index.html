@@ -282,17 +282,20 @@
         return true;
       } else return false;
     }
-    if (isSongAvail(1) == true && isSongAvail(2) == true && isSongAvail(3) == true && isSongAvail(4) == true && isSongAvail(5) == true && isSongAvail(6) == true && isSongAvail(7) == true && isSongAvail(8) == true && isSongAvail(9) == true && isSongAvail(10) == true && isSongAvail(11) == true && isSongAvail(12) == true && isSongAvail(13) == true && isSongAvail(14) == true && isSongAvail(15) == true && isSongAvail(16) == true && isSongAvail(17) == true && isSongAvail(18) == true && isSongAvail(19) == true && isSongAvail(20) == true && isSongAvail(21) == true && isSongAvail(22) == true && isSongAvail(23) == true && isSongAvail(24) == true && isSongAvail(25) == true && isSongAvail(26) == true && isSongAvail(27) == true && isSongAvail(28) == true && isSongAvail(29) == true && isSongAvail(30) == true && isSongAvail(31) == true && isSongAvail(32) == true && isSongAvail(33) == true && isSongAvail(34) == true && isSongAvail(35) == true && isSongAvail(36) == true && isSongAvail(37) == true && isSongAvail(38) == true && isSongAvail(39) == true && isSongAvail(40) == true && isSongAvail(41) == true && isSongAvail(42) == true && isSongAvail(43) == true && isSongAvail(44) == true && isSongAvail(45) == true && isSongAvail(46) == true && isSongAvail(47) == true) {
-      document.getElementById("restartBtn").removeAttribute("disabled");
-      document.getElementById("rew15sBtn").removeAttribute("disabled");
-      document.getElementById("rew5sBtn").removeAttribute("disabled");
-      document.getElementById("playBtn").removeAttribute("disabled");
-      document.getElementById("skip5sBtn").removeAttribute("disabled");
-      document.getElementById("skip15sBtn").removeAttribute("disabled");
-      document.getElementById("skipBtn").removeAttribute("disabled");
-      document.title = "Music Player";
-		  setInterval(playProgress, 0);
-    }
+    var loading = setInterval(function() {
+      if (isSongAvail(1) == true && isSongAvail(2) == true && isSongAvail(3) == true && isSongAvail(4) == true && isSongAvail(5) == true && isSongAvail(6) == true && isSongAvail(7) == true && isSongAvail(8) == true && isSongAvail(9) == true && isSongAvail(10) == true && isSongAvail(11) == true && isSongAvail(12) == true && isSongAvail(13) == true && isSongAvail(14) == true && isSongAvail(15) == true && isSongAvail(16) == true && isSongAvail(17) == true && isSongAvail(18) == true && isSongAvail(19) == true && isSongAvail(20) == true && isSongAvail(21) == true && isSongAvail(22) == true && isSongAvail(23) == true && isSongAvail(24) == true && isSongAvail(25) == true && isSongAvail(26) == true && isSongAvail(27) == true && isSongAvail(28) == true && isSongAvail(29) == true && isSongAvail(30) == true && isSongAvail(31) == true && isSongAvail(32) == true && isSongAvail(33) == true && isSongAvail(34) == true && isSongAvail(35) == true && isSongAvail(36) == true && isSongAvail(37) == true && isSongAvail(38) == true && isSongAvail(39) == true && isSongAvail(40) == true && isSongAvail(41) == true && isSongAvail(42) == true && isSongAvail(43) == true && isSongAvail(44) == true && isSongAvail(45) == true && isSongAvail(46) == true && isSongAvail(47) == true) {
+        document.getElementById("restartBtn").removeAttribute("disabled");
+        document.getElementById("rew15sBtn").removeAttribute("disabled");
+        document.getElementById("rew5sBtn").removeAttribute("disabled");
+        document.getElementById("playBtn").removeAttribute("disabled");
+        document.getElementById("skip5sBtn").removeAttribute("disabled");
+        document.getElementById("skip15sBtn").removeAttribute("disabled");
+        document.getElementById("skipBtn").removeAttribute("disabled");
+        document.title = "Music Player";
+        setInterval(playProgress, 0);
+        clearInterval(loading);
+      }
+    }, 100);
 		var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
 		function change() {
       if (currentSong > 0) {prevSong = currentSong; songs[prevSong].pause(); songs[prevSong].currentTime = 0;}
