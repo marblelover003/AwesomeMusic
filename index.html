@@ -236,8 +236,20 @@
 				case 12:
 					document.getElementById("album").href = "Album-Art/Music Albums/Ultimate Collection.jpg";
 					break;
-				case 20: case 30: case 32: case 44: case 46:
-					document.getElementById("album").href = "Album-Art/Music Albums/Unknown.jpg";
+				case 20:
+					document.getElementById("album").href = "Album-Art/Music Albums/HYPE.JPG";
+					break;
+				case 30:
+					document.getElementById("album").href = "Album-Art/Music Albums/Shawn Daley.JPG";
+					break;
+				case 32:
+					document.getElementById("album").href = "Album-Art/Music Albums/cYsmix.JPG";
+					break;
+				case 44:
+					document.getElementById("album").href = "Album-Art/Music Albums/Unlocked.JPG";
+					break;
+				case 46:
+					document.getElementById("album").href = "Album-Art/Music Albums/Avenza.JPG";
 					break;
 			}
 			document.getElementById("albumImg").style.backgroundImage = "url(" + document.getElementById("album").href + ")";
@@ -276,20 +288,16 @@
 						length = [3,26,471];
 					}
 					break;
-				case 5: case 9: case 22: case 23: case 31: case 40:
+				case 5: case 9: case 23: case 31:
 					artist.innerHTML = "Danimal Cannon and Zef";
 					if (index == 5) {
 						length = [4,29,740];
 					} else if (index == 9) {
 						length = [6,16,737];
-					} else if (index == 22) {
-						length = [5,17,74];
 					} else if (index == 23) {
 						length = [4,58,736];
 					} else if (index == 31) {
 						length = [8,29,22];
-					} else if (index == 40) {
-						length = [4,35,826];
 					}
 					break;
 				case 6: case 25:
@@ -302,7 +310,6 @@
 					break;
 				case 7:
 					artist.innerHTML = "Silva Hound";
-					document.getElementById("title").innerHTML += " (Murtagh & Veschell Remix)";
 					length = [3,59,72];
 					break;
 				case 8: case 11: case 37:
@@ -361,9 +368,18 @@
 					artist.innerHTML = "Tokyo Machine";
 					length = [3,2,909];
 					break;
-				case 24:
-					artist.innerHTML = "Danimal Cannon";
-					length = [4,27,049];
+				case 22: case 40:
+          artist.innerHTML = "Danimal Cannon";
+          document.getElementById("title").innerHTML += " (feat. Zef)";
+          if (index == 22) {
+						length = [5,17,74];
+          } else if (index == 40) {
+						length = [4,35,826];
+					}
+          break;
+        case 24:
+					artist.innerHTML = "Danimal Cannon"; 
+          length = [4,27,49];
 					break;
 				case 28: case 41:
 					artist.innerHTML = "Tristam";
@@ -406,9 +422,6 @@
 					length = [3,41,126];
 					break;
 			}
-			if (index == 7) {
-				document.title += " (Murtagh and Veschell Remix)";
-			}
 			document.getElementById("song").selectedIndex = 0;
 			document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2) + "." + ("00" + length[2]).slice(-3);
 			var millis = (length[0] * 60000) + (length[1] * 1000) + length[2];
@@ -427,7 +440,10 @@
 			document.getElementById("progress").value = currentPos;
 		}
 		function changeTitle() {
-			document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + " / " + (document.getElementById("length").innerHTML).slice(0,4) + "] " + currentSong;
+			document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + "] " + currentSong;
+      if (currentSong == "Legacy" || currentSong == "The Lunar Whale") {
+        document.title += " (feat. Zef)";
+      }
 		}
 		function toggle() {
 			if (audio.paused == true) {audio.play();} else if (audio.paused == false) {audio.pause();}
