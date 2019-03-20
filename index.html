@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Music Player</title>
+		<title>Loading...</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
 		<link rel="icon" href="Album-Art/Music Albums/Unknown.jpg" id="album">
 		<style>
@@ -15,6 +15,7 @@
 			}
 			button {
 				-webkit-appearance: none;
+        background: white;
 				border: 1px solid black;
 				height: 50px;
 				min-width: 50px;
@@ -48,82 +49,127 @@
 					background-size: 300px;
 				}
 			}
+      button:disabled {background: #000;}
 		</style>
 	</head>
 	<body>
 		<select id="song" onchange="change()">
 			<option>Choose a song to play!</option>
-			<option value="Barracuda">Barracuda (ID 00)</option>
-			<option value="Cascade">Cascade (ID 01)</option>
-			<option value="Cheat Codes">Cheat Codes (ID 02)</option>
-			<option value="Checkpoint">Checkpoint (ID 03)</option>
-			<option value="Chip Zeal">Chip Zeal (ID 04)</option>
-			<option value="Chronos">Chronos (ID 05)</option>
-			<option value="Commando Steve">Commando Steve (ID 06)</option>
-			<option value="Cool Friends">Cool Friends (ID 07)</option>
-			<option value="Core">Core (ID 08)</option>
-			<option value="Corrupted">Corrupted (ID 09)</option>
-			<option value="Courtesy">Courtesy (ID 10)</option>
-			<option value="Cruise Control">Cruise Control (ID 11)</option>
-			<option value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
-			<option value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
-			<option value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
-			<option value="Final Boss">Final Boss (ID 15)</option>
-			<option value="Focus">Focus (ID 16)</option>
-			<option value="FOX">FOX (ID 17)</option>
-			<option value="FTW">FTW (ID 18)</option>
-			<option value="Houston">Houston (ID 19)</option>
-			<option value="HYPE">HYPE (ID 20)</option>
-			<option value="Into The Zone">Into The Zone (ID 21)</option>
-			<option value="Legacy">Legacy (ID 22)</option>
-			<option value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
-			<option value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
-			<option value="Milky Ways">Milky Ways (ID 25)</option>
-			<option value="New Game">New Game (ID 26)</option>
-			<option value="On The Run">On The Run (ID 27)</option>
-			<option value="Once Again">Once Again (ID 28)</option>
-			<option value="Otis">Otis (ID 29)</option>
-			<option value="Paper Dolls">Paper Dolls (ID 30)</option>
-			<option value="Parallel Processing">Parallel Processing (ID 31)</option>
-			<option value="Peer Gynt">Peer Gynt (ID 32)</option>
-			<option value="Rainbow Road">Rainbow Road (ID 33)</option>
-			<option value="Sevcon">Sevcon (ID 34)</option>
-			<option value="Spectra">Spectra (ID 35)</option>
-			<option value="Sugar Rush">Sugar Rush (ID 36)</option>
-			<option value="Tension">Tension (ID 37)</option>
-			<option value="Termination Shock">Termination Shock (ID 38)</option>
-			<option value="The Art of War">The Art of War (ID 39)</option>
-			<option value="The Lunar Whale">The Lunar Whale (ID 40)</option>
-			<option value="Till It's Over">Till It's Over (ID 41)</option>
-			<option value="Tokyo Skies">Tokyo Skies (ID 42)</option>
-			<option value="Try This">Try This (ID 43)</option>
-			<option value="Unlocked">Unlocked (ID 44)</option>
-			<option value="Vindicate Me">Vindicate Me (ID 45)</option>
-			<option value="Wicked">Wicked (ID 46)</option>
+			<option disabled value="Barracuda">Barracuda (ID 00)</option>
+			<option disabled value="Cascade">Cascade (ID 01)</option>
+			<option disabled value="Cheat Codes">Cheat Codes (ID 02)</option>
+			<option disabled value="Checkpoint">Checkpoint (ID 03)</option>
+			<option disabled value="Chip Zeal">Chip Zeal (ID 04)</option>
+			<option disabled value="Chronos">Chronos (ID 05)</option>
+			<option disabled value="Commando Steve">Commando Steve (ID 06)</option>
+			<option disabled value="Cool Friends">Cool Friends (ID 07)</option>
+			<option disabled value="Core">Core (ID 08)</option>
+			<option disabled value="Corrupted">Corrupted (ID 09)</option>
+			<option disabled value="Courtesy">Courtesy (ID 10)</option>
+			<option disabled value="Cruise Control">Cruise Control (ID 11)</option>
+			<option disabled value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
+			<option disabled value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
+			<option disabled value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
+			<option disabled value="Final Boss">Final Boss (ID 15)</option>
+			<option disabled value="Focus">Focus (ID 16)</option>
+			<option disabled value="FOX">FOX (ID 17)</option>
+			<option disabled value="FTW">FTW (ID 18)</option>
+			<option disabled value="Houston">Houston (ID 19)</option>
+			<option disabled value="HYPE">HYPE (ID 20)</option>
+			<option disabled value="Into The Zone">Into The Zone (ID 21)</option>
+			<option disabled value="Legacy">Legacy (ID 22)</option>
+			<option disabled value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
+			<option disabled value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
+			<option disabled value="Milky Ways">Milky Ways (ID 25)</option>
+			<option disabled value="New Game">New Game (ID 26)</option>
+			<option disabled value="On The Run">On The Run (ID 27)</option>
+			<option disabled value="Once Again">Once Again (ID 28)</option>
+			<option disabled value="Otis">Otis (ID 29)</option>
+			<option disabled value="Paper Dolls">Paper Dolls (ID 30)</option>
+			<option disabled value="Parallel Processing">Parallel Processing (ID 31)</option>
+			<option disabled value="Peer Gynt">Peer Gynt (ID 32)</option>
+			<option disabled value="Rainbow Road">Rainbow Road (ID 33)</option>
+			<option disabled value="Sevcon">Sevcon (ID 34)</option>
+			<option disabled value="Spectra">Spectra (ID 35)</option>
+			<option disabled value="Sugar Rush">Sugar Rush (ID 36)</option>
+			<option disabled value="Tension">Tension (ID 37)</option>
+			<option disabled value="Termination Shock">Termination Shock (ID 38)</option>
+			<option disabled value="The Art of War">The Art of War (ID 39)</option>
+			<option disabled value="The Lunar Whale">The Lunar Whale (ID 40)</option>
+			<option disabled value="Till It's Over">Till It's Over (ID 41)</option>
+			<option disabled value="Tokyo Skies">Tokyo Skies (ID 42)</option>
+			<option disabled value="Try This">Try This (ID 43)</option>
+			<option disabled value="Unlocked">Unlocked (ID 44)</option>
+			<option disabled value="Vindicate Me">Vindicate Me (ID 45)</option>
+			<option disabled value="Wicked">Wicked (ID 46)</option>
 		</select><br>
 		<div>
 			<span id="currentPos">0:00.000</span><progress value="0" max="1" id="progress"></progress><span id="length">0:00.000</span><br>
-			<button onclick="restart()">
+			<button onclick="restart()" disabled id="restartBtn">
 				<svg width="40" height="40">
 					<polyline style="stroke: none; fill: black;" points="35,5 10,20 35,35 35,5" />
 					<polyline style="stroke: none; fill: black;" points="5,5 10,5 10,35 5,35 5,5" />
 				</svg>
 			</button>
-			<button onclick="skip(-15)" style="position: relative; top: -22px;">Rewind<br>15 sec</button>
-			<button onclick="skip(-5)" style="position: relative; top: -22px;">Rewind<br>5 sec</button>
-			<button onclick="toggle()" style="position: relative; top: -14px;">Play/Pause</button>
-			<button onclick="skip(5)" style="position: relative; top: -22px;">Skip<br>5 sec</button>
-			<button onclick="skip(15)" style="position: relative; top: -22px;">Skip<br>15 sec</button>
-			<button onclick="nextSong()">
+			<button onclick="skip(-15)" style="position: relative; top: -22px;" disabled id="rew15sBtn">Rewind<br>15 sec</button>
+			<button onclick="skip(-5)" style="position: relative; top: -22px;" disabled id="rew5sBtn">Rewind<br>5 sec</button>
+			<button onclick="toggle()" style="position: relative; top: -14px;" disabled id="playBtn">Play/Pause</button>
+			<button onclick="skip(5)" style="position: relative; top: -22px;" disabled id="skip5sBtn">Skip<br>5 sec</button>
+			<button onclick="skip(15)" style="position: relative; top: -22px;" disabled id="skip15sBtn">Skip<br>15 sec</button>
+			<button onclick="nextSong()" disabled id="skipBtn">
 				<svg width="40" height="40">
 					<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
 					<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
 				</svg>
 			</button>
 		</div>
-		<audio id="audio" style="visibility: hidden;" preload="metadata">
-			<source src="">
-		</audio>
+		<audio id="audio1" style="visibility: hidden;" src="Barracuda.mp3"></audio>
+		<audio id="audio2" style="visibility: hidden;" src="Cascade.mp3"></audio>
+		<audio id="audio3" style="visibility: hidden;" src="Cheat Codes.mp3"></audio>
+		<audio id="audio4" style="visibility: hidden;" src="Checkpoint.mp3"></audio>
+		<audio id="audio5" style="visibility: hidden;" src="Chip Zeal.mp3"></audio>
+		<audio id="audio6" style="visibility: hidden;" src="Chronos.mp3"></audio>
+		<audio id="audio7" style="visibility: hidden;" src="Commando Steve.mp3"></audio>
+		<audio id="audio8" style="visibility: hidden;" src="Cool Friends.mp3"></audio>
+		<audio id="audio9" style="visibility: hidden;" src="Core.mp3"></audio>
+		<audio id="audio10" style="visibility: hidden;" src="Corrupted.mp3"></audio>
+		<audio id="audio11" style="visibility: hidden;" src="Courtesy.mp3"></audio>
+		<audio id="audio12" style="visibility: hidden;" src="Cruise Control.mp3"></audio>
+		<audio id="audio13" style="visibility: hidden;" src="Dance of the Incognizant.mp3"></audio>
+		<audio id="audio14" style="visibility: hidden;" src="Destroid 10 - Funk Hole.mp3"></audio>
+		<audio id="audio15" style="visibility: hidden;" src="Destroid 8 - Annihilate.mp3"></audio>
+		<audio id="audio16" style="visibility: hidden;" src="Final Boss.mp3"></audio>
+		<audio id="audio17" style="visibility: hidden;" src="Focus.mp3"></audio>
+		<audio id="audio18" style="visibility: hidden;" src="FOX.mp3"></audio>
+		<audio id="audio19" style="visibility: hidden;" src="FTW.mp3"></audio>
+		<audio id="audio20" style="visibility: hidden;" src="Houston.mp3"></audio>
+		<audio id="audio21" style="visibility: hidden;" src="HYPE.mp3"></audio>
+		<audio id="audio22" style="visibility: hidden;" src="Into The Zone.mp3"></audio>
+		<audio id="audio23" style="visibility: hidden;" src="Legacy.mp3"></audio>
+		<audio id="audio24" style="visibility: hidden;" src="Logic Gatekeeper.mp3"></audio>
+		<audio id="audio25" style="visibility: hidden;" src="Long Live The New Fresh.mp3"></audio>
+		<audio id="audio26" style="visibility: hidden;" src="Milky Ways.mp3"></audio>
+		<audio id="audio27" style="visibility: hidden;" src="New Game.mp3"></audio>
+		<audio id="audio28" style="visibility: hidden;" src="On The Run.mp3"></audio>
+		<audio id="audio29" style="visibility: hidden;" src="Once Again.mp3"></audio>
+		<audio id="audio30" style="visibility: hidden;" src="Otis.mp3"></audio>
+		<audio id="audio31" style="visibility: hidden;" src="Paper Dolls.mp3"></audio>
+		<audio id="audio32" style="visibility: hidden;" src="Parallel Processing.mp3"></audio>
+		<audio id="audio33" style="visibility: hidden;" src="Peer Gynt.mp3"></audio>
+		<audio id="audio34" style="visibility: hidden;" src="Rainbow Road.mp3"></audio>
+		<audio id="audio35" style="visibility: hidden;" src="Sevcon.mp3"></audio>
+		<audio id="audio36" style="visibility: hidden;" src="Spectra.mp3"></audio>
+		<audio id="audio37" style="visibility: hidden;" src="Sugar Rush.mp3"></audio>
+		<audio id="audio38" style="visibility: hidden;" src="Tension.mp3"></audio>
+		<audio id="audio39" style="visibility: hidden;" src="Termination Shock.mp3"></audio>
+		<audio id="audio40" style="visibility: hidden;" src="The Art of War.mp3"></audio>
+		<audio id="audio41" style="visibility: hidden;" src="The Lunar Whale.mp3"></audio>
+		<audio id="audio42" style="visibility: hidden;" src="Till It's Over.mp3"></audio>
+		<audio id="audio43" style="visibility: hidden;" src="Tokyo Skies.mp3"></audio>
+		<audio id="audio44" style="visibility: hidden;" src="Try This.mp3"></audio>
+		<audio id="audio45" style="visibility: hidden;" src="Unlocked.mp3"></audio>
+		<audio id="audio46" style="visibility: hidden;" src="Vindicate Me.mp3"></audio>
+		<audio id="audio47" style="visibility: hidden;" src="Wicked.mp3"></audio>
 		<div>Currently playing:</div>
 		<h1 id="title">&nbsp;</h1>
 		<div>- by -</div>
@@ -133,16 +179,88 @@
 		</div>
 	</body>
 	<script>
-		var length = 0, audio = document.getElementById("audio"), p = false, currentSong;
+    var songs = [
+      0,
+      document.getElementById("audio1"),
+      document.getElementById("audio2"),
+      document.getElementById("audio3"),
+      document.getElementById("audio4"),
+      document.getElementById("audio5"),
+      document.getElementById("audio6"),
+      document.getElementById("audio7"),
+      document.getElementById("audio8"),
+      document.getElementById("audio9"),
+      document.getElementById("audio10"),
+      document.getElementById("audio11"),
+      document.getElementById("audio12"),
+      document.getElementById("audio13"),
+      document.getElementById("audio14"),
+      document.getElementById("audio15"),
+      document.getElementById("audio16"),
+      document.getElementById("audio17"),
+      document.getElementById("audio18"),
+      document.getElementById("audio19"),
+      document.getElementById("audio20"),
+      document.getElementById("audio21"),
+      document.getElementById("audio22"),
+      document.getElementById("audio23"),
+      document.getElementById("audio24"),
+      document.getElementById("audio25"),
+      document.getElementById("audio26"),
+      document.getElementById("audio27"),
+      document.getElementById("audio28"),
+      document.getElementById("audio29"),
+      document.getElementById("audio30"),
+      document.getElementById("audio31"),
+      document.getElementById("audio32"),
+      document.getElementById("audio33"),
+      document.getElementById("audio34"),
+      document.getElementById("audio35"),
+      document.getElementById("audio36"),
+      document.getElementById("audio37"),
+      document.getElementById("audio38"),
+      document.getElementById("audio39"),
+      document.getElementById("audio40"),
+      document.getElementById("audio41"),
+      document.getElementById("audio42"),
+      document.getElementById("audio43"),
+      document.getElementById("audio44"),
+      document.getElementById("audio45"),
+      document.getElementById("audio46"),
+      document.getElementById("audio47")
+    ];
+    for (var i = 1; i <= 47; i++) {
+      songs[i].addEventListener("canplaythrough", function() {
+        document.getElementById("song")[i].removeAttribute("disabled");
+      });
+    }
+    function isSongAvail(id) {
+      return !document.getElementById("song")[id].hasAttribute("disabled");
+    }
+    if (isSongAvail(1) == true && isSongAvail(2) == true && isSongAvail(3) == true && isSongAvail(4) == true && isSongAvail(5) == true && isSongAvail(6) == true && isSongAvail(7) == true && isSongAvail(8) == true && isSongAvail(9) == true && isSongAvail(10) == true && isSongAvail(11) == true && isSongAvail(12) == true && isSongAvail(13) == true && isSongAvail(14) == true && isSongAvail(15) == true && isSongAvail(16) == true && isSongAvail(17) == true && isSongAvail(18) == true && isSongAvail(19) == true && isSongAvail(20) == true && isSongAvail(21) == true && isSongAvail(22) == true && isSongAvail(23) == true && isSongAvail(24) == true && isSongAvail(25) == true && isSongAvail(26) == true && isSongAvail(27) == true && isSongAvail(28) == true && isSongAvail(29) == true && isSongAvail(30) == true && isSongAvail(31) == true && isSongAvail(32) == true && isSongAvail(33) == true && isSongAvail(34) == true && isSongAvail(35) == true && isSongAvail(36) == true && isSongAvail(37) == true && isSongAvail(38) == true && isSongAvail(39) == true && isSongAvail(40) == true && isSongAvail(41) == true && isSongAvail(42) == true && isSongAvail(43) == true && isSongAvail(44) == true && isSongAvail(45) == true && isSongAvail(46) == true && isSongAvail(47) == true) {
+      document.getElementById("restartBtn").removeAttribute("disabled");
+      document.getElementById("rew15sBtn").removeAttribute("disabled");
+      document.getElementById("rew5sBtn").removeAttribute("disabled");
+      document.getElementById("playBtn").removeAttribute("disabled");
+      document.getElementById("skip5sBtn").removeAttribute("disabled");
+      document.getElementById("skip15sBtn").removeAttribute("disabled");
+      document.getElementById("skipBtn").removeAttribute("disabled");
+      document.title = "Music Player";
+    }
+		var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
 		setInterval(playProgress, 0);
 		function change() {
-			audio.src = document.getElementById("song").value + ".mp3";
-			audio.pause();
-			audio.play();
+      if (currentSong > 0) {prevSong = currentSong; songs[prevSong].pause(); songs[prevSong].currentTime = 0;}
+      currentSong = document.getElementById("song").selectedIndex;
+      song = songs[document.getElementById("song").selectedIndex];
+			song.play();
 			playing();
 			if (p == false) {
 				p = true;
-				setInterval(changeTitle, 1000);
+        setTimeout(function() {
+          changeTitle();
+				  setInterval(changeTitle, 1000);
+        }, 100);
 			}
 		}
 		function restart() {
@@ -152,20 +270,13 @@
 			audio.currentTime += sec;
 		}
 		function nextSong() {
-			var songId = Math.ceil(Math.random() * 47);
+			var songId = Math.floor(Math.random() * 47) + 1;
 			document.getElementById("song").selectedIndex = songId;
-			audio.src = document.getElementById("song").value + ".mp3";
-			audio.pause();
-			audio.play();
-			playing();
-			if (p == false) {
-				p = true;
-				setInterval(changeTitle, 1000);
-			}
+      change();
 		}
 		function playing() {
 			document.getElementById("title").innerHTML = document.getElementById("song").value;
-			currentSong = document.getElementById("song").value;
+			songValue = document.getElementById("song").value;
 			var artist = document.getElementById("artist");
 			var index = (document.getElementById("song").selectedIndex) - 1;
 			var lenElem = document.getElementById("length");
@@ -426,13 +537,13 @@
 			document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2) + "." + ("00" + length[2]).slice(-3);
 			var millis = (length[0] * 60000) + (length[1] * 1000) + length[2];
 			document.getElementById("progress").max = millis;
-			audio.addEventListener("ended", function() {
-				audio.pause();
+			song.addEventListener("ended", function() {
+				song.pause();
 				nextSong();
 			});
 		}
 		function playProgress() {
-			var currentPos = Math.floor(document.getElementById("audio").currentTime * 1000);
+			var currentPos = Math.floor(song.currentTime * 1000);
 			var c_m = Math.floor(currentPos / 60000);
 			var c_s = Math.floor((currentPos % 60000) / 1000);
 			var c_ms= Math.floor(currentPos % 1000);
@@ -440,13 +551,13 @@
 			document.getElementById("progress").value = currentPos;
 		}
 		function changeTitle() {
-			document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + "] " + currentSong;
-      if (currentSong == "Legacy" || currentSong == "The Lunar Whale") {
+			document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + "] " + songValue;
+      if (songValue == "Legacy" || songValue == "The Lunar Whale") {
         document.title += " (feat. Zef)";
       }
 		}
 		function toggle() {
-			if (audio.paused == true) {audio.play();} else if (audio.paused == false) {audio.pause();}
+			if (song.paused == true) {song.play();} else if (song.paused == false) {song.pause();}
 		}
 	</script>
 </html>
