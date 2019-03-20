@@ -20,6 +20,7 @@
 				height: 50px;
 				min-width: 50px;
 				border-radius: 0;
+        transition-duration: 500ms;
 			}
 			h1 {font-weight: 900; font-size: 40px; margin: 0; text-align: center;}
 			h2 {font-weight: 600; font-size: 30px; margin: 0; text-align: center;}
@@ -49,7 +50,7 @@
 					background-size: 300px;
 				}
 			}
-      button:disabled {background: #000;}
+      button:disabled {background: #000; color: #000;}
 		</style>
 	</head>
 	<body>
@@ -246,13 +247,13 @@
       document.getElementById("skip15sBtn").removeAttribute("disabled");
       document.getElementById("skipBtn").removeAttribute("disabled");
       document.title = "Music Player";
+		  setInterval(playProgress, 0);
     }
 		var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
-		setInterval(playProgress, 0);
 		function change() {
       if (currentSong > 0) {prevSong = currentSong; songs[prevSong].pause(); songs[prevSong].currentTime = 0;}
       currentSong = document.getElementById("song").selectedIndex;
-      song = songs[document.getElementById("song").selectedIndex];
+      song = songs[currentSong];
 			song.play();
 			playing();
 			if (p == false) {
