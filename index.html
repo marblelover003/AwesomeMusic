@@ -9,8 +9,8 @@
 				font-family: Overlock;
 			}
 			option:disabled {
-				color: black;
-				background: black;
+				color: #000000;
+				background: #000000;
 			}
 			option {
 				transition-duration: 500ms;
@@ -322,10 +322,10 @@
 			}
 		}
 		function restart() {
-			audio.currentTime = 0;
+			song.currentTime = 0;
 		}
 		function skip(sec) {
-			audio.currentTime += sec;
+			song.currentTime += sec;
 		}
 		function nextSong() {
 			var songId = Math.floor(Math.random() * 47) + 1;
