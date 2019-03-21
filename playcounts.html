@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>Play Counts</title>
+    <link rel="icon" href="Play Counts.jpg">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
+		<style>
+      body {font-family: Montserrat;}
+      ul li {list-style-type: none;}
+		</style>
+	</head>
+	<body>
+    Play Counts
+    <ul id="songs">
+      <li>Barracuda: <span>0</span></li>
+      <li>Cascade: <span>0</span></li>
+      <li>Cheat Codes: <span>0</span></li>
+      <li>Checkpoint: <span>0</span></li>
+      <li>Chip Zeal: <span>0</span></li>
+      <li>Chronos: <span>0</span></li>
+      <li>Commando Steve: <span>0</span></li>
+      <li>Cool Friends: <span>0</span></li>
+      <li>Core: <span>0</span></li>
+      <li>Corrupted: <span>0</span></li>
+      <li>Courtesy: <span>0</span></li>
+      <li>Cruise Control: <span>0</span></li>
+      <li>Dance of the Incognizant: <span>0</span></li>
+      <li>Destroid 10 - Funk Hole: <span>0</span></li>
+      <li>Destroid 8 - Annihilate: <span>0</span></li>
+      <li>Final Boss: <span>0</span></li>
+      <li>Focus: <span>0</span></li>
+      <li>FOX: <span>0</span></li>
+      <li>FTW: <span>0</span></li>
+      <li>Houston: <span>0</span></li>
+      <li>HYPE: <span>0</span></li>
+      <li>Into The Zone: <span>0</span></li>
+      <li>Legacy (feat. Zef): <span>0</span></li>
+      <li>Logic Gatekeeper: <span>0</span></li>
+      <li>Long Live The New Fresh: <span>0</span></li>
+      <li>Milky Ways: <span>0</span></li>
+      <li>New Game: <span>0</span></li>
+      <li>On The Run: <span>0</span></li>
+      <li>Once Again: <span>0</span></li>
+      <li>Otis: <span>0</span></li>
+      <li>Paper Dolls: <span>0</span></li>
+      <li>Parallel Processing: <span>0</span></li>
+      <li>Peer Gynt: <span>0</span></li>
+      <li>Rainbow Road: <span>0</span></li>
+      <li>Sevcon: <span>0</span></li>
+      <li>Spectra: <span>0</span></li>
+      <li>Sugar Rush: <span>0</span></li>
+      <li>Tension: <span>0</span></li>
+      <li>Termination Shock: <span>0</span></li>
+      <li>The Art of War: <span>0</span></li>
+      <li>The Lunar Whale (feat. Zef): <span>0</span></li>
+      <li>Till It&apos;s Over: <span>0</span></li>
+      <li>Tokyo Skies: <span>0</span></li>
+      <li>Try This: <span>0</span></li>
+      <li>Unlocked: <span>0</span></li>
+      <li>Vindicate Me: <span>0</span></li>
+      <li>Wicked: <span>0</span></li>
+    </ul>
+	</body>
+	<script>
+    var ls = localStorage;
+    var playcounts = [
+      ls.getItem("song1"),
+      ls.getItem("song2"),
+      ls.getItem("song3"),
+      ls.getItem("song4"),
+      ls.getItem("song5"),
+      ls.getItem("song6"),
+      ls.getItem("song7"),
+      ls.getItem("song8"),
+      ls.getItem("song9"),
+      ls.getItem("song10"),
+      ls.getItem("song11"),
+      ls.getItem("song12"),
+      ls.getItem("song13"),
+      ls.getItem("song14"),
+      ls.getItem("song15"),
+      ls.getItem("song16"),
+      ls.getItem("song17"),
+      ls.getItem("song18"),
+      ls.getItem("song19"),
+      ls.getItem("song20"),
+      ls.getItem("song21"),
+      ls.getItem("song22"),
+      ls.getItem("song23"),
+      ls.getItem("song24"),
+      ls.getItem("song25"),
+      ls.getItem("song26"),
+      ls.getItem("song27"),
+      ls.getItem("song28"),
+      ls.getItem("song29"),
+      ls.getItem("song30"),
+      ls.getItem("song31"),
+      ls.getItem("song32"),
+      ls.getItem("song33"),
+      ls.getItem("song34"),
+      ls.getItem("song35"),
+      ls.getItem("song36"),
+      ls.getItem("song37"),
+      ls.getItem("song38"),
+      ls.getItem("song39"),
+      ls.getItem("song40"),
+      ls.getItem("song41"),
+      ls.getItem("song42"),
+      ls.getItem("song43"),
+      ls.getItem("song44"),
+      ls.getItem("song45"),
+      ls.getItem("song46"),
+      ls.getItem("song47")
+    ];
+    var list, i, switching, b, shouldSwitch;
+    list = document.getElementById("songs");
+    var playCountsSpanElems = list.getElementsByTagName("SPAN");
+    for (var x = 0; x < 47; x++) {
+      playCountsSpanElems[x].innerHTML = playcounts[x];
+    }
+    sortList();
+    function sortList() {
+      switching = true;
+      while (switching) {
+        switching = false;
+        b = list.getElementsByTagName("LI");
+        for (i = 0; i < (b.length - 1); i++) {
+          shouldSwitch = false;
+          if (Number(playCountsSpanElems[i].innerHTML) < Number(playCountsSpanElems[i + 1].innerHTML)) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          b[i].parentNode.insertBefore(b[i + 1], b[i]);
+          switching = true;
+        }
+      }
+    }
+	</script>
+</html>
