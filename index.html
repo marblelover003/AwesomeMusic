@@ -238,7 +238,7 @@
     var playCounts = [0];
     for (var i = 1; i <= 47; i++) {
       if (localStorage.getItem("song" + i) != null) {
-        playCounts[i] = localStorage.getItem("song" + i);
+        playCounts[i] = parseInt(localStorage.getItem("song" + i));
       } else {
         playCounts[i] = 0;
         localStorage.setItem("song" + i, playCounts[i]);
