@@ -9,11 +9,7 @@
 				font-family: Overlock;
 			}
 			option:disabled {
-				color: #000000;
-				background: #000000;
-			}
-			option {
-				transition-duration: 500ms;
+        display: none;
 			}
 			body {
 				font-family: Montserrat;
@@ -38,27 +34,20 @@
 			#currentPos, #length {
 				display: inline-block;
 				font-family: Overlock;
-				width: 13%;
+				width: 50%;
 				font-size: 20px;
 			}
-			#currentPos {text-align: right;}
-			#length {text-align: left;}
-			progress {-webkit-appearance: none; width: 73%; height: 20px;}
-			progress::-webkit-progress-bar {background: white; border: 1px solid black;}
-			progress::-webkit-progress-value {background: black;}
+			#currentPos {text-align: left;}
+			#length {text-align: right;}
+			progress {-webkit-appearance: none; width: 100%; height: 20px;}
+			progress::-webkit-progress-bar {background: #00ffff;}
+			progress::-webkit-progress-value {background: #ff8000; border-right: 4px solid #000;}
 			#albumImg {
 				display: inline-block;
-				width: 384px;
-				height: 384px;
+				width: 360px;
+				height: 360px;
 				background-image: url("Album-Art/Music Albums/Unknown.jpg");
-				background-size: 384px;
-			}
-			@media screen and (max-width: 520px) {
-				#albumImg {
-					width: 300px;
-					height: 300px;
-					background-size: 300px;
-				}
+				background-size: 360px;
 			}
       button:disabled {background: #000; color: #000;}
 		</style>
@@ -115,7 +104,7 @@
 			<option id="song47" disabled value="Wicked">Wicked (ID 46)</option>
 		</select><br>
 		<div>
-			<span id="currentPos">0:00.000</span><progress value="0" max="1" id="progress"></progress><span id="length">0:00.000</span><br>
+			<span id="currentPos">0:00.000</span><span id="length">0:00.000</span><progress value="0" max="1" id="progress"></progress><br>
 			<button onclick="restart()" disabled id="restartBtn">
 				<svg width="40" height="40">
 					<polyline style="stroke: none; fill: black;" points="35,5 10,20 35,35 35,5" />
