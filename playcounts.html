@@ -115,12 +115,10 @@
     var list, i, switching, b, shouldSwitch;
     list = document.getElementById("songs");
     var playCountsSpanElems = list.getElementsByTagName("SPAN");
-	  setInterval(function() {
-      for (var x = 0; x < 47; x++) {
-        playCountsSpanElems[x].innerHTML = playcounts[x];
-      }
-      sortList();
-    }, 100);
+    for (var x = 0; x < 47; x++) {
+      playCountsSpanElems[x].innerHTML = playcounts[x];
+    }
+    sortList();
     function sortList() {
       switching = true;
       while (switching) {
