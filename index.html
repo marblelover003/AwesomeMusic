@@ -5,43 +5,72 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
 		<link rel="icon" href="Album-Art/Music Albums/Unknown.jpg" id="album">
 		<style>
-			select {
-				font-family: Overlock;
-			}
+      select {
+        font-family: Overlock;
+      }
 			option:disabled {
-				background: white; color: white;
-			}
+        background: white;
+        color: white;
+      }
+      option {
+        transition-duration: 500ms;
+      }
 			body {
-				font-family: Montserrat;
-				margin: 0;
-				overflow: hidden;
-			}
+        font-family: Montserrat;
+        margin: 0;
+        overflow: hidden;
+      }
 			button {
-				-webkit-appearance: none;
-				background: white;
-				border: 1px solid black;
-				height: 50px;
-				min-width: 50px;
-				border-radius: 0;
-				transition-duration: 500ms;
-			}
+        -webkit-appearance: none;
+        background: white;
+        border: 1px solid black;
+        height: 50px;
+        min-width: 50px;
+        border-radius: 0;
+        transition-duration: 500ms;
+      }
 			button:hover {
 				background: #d7d7d7;
 			}
-			h1 {font-weight: 900; font-size: 40px; margin: 0; text-align: center;}
-			h2 {font-weight: 600; font-size: 30px; margin: 0; text-align: center;}
-			div {text-align: center;}
+			h1 {
+        font-weight: 900;
+        font-size: 40px;
+        margin: 0;
+        text-align: center;
+      }
+			h2 {
+        font-weight: 600;
+        font-size: 30px;
+        margin: 0;
+        text-align: center;
+      }
+			div {
+        text-align: center;
+      }
 			#currentPos, #length {
 				display: inline-block;
 				font-family: Overlock;
 				width: 50%;
 				font-size: 20px;
 			}
-			#currentPos {text-align: left;}
-			#length {text-align: right;}
-			progress {-webkit-appearance: none; width: 100%; height: 20px;}
-			progress::-webkit-progress-bar {background: #00ffff;}
-			progress::-webkit-progress-value {background: #ff8000; border-right: 4px solid #000;}
+			#currentPos {
+        text-align: left;
+      }
+			#length {
+        text-align: right;
+      }
+			progress {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 20px;
+      }
+			progress::-webkit-progress-bar {
+        background: #00ffff;
+      }
+			progress::-webkit-progress-value {
+        background: #ff8000;
+        border-right: 4px solid #000;
+      }
 			#albumImg {
 				display: inline-block;
 				width: 360px;
@@ -49,7 +78,33 @@
 				background-image: url("Album-Art/Music Albums/Unknown.jpg");
 				background-size: 360px;
 			}
-      button:disabled {background: #000; color: #000;}
+			button:disabled {
+        background: #000;
+        color: #000;
+      }
+      #playCtsLink {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        font-size: 20px;
+      }
+      a, a:visited {
+        color: blue;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      @media screen and (max-width: 520px) {
+        #albumImg {
+          width: 300px;
+          height: 300px;
+          background-size: 300px;
+        }
+        #playCtsLink {
+          font-size: 40px;
+        }
+      }
 		</style>
 	</head>
 	<body>
@@ -111,11 +166,11 @@
 					<polyline style="stroke: none; fill: black;" points="5,5 10,5 10,35 5,35 5,5" />
 				</svg>
 			</button>
-			<button onclick="skip(-15)" style="position: relative; top: -22px;" disabled id="rew15sBtn">Rewind<br>15 sec</button>
-			<button onclick="skip(-5)" style="position: relative; top: -22px;" disabled id="rew5sBtn">Rewind<br>5 sec</button>
+			<button onclick="skip(-15)" style="position: relative; top: -21px;" disabled id="rew15sBtn">Rewind<br>15 sec</button>
+			<button onclick="skip(-5)" style="position: relative; top: -21px;" disabled id="rew5sBtn">Rewind<br>5 sec</button>
 			<button onclick="toggle()" style="position: relative; top: -14px;" disabled id="playBtn">Play/Pause</button>
-			<button onclick="skip(5)" style="position: relative; top: -22px;" disabled id="skip5sBtn">Skip<br>5 sec</button>
-			<button onclick="skip(15)" style="position: relative; top: -22px;" disabled id="skip15sBtn">Skip<br>15 sec</button>
+			<button onclick="skip(5)" style="position: relative; top: -21px;" disabled id="skip5sBtn">Skip<br>5 sec</button>
+			<button onclick="skip(15)" style="position: relative; top: -21px;" disabled id="skip15sBtn">Skip<br>15 sec</button>
 			<button onclick="nextSong()" disabled id="skipBtn">
 				<svg width="40" height="40">
 					<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
@@ -177,6 +232,7 @@
 		<div>
 			<span id="albumImg"></span>
 		</div>
+    <a href="playcounts.html" target="_blank" id="playCtsLink">See play counts</a>
 	</body>
 	<script>
     var playcounts = [0];
@@ -238,53 +294,53 @@
       document.getElementById("audio46"),
       document.getElementById("audio47")
     ];
-    songs[1].addEventListener("canplaythrough", function() {document.getElementById("song").options[1].disabled = false;});
-    songs[2].addEventListener("canplaythrough", function() {document.getElementById("song").options[2].disabled = false;});
-    songs[3].addEventListener("canplaythrough", function() {document.getElementById("song").options[3].disabled = false;});
-    songs[4].addEventListener("canplaythrough", function() {document.getElementById("song").options[4].disabled = false;});
-    songs[5].addEventListener("canplaythrough", function() {document.getElementById("song").options[5].disabled = false;});
-    songs[6].addEventListener("canplaythrough", function() {document.getElementById("song").options[6].disabled = false;});
-    songs[7].addEventListener("canplaythrough", function() {document.getElementById("song").options[7].disabled = false;});
-    songs[8].addEventListener("canplaythrough", function() {document.getElementById("song").options[8].disabled = false;});
-    songs[9].addEventListener("canplaythrough", function() {document.getElementById("song").options[9].disabled = false;});
-    songs[10].addEventListener("canplaythrough", function() {document.getElementById("song").options[10].disabled = false;});
-    songs[11].addEventListener("canplaythrough", function() {document.getElementById("song").options[11].disabled = false;});
-    songs[12].addEventListener("canplaythrough", function() {document.getElementById("song").options[12].disabled = false;});
-    songs[13].addEventListener("canplaythrough", function() {document.getElementById("song").options[13].disabled = false;});
-    songs[14].addEventListener("canplaythrough", function() {document.getElementById("song").options[14].disabled = false;});
-    songs[15].addEventListener("canplaythrough", function() {document.getElementById("song").options[15].disabled = false;});
-    songs[16].addEventListener("canplaythrough", function() {document.getElementById("song").options[16].disabled = false;});
-    songs[17].addEventListener("canplaythrough", function() {document.getElementById("song").options[17].disabled = false;});
-    songs[18].addEventListener("canplaythrough", function() {document.getElementById("song").options[18].disabled = false;});
-    songs[19].addEventListener("canplaythrough", function() {document.getElementById("song").options[19].disabled = false;});
-    songs[20].addEventListener("canplaythrough", function() {document.getElementById("song").options[20].disabled = false;});
-    songs[21].addEventListener("canplaythrough", function() {document.getElementById("song").options[21].disabled = false;});
-    songs[22].addEventListener("canplaythrough", function() {document.getElementById("song").options[22].disabled = false;});
-    songs[23].addEventListener("canplaythrough", function() {document.getElementById("song").options[23].disabled = false;});
-    songs[24].addEventListener("canplaythrough", function() {document.getElementById("song").options[24].disabled = false;});
-    songs[25].addEventListener("canplaythrough", function() {document.getElementById("song").options[25].disabled = false;});
-    songs[26].addEventListener("canplaythrough", function() {document.getElementById("song").options[26].disabled = false;});
-    songs[27].addEventListener("canplaythrough", function() {document.getElementById("song").options[27].disabled = false;});
-    songs[28].addEventListener("canplaythrough", function() {document.getElementById("song").options[28].disabled = false;});
-    songs[29].addEventListener("canplaythrough", function() {document.getElementById("song").options[29].disabled = false;});
-    songs[30].addEventListener("canplaythrough", function() {document.getElementById("song").options[30].disabled = false;});
-    songs[31].addEventListener("canplaythrough", function() {document.getElementById("song").options[31].disabled = false;});
-    songs[32].addEventListener("canplaythrough", function() {document.getElementById("song").options[32].disabled = false;});
-    songs[33].addEventListener("canplaythrough", function() {document.getElementById("song").options[33].disabled = false;});
-    songs[34].addEventListener("canplaythrough", function() {document.getElementById("song").options[34].disabled = false;});
-    songs[35].addEventListener("canplaythrough", function() {document.getElementById("song").options[35].disabled = false;});
-    songs[36].addEventListener("canplaythrough", function() {document.getElementById("song").options[36].disabled = false;});
-    songs[37].addEventListener("canplaythrough", function() {document.getElementById("song").options[37].disabled = false;});
-    songs[38].addEventListener("canplaythrough", function() {document.getElementById("song").options[38].disabled = false;});
-    songs[39].addEventListener("canplaythrough", function() {document.getElementById("song").options[39].disabled = false;});
-    songs[40].addEventListener("canplaythrough", function() {document.getElementById("song").options[40].disabled = false;});
-    songs[41].addEventListener("canplaythrough", function() {document.getElementById("song").options[41].disabled = false;});
-    songs[42].addEventListener("canplaythrough", function() {document.getElementById("song").options[42].disabled = false;});
-    songs[43].addEventListener("canplaythrough", function() {document.getElementById("song").options[43].disabled = false;});
-    songs[44].addEventListener("canplaythrough", function() {document.getElementById("song").options[44].disabled = false;});
-    songs[45].addEventListener("canplaythrough", function() {document.getElementById("song").options[45].disabled = false;});
-    songs[46].addEventListener("canplaythrough", function() {document.getElementById("song").options[46].disabled = false;});
-    songs[47].addEventListener("canplaythrough", function() {document.getElementById("song").options[47].disabled = false;});
+    songs[1].addEventListener("canplay", function() {document.getElementById("song").options[1].disabled = false;});
+    songs[2].addEventListener("canplay", function() {document.getElementById("song").options[2].disabled = false;});
+    songs[3].addEventListener("canplay", function() {document.getElementById("song").options[3].disabled = false;});
+    songs[4].addEventListener("canplay", function() {document.getElementById("song").options[4].disabled = false;});
+    songs[5].addEventListener("canplay", function() {document.getElementById("song").options[5].disabled = false;});
+    songs[6].addEventListener("canplay", function() {document.getElementById("song").options[6].disabled = false;});
+    songs[7].addEventListener("canplay", function() {document.getElementById("song").options[7].disabled = false;});
+    songs[8].addEventListener("canplay", function() {document.getElementById("song").options[8].disabled = false;});
+    songs[9].addEventListener("canplay", function() {document.getElementById("song").options[9].disabled = false;});
+    songs[10].addEventListener("canplay", function() {document.getElementById("song").options[10].disabled = false;});
+    songs[11].addEventListener("canplay", function() {document.getElementById("song").options[11].disabled = false;});
+    songs[12].addEventListener("canplay", function() {document.getElementById("song").options[12].disabled = false;});
+    songs[13].addEventListener("canplay", function() {document.getElementById("song").options[13].disabled = false;});
+    songs[14].addEventListener("canplay", function() {document.getElementById("song").options[14].disabled = false;});
+    songs[15].addEventListener("canplay", function() {document.getElementById("song").options[15].disabled = false;});
+    songs[16].addEventListener("canplay", function() {document.getElementById("song").options[16].disabled = false;});
+    songs[17].addEventListener("canplay", function() {document.getElementById("song").options[17].disabled = false;});
+    songs[18].addEventListener("canplay", function() {document.getElementById("song").options[18].disabled = false;});
+    songs[19].addEventListener("canplay", function() {document.getElementById("song").options[19].disabled = false;});
+    songs[20].addEventListener("canplay", function() {document.getElementById("song").options[20].disabled = false;});
+    songs[21].addEventListener("canplay", function() {document.getElementById("song").options[21].disabled = false;});
+    songs[22].addEventListener("canplay", function() {document.getElementById("song").options[22].disabled = false;});
+    songs[23].addEventListener("canplay", function() {document.getElementById("song").options[23].disabled = false;});
+    songs[24].addEventListener("canplay", function() {document.getElementById("song").options[24].disabled = false;});
+    songs[25].addEventListener("canplay", function() {document.getElementById("song").options[25].disabled = false;});
+    songs[26].addEventListener("canplay", function() {document.getElementById("song").options[26].disabled = false;});
+    songs[27].addEventListener("canplay", function() {document.getElementById("song").options[27].disabled = false;});
+    songs[28].addEventListener("canplay", function() {document.getElementById("song").options[28].disabled = false;});
+    songs[29].addEventListener("canplay", function() {document.getElementById("song").options[29].disabled = false;});
+    songs[30].addEventListener("canplay", function() {document.getElementById("song").options[30].disabled = false;});
+    songs[31].addEventListener("canplay", function() {document.getElementById("song").options[31].disabled = false;});
+    songs[32].addEventListener("canplay", function() {document.getElementById("song").options[32].disabled = false;});
+    songs[33].addEventListener("canplay", function() {document.getElementById("song").options[33].disabled = false;});
+    songs[34].addEventListener("canplay", function() {document.getElementById("song").options[34].disabled = false;});
+    songs[35].addEventListener("canplay", function() {document.getElementById("song").options[35].disabled = false;});
+    songs[36].addEventListener("canplay", function() {document.getElementById("song").options[36].disabled = false;});
+    songs[37].addEventListener("canplay", function() {document.getElementById("song").options[37].disabled = false;});
+    songs[38].addEventListener("canplay", function() {document.getElementById("song").options[38].disabled = false;});
+    songs[39].addEventListener("canplay", function() {document.getElementById("song").options[39].disabled = false;});
+    songs[40].addEventListener("canplay", function() {document.getElementById("song").options[40].disabled = false;});
+    songs[41].addEventListener("canplay", function() {document.getElementById("song").options[41].disabled = false;});
+    songs[42].addEventListener("canplay", function() {document.getElementById("song").options[42].disabled = false;});
+    songs[43].addEventListener("canplay", function() {document.getElementById("song").options[43].disabled = false;});
+    songs[44].addEventListener("canplay", function() {document.getElementById("song").options[44].disabled = false;});
+    songs[45].addEventListener("canplay", function() {document.getElementById("song").options[45].disabled = false;});
+    songs[46].addEventListener("canplay", function() {document.getElementById("song").options[46].disabled = false;});
+    songs[47].addEventListener("canplay", function() {document.getElementById("song").options[47].disabled = false;});
     function isSongAvail(id) {
       if (document.getElementById("song").options[id].disabled == false) {
         return true;
