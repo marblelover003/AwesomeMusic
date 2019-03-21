@@ -650,7 +650,7 @@
 			var millis = (length[0] * 60000) + (length[1] * 1000) + length[2];
 			document.getElementById("progress").max = millis;
 			song.addEventListener("ended", function() {
-        playCounts[currentSong] += 1;
+        playCounts[currentSong]++;
         localStorage.setItem("song" + currentSong, playCounts[currentSong]);
 				song.pause();
 				nextSong();
