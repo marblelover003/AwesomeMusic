@@ -7,59 +7,59 @@
     <style>
       body {font-family: Montserrat;}
       ul li {list-style-type: none;}
-      .darker {background: #d7d7d7;}
       div {display: inline-block; width: 225px;}
+      ul {background: repeating-linear-gradient(to bottom, #d7d7d7 0px, #d7d7d7 19px, #ffffff 19px, #ffffff 38px); display: inline-block;}
     </style>
   </head>
   <body>
-    Play Counts
+    Play Counts<br>
     <ul id="songs">
       <li><div>Barracuda</div><span>0</span></li>
-      <li><div class="darker">Cascade</div><span class="darker">0</span></li>
+      <li><div>Cascade</div><span>0</span></li>
       <li><div>Cheat Codes</div><span>0</span></li>
-      <li><div class="darker">Checkpoint</div><span class="darker">0</span></li>
+      <li><div>Checkpoint</div><span>0</span></li>
       <li><div>Chip Zeal</div><span>0</span></li>
-      <li><div class="darker">Chronos</div><span class="darker">0</span></li>
+      <li><div>Chronos</div><span>0</span></li>
       <li><div>Commando Steve</div><span>0</span></li>
-      <li><div class="darker">Cool Friends</div><span class="darker">0</span></li>
+      <li><div>Cool Friends</div><span>0</span></li>
       <li><div>Core</div><span>0</span></li>
-      <li><div class="darker">Corrupted</div><span class="darker">0</span></li>
+      <li><div>Corrupted</div><span>0</span></li>
       <li><div>Courtesy</div><span>0</span></li>
-      <li><div class="darker">Cruise Control</div><span class="darker">0</span></li>
+      <li><div>Cruise Control</div><span>0</span></li>
       <li><div>Dance of the Incognizant</div><span>0</span></li>
-      <li><div class="darker">Destroid 10 - Funk Hole</div><span class="darker">0</span></li>
+      <li><div>Destroid 10 - Funk Hole</div><span>0</span></li>
       <li><div>Destroid 8 - Annihilate</div><span>0</span></li>
-      <li><div class="darker">Final Boss</div><span class="darker">0</span></li>
+      <li><div>Final Boss</div><span>0</span></li>
       <li><div>Focus</div><span>0</span></li>
-      <li><div class="darker">FOX</div><span class="darker">0</span></li>
+      <li><div>FOX</div><span>0</span></li>
       <li><div>FTW</div><span>0</span></li>
-      <li><div class="darker">Houston</div><span class="darker">0</span></li>
+      <li><div>Houston</div><span>0</span></li>
       <li><div>HYPE</div><span>0</span></li>
-      <li><div class="darker">Into The Zone</div><span class="darker">0</span></li>
+      <li><div>Into The Zone</div><span>0</span></li>
       <li><div>Legacy (feat. Zef)</div><span>0</span></li>
-      <li><div class="darker">Logic Gatekeeper</div><span class="darker">0</span></li>
+      <li><div>Logic Gatekeeper</div><span>0</span></li>
       <li><div>Long Live The New Fresh</div><span>0</span></li>
-      <li><div class="darker">Milky Ways</div><span class="darker">0</span></li>
+      <li><div>Milky Ways</div><span>0</span></li>
       <li><div>New Game</div><span>0</span></li>
-      <li><div class="darker">On The Run</div><span class="darker">0</span></li>
+      <li><div>On The Run</div><span>0</span></li>
       <li><div>Once Again</div><span>0</span></li>
-      <li><div class="darker">Otis</div><span class="darker">0</span></li>
+      <li><div>Otis</div><span>0</span></li>
       <li><div>Paper Dolls</div><span>0</span></li>
-      <li><div class="darker">Parallel Processing</div><span class="darker">0</span></li>
+      <li><div>Parallel Processing</div><span>0</span></li>
       <li><div>Peer Gynt</div><span>0</span></li>
-      <li><div class="darker">Rainbow Road</div><span class="darker">0</span></li>
+      <li><div>Rainbow Road</div><span>0</span></li>
       <li><div>Sevcon</div><span>0</span></li>
-      <li><div class="darker">Spectra</div><span class="darker">0</span></li>
+      <li><div>Spectra</div><span>0</span></li>
       <li><div>Sugar Rush</div><span>0</span></li>
-      <li><div class="darker">Tension</div><span class="darker">0</span></li>
+      <li><div>Tension</div><span>0</span></li>
       <li><div>Termination Shock</div><span>0</span></li>
-      <li><div class="darker">The Art of War</div><span class="darker">0</span></li>
+      <li><div>The Art of War</div><span>0</span></li>
       <li><div>The Lunar Whale (feat. Zef)</div><span>0</span></li>
-      <li><div class="darker">Till It&apos;s Over</div><span class="darker">0</span></li>
+      <li><div>Till It&apos;s Over</div><span>0</span></li>
       <li><div>Tokyo Skies</div><span>0</span></li>
-      <li><div class="darker">Try This</div><span class="darker">0</span></li>
+      <li><div>Try This</div><span>0</span></li>
       <li><div>Unlocked</div><span>0</span></li>
-      <li><div class="darker">Vindicate Me</div><span class="darker">0</span></li>
+      <li><div>Vindicate Me</div><span>5</span></li>
       <li><div>Wicked</div><span>0</span></li>
     </ul>
   </body>
@@ -117,6 +117,27 @@
     var playCountsSpanElems = document.getElementById("songs").getElementsByTagName("SPAN");
     for (var x = 0; x < 47; x++) {
       playCountsSpanElems[x].innerHTML = playcounts[x];
+    }
+    var list, i, switching, b, shouldSwitch;
+    list = document.getElementById("songs");
+    sortList();
+    function sortList() {
+      switching = true;
+      while (switching) {
+        switching = false;
+        b = list.getElementsByTagName("LI");
+        for (i = 0; i < (b.length - 1); i++) {
+          shouldSwitch = false;
+          if (Number(playCountsSpanElems[i].innerHTML) < Number(playCountsSpanElems[i + 1].innerHTML)) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          b[i].parentNode.insertBefore(b[i + 1], b[i]);
+          switching = true;
+        }
+      }
     }
   </script>
 </html>
