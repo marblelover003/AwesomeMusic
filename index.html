@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Loading...</title>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
-		<link rel="icon" href="Album-Art/Music Albums/Unknown.jpg" id="album">
-		<style>
+  <head>
+    <title>Loading...</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
+    <link rel="icon" href="Album-Art/Music Albums/Unknown.jpg" id="album">
+    <style>
       select {
         font-family: Overlock;
       }
-			option:disabled {
+      option:disabled {
         background: white;
         color: white;
       }
       option {
         transition-duration: 500ms;
       }
-			body {
+      body {
         font-family: Montserrat;
         margin: 0;
         overflow: hidden;
       }
-			button {
+      button {
         -webkit-appearance: none;
         background: white;
         border: 1px solid black;
@@ -29,56 +29,56 @@
         border-radius: 0;
         transition-duration: 500ms;
       }
-			button:hover {
-				background: #d7d7d7;
-			}
-			h1 {
+      button:hover {
+        background: #d7d7d7;
+      }
+      h1 {
         font-weight: 900;
         font-size: 40px;
         margin: 0;
         text-align: center;
       }
-			h2 {
+      h2 {
         font-weight: 600;
         font-size: 30px;
         margin: 0;
         text-align: center;
       }
-			div {
+      div {
         text-align: center;
       }
-			#currentPos, #length {
-				display: inline-block;
-				font-family: Overlock;
-				width: 50%;
-				font-size: 20px;
-			}
-			#currentPos {
+      #currentPos, #length {
+        display: inline-block;
+        font-family: Overlock;
+        width: 50%;
+        font-size: 20px;
+      }
+      #currentPos {
         text-align: left;
       }
-			#length {
+      #length {
         text-align: right;
       }
-			progress {
+      progress {
         -webkit-appearance: none;
         width: 100%;
         height: 20px;
       }
-			progress::-webkit-progress-bar {
+      progress::-webkit-progress-bar {
         background: #00ffff;
       }
-			progress::-webkit-progress-value {
+      progress::-webkit-progress-value {
         background: #ff8000;
         border-right: 4px solid #000;
       }
-			#albumImg {
-				display: inline-block;
-				width: 360px;
-				height: 360px;
-				background-image: url("Album-Art/Music Albums/Unknown.jpg");
-				background-size: 360px;
-			}
-			button:disabled {
+      #albumImg {
+        display: inline-block;
+        width: 360px;
+        height: 360px;
+        background-image: url("Album-Art/Music Albums/Unknown.jpg");
+        background-size: 360px;
+      }
+      button:disabled {
         background: #000;
         color: #000;
       }
@@ -105,136 +105,140 @@
           font-size: 40px;
         }
       }
-		</style>
-	</head>
-	<body>
-		<select id="song" onchange="change()">
-			<option>Choose a song to play!</option>
-			<option id="song1" disabled value="Barracuda">Barracuda (ID 00)</option>
-			<option id="song2" disabled value="Cascade">Cascade (ID 01)</option>
-			<option id="song3" disabled value="Cheat Codes">Cheat Codes (ID 02)</option>
-			<option id="song4" disabled value="Checkpoint">Checkpoint (ID 03)</option>
-			<option id="song5" disabled value="Chip Zeal">Chip Zeal (ID 04)</option>
-			<option id="song6" disabled value="Chronos">Chronos (ID 05)</option>
-			<option id="song7" disabled value="Commando Steve">Commando Steve (ID 06)</option>
-			<option id="song8" disabled value="Cool Friends">Cool Friends (ID 07)</option>
-			<option id="song9" disabled value="Core">Core (ID 08)</option>
-			<option id="song10" disabled value="Corrupted">Corrupted (ID 09)</option>
-			<option id="song11" disabled value="Courtesy">Courtesy (ID 10)</option>
-			<option id="song12" disabled value="Cruise Control">Cruise Control (ID 11)</option>
-			<option id="song13" disabled value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
-			<option id="song14" disabled value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
-			<option id="song15" disabled value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
-			<option id="song16" disabled value="Final Boss">Final Boss (ID 15)</option>
-			<option id="song17" disabled value="Focus">Focus (ID 16)</option>
-			<option id="song18" disabled value="FOX">FOX (ID 17)</option>
-			<option id="song19" disabled value="FTW">FTW (ID 18)</option>
-			<option id="song20" disabled value="Houston">Houston (ID 19)</option>
-			<option id="song21" disabled value="HYPE">HYPE (ID 20)</option>
-			<option id="song22" disabled value="Into The Zone">Into The Zone (ID 21)</option>
-			<option id="song23" disabled value="Legacy">Legacy (ID 22)</option>
-			<option id="song24" disabled value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
-			<option id="song25" disabled value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
-			<option id="song26" disabled value="Milky Ways">Milky Ways (ID 25)</option>
-			<option id="song27" disabled value="New Game">New Game (ID 26)</option>
-			<option id="song28" disabled value="On The Run">On The Run (ID 27)</option>
-			<option id="song29" disabled value="Once Again">Once Again (ID 28)</option>
-			<option id="song30" disabled value="Otis">Otis (ID 29)</option>
-			<option id="song31" disabled value="Paper Dolls">Paper Dolls (ID 30)</option>
-			<option id="song32" disabled value="Parallel Processing">Parallel Processing (ID 31)</option>
-			<option id="song33" disabled value="Peer Gynt">Peer Gynt (ID 32)</option>
-			<option id="song34" disabled value="Rainbow Road">Rainbow Road (ID 33)</option>
-			<option id="song35" disabled value="Sevcon">Sevcon (ID 34)</option>
-			<option id="song36" disabled value="Spectra">Spectra (ID 35)</option>
-			<option id="song37" disabled value="Sugar Rush">Sugar Rush (ID 36)</option>
-			<option id="song38" disabled value="Tension">Tension (ID 37)</option>
-			<option id="song39" disabled value="Termination Shock">Termination Shock (ID 38)</option>
-			<option id="song40" disabled value="The Art of War">The Art of War (ID 39)</option>
-			<option id="song41" disabled value="The Lunar Whale">The Lunar Whale (ID 40)</option>
-			<option id="song42" disabled value="Till It's Over">Till It's Over (ID 41)</option>
-			<option id="song43" disabled value="Tokyo Skies">Tokyo Skies (ID 42)</option>
-			<option id="song44" disabled value="Try This">Try This (ID 43)</option>
-			<option id="song45" disabled value="Unlocked">Unlocked (ID 44)</option>
-			<option id="song46" disabled value="Vindicate Me">Vindicate Me (ID 45)</option>
-			<option id="song47" disabled value="Wicked">Wicked (ID 46)</option>
-		</select><br>
-		<div>
-			<span id="currentPos">0:00.000</span><span id="length">0:00.000</span><progress value="0" max="1" id="progress"></progress><br>
-			<button onclick="restart()" disabled id="restartBtn">
-				<svg width="40" height="40">
-					<polyline style="stroke: none; fill: black;" points="35,5 10,20 35,35 35,5" />
-					<polyline style="stroke: none; fill: black;" points="5,5 10,5 10,35 5,35 5,5" />
-				</svg>
-			</button>
-			<button onclick="skip(-15)" style="position: relative; top: -21px;" disabled id="rew15sBtn">Rewind<br>15 sec</button>
-			<button onclick="skip(-5)" style="position: relative; top: -21px;" disabled id="rew5sBtn">Rewind<br>5 sec</button>
-			<button onclick="toggle()" style="position: relative; top: -14px;" disabled id="playBtn">Play/Pause</button>
-			<button onclick="skip(5)" style="position: relative; top: -21px;" disabled id="skip5sBtn">Skip<br>5 sec</button>
-			<button onclick="skip(15)" style="position: relative; top: -21px;" disabled id="skip15sBtn">Skip<br>15 sec</button>
-			<button onclick="nextSong()" disabled id="skipBtn">
-				<svg width="40" height="40">
-					<polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
-					<polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
-				</svg>
-			</button>
-		</div>
-		<audio id="audio1" style="visibility: hidden;" src="Barracuda.mp3"></audio>
-		<audio id="audio2" style="visibility: hidden;" src="Cascade.mp3"></audio>
-		<audio id="audio3" style="visibility: hidden;" src="Cheat Codes.mp3"></audio>
-		<audio id="audio4" style="visibility: hidden;" src="Checkpoint.mp3"></audio>
-		<audio id="audio5" style="visibility: hidden;" src="Chip Zeal.mp3"></audio>
-		<audio id="audio6" style="visibility: hidden;" src="Chronos.mp3"></audio>
-		<audio id="audio7" style="visibility: hidden;" src="Commando Steve.mp3"></audio>
-		<audio id="audio8" style="visibility: hidden;" src="Cool Friends.mp3"></audio>
-		<audio id="audio9" style="visibility: hidden;" src="Core.mp3"></audio>
-		<audio id="audio10" style="visibility: hidden;" src="Corrupted.mp3"></audio>
-		<audio id="audio11" style="visibility: hidden;" src="Courtesy.mp3"></audio>
-		<audio id="audio12" style="visibility: hidden;" src="Cruise Control.mp3"></audio>
-		<audio id="audio13" style="visibility: hidden;" src="Dance of the Incognizant.mp3"></audio>
-		<audio id="audio14" style="visibility: hidden;" src="Destroid 10 - Funk Hole.mp3"></audio>
-		<audio id="audio15" style="visibility: hidden;" src="Destroid 8 - Annihilate.mp3"></audio>
-		<audio id="audio16" style="visibility: hidden;" src="Final Boss.mp3"></audio>
-		<audio id="audio17" style="visibility: hidden;" src="Focus.mp3"></audio>
-		<audio id="audio18" style="visibility: hidden;" src="FOX.mp3"></audio>
-		<audio id="audio19" style="visibility: hidden;" src="FTW.mp3"></audio>
-		<audio id="audio20" style="visibility: hidden;" src="Houston.mp3"></audio>
-		<audio id="audio21" style="visibility: hidden;" src="HYPE.mp3"></audio>
-		<audio id="audio22" style="visibility: hidden;" src="Into The Zone.mp3"></audio>
-		<audio id="audio23" style="visibility: hidden;" src="Legacy.mp3"></audio>
-		<audio id="audio24" style="visibility: hidden;" src="Logic Gatekeeper.mp3"></audio>
-		<audio id="audio25" style="visibility: hidden;" src="Long Live The New Fresh.mp3"></audio>
-		<audio id="audio26" style="visibility: hidden;" src="Milky Ways.mp3"></audio>
-		<audio id="audio27" style="visibility: hidden;" src="New Game.mp3"></audio>
-		<audio id="audio28" style="visibility: hidden;" src="On The Run.mp3"></audio>
-		<audio id="audio29" style="visibility: hidden;" src="Once Again.mp3"></audio>
-		<audio id="audio30" style="visibility: hidden;" src="Otis.mp3"></audio>
-		<audio id="audio31" style="visibility: hidden;" src="Paper Dolls.mp3"></audio>
-		<audio id="audio32" style="visibility: hidden;" src="Parallel Processing.mp3"></audio>
-		<audio id="audio33" style="visibility: hidden;" src="Peer Gynt.mp3"></audio>
-		<audio id="audio34" style="visibility: hidden;" src="Rainbow Road.mp3"></audio>
-		<audio id="audio35" style="visibility: hidden;" src="Sevcon.mp3"></audio>
-		<audio id="audio36" style="visibility: hidden;" src="Spectra.mp3"></audio>
-		<audio id="audio37" style="visibility: hidden;" src="Sugar Rush.mp3"></audio>
-		<audio id="audio38" style="visibility: hidden;" src="Tension.mp3"></audio>
-		<audio id="audio39" style="visibility: hidden;" src="Termination Shock.mp3"></audio>
-		<audio id="audio40" style="visibility: hidden;" src="The Art of War.mp3"></audio>
-		<audio id="audio41" style="visibility: hidden;" src="The Lunar Whale.mp3"></audio>
-		<audio id="audio42" style="visibility: hidden;" src="Till It's Over.mp3"></audio>
-		<audio id="audio43" style="visibility: hidden;" src="Tokyo Skies.mp3"></audio>
-		<audio id="audio44" style="visibility: hidden;" src="Try This.mp3"></audio>
-		<audio id="audio45" style="visibility: hidden;" src="Unlocked.mp3"></audio>
-		<audio id="audio46" style="visibility: hidden;" src="Vindicate Me.mp3"></audio>
-		<audio id="audio47" style="visibility: hidden;" src="Wicked.mp3"></audio>
-		<div>Currently playing:</div>
-		<h1 id="title">&nbsp;</h1>
-		<div>- by -</div>
-		<h2 id="artist">&nbsp;</h2>
-		<div>
-			<span id="albumImg"></span>
-		</div>
+    </style>
+    <meta property="og:title" content="Epic Music Player - Play amazing electro music!"/>
+    <meta property="og:site_name" content="Epic Music Player"/>
+    <meta property="og:description" content="47 tracks of awesomeness. Want some amazing electro and chiptunes and whatnot? You've come to the right place."/>
+    <meta property="og:image" content="http://marblelover003.github.io/AwesomeMusic/Epic Music Player.jpg"/>
+  </head>
+  <body>
+    <select id="song" onchange="change()">
+      <option>Choose a song to play!</option>
+      <option id="song1" disabled value="Barracuda">Barracuda (ID 00)</option>
+      <option id="song2" disabled value="Cascade">Cascade (ID 01)</option>
+      <option id="song3" disabled value="Cheat Codes">Cheat Codes (ID 02)</option>
+      <option id="song4" disabled value="Checkpoint">Checkpoint (ID 03)</option>
+      <option id="song5" disabled value="Chip Zeal">Chip Zeal (ID 04)</option>
+      <option id="song6" disabled value="Chronos">Chronos (ID 05)</option>
+      <option id="song7" disabled value="Commando Steve">Commando Steve (ID 06)</option>
+      <option id="song8" disabled value="Cool Friends">Cool Friends (ID 07)</option>
+      <option id="song9" disabled value="Core">Core (ID 08)</option>
+      <option id="song10" disabled value="Corrupted">Corrupted (ID 09)</option>
+      <option id="song11" disabled value="Courtesy">Courtesy (ID 10)</option>
+      <option id="song12" disabled value="Cruise Control">Cruise Control (ID 11)</option>
+      <option id="song13" disabled value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
+      <option id="song14" disabled value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
+      <option id="song15" disabled value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
+      <option id="song16" disabled value="Final Boss">Final Boss (ID 15)</option>
+      <option id="song17" disabled value="Focus">Focus (ID 16)</option>
+      <option id="song18" disabled value="FOX">FOX (ID 17)</option>
+      <option id="song19" disabled value="FTW">FTW (ID 18)</option>
+      <option id="song20" disabled value="Houston">Houston (ID 19)</option>
+      <option id="song21" disabled value="HYPE">HYPE (ID 20)</option>
+      <option id="song22" disabled value="Into The Zone">Into The Zone (ID 21)</option>
+      <option id="song23" disabled value="Legacy">Legacy (ID 22)</option>
+      <option id="song24" disabled value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
+      <option id="song25" disabled value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
+      <option id="song26" disabled value="Milky Ways">Milky Ways (ID 25)</option>
+      <option id="song27" disabled value="New Game">New Game (ID 26)</option>
+      <option id="song28" disabled value="On The Run">On The Run (ID 27)</option>
+      <option id="song29" disabled value="Once Again">Once Again (ID 28)</option>
+      <option id="song30" disabled value="Otis">Otis (ID 29)</option>
+      <option id="song31" disabled value="Paper Dolls">Paper Dolls (ID 30)</option>
+      <option id="song32" disabled value="Parallel Processing">Parallel Processing (ID 31)</option>
+      <option id="song33" disabled value="Peer Gynt">Peer Gynt (ID 32)</option>
+      <option id="song34" disabled value="Rainbow Road">Rainbow Road (ID 33)</option>
+      <option id="song35" disabled value="Sevcon">Sevcon (ID 34)</option>
+      <option id="song36" disabled value="Spectra">Spectra (ID 35)</option>
+      <option id="song37" disabled value="Sugar Rush">Sugar Rush (ID 36)</option>
+      <option id="song38" disabled value="Tension">Tension (ID 37)</option>
+      <option id="song39" disabled value="Termination Shock">Termination Shock (ID 38)</option>
+      <option id="song40" disabled value="The Art of War">The Art of War (ID 39)</option>
+      <option id="song41" disabled value="The Lunar Whale">The Lunar Whale (ID 40)</option>
+      <option id="song42" disabled value="Till It's Over">Till It's Over (ID 41)</option>
+      <option id="song43" disabled value="Tokyo Skies">Tokyo Skies (ID 42)</option>
+      <option id="song44" disabled value="Try This">Try This (ID 43)</option>
+      <option id="song45" disabled value="Unlocked">Unlocked (ID 44)</option>
+      <option id="song46" disabled value="Vindicate Me">Vindicate Me (ID 45)</option>
+      <option id="song47" disabled value="Wicked">Wicked (ID 46)</option>
+    </select><br>
+    <div>
+      <span id="currentPos">0:00.000</span><span id="length">0:00.000</span><progress value="0" max="1" id="progress"></progress><br>
+      <button onclick="restart()" disabled id="restartBtn">
+        <svg width="40" height="40">
+          <polyline style="stroke: none; fill: black;" points="35,5 10,20 35,35 35,5" />
+          <polyline style="stroke: none; fill: black;" points="5,5 10,5 10,35 5,35 5,5" />
+        </svg>
+      </button>
+      <button onclick="skip(-15)" style="position: relative; top: -21px;" disabled id="rew15sBtn">Rewind<br>15 sec</button>
+      <button onclick="skip(-5)" style="position: relative; top: -21px;" disabled id="rew5sBtn">Rewind<br>5 sec</button>
+      <button onclick="toggle()" style="position: relative; top: -14px;" disabled id="playBtn">Play/Pause</button>
+      <button onclick="skip(5)" style="position: relative; top: -21px;" disabled id="skip5sBtn">Skip<br>5 sec</button>
+      <button onclick="skip(15)" style="position: relative; top: -21px;" disabled id="skip15sBtn">Skip<br>15 sec</button>
+      <button onclick="nextSong()" disabled id="skipBtn">
+        <svg width="40" height="40">
+          <polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
+          <polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
+        </svg>
+      </button>
+    </div>
+    <audio id="audio1" style="visibility: hidden;" src="Barracuda.mp3"></audio>
+    <audio id="audio2" style="visibility: hidden;" src="Cascade.mp3"></audio>
+    <audio id="audio3" style="visibility: hidden;" src="Cheat Codes.mp3"></audio>
+    <audio id="audio4" style="visibility: hidden;" src="Checkpoint.mp3"></audio>
+    <audio id="audio5" style="visibility: hidden;" src="Chip Zeal.mp3"></audio>
+    <audio id="audio6" style="visibility: hidden;" src="Chronos.mp3"></audio>
+    <audio id="audio7" style="visibility: hidden;" src="Commando Steve.mp3"></audio>
+    <audio id="audio8" style="visibility: hidden;" src="Cool Friends.mp3"></audio>
+    <audio id="audio9" style="visibility: hidden;" src="Core.mp3"></audio>
+    <audio id="audio10" style="visibility: hidden;" src="Corrupted.mp3"></audio>
+    <audio id="audio11" style="visibility: hidden;" src="Courtesy.mp3"></audio>
+    <audio id="audio12" style="visibility: hidden;" src="Cruise Control.mp3"></audio>
+    <audio id="audio13" style="visibility: hidden;" src="Dance of the Incognizant.mp3"></audio>
+    <audio id="audio14" style="visibility: hidden;" src="Destroid 10 - Funk Hole.mp3"></audio>
+    <audio id="audio15" style="visibility: hidden;" src="Destroid 8 - Annihilate.mp3"></audio>
+    <audio id="audio16" style="visibility: hidden;" src="Final Boss.mp3"></audio>
+    <audio id="audio17" style="visibility: hidden;" src="Focus.mp3"></audio>
+    <audio id="audio18" style="visibility: hidden;" src="FOX.mp3"></audio>
+    <audio id="audio19" style="visibility: hidden;" src="FTW.mp3"></audio>
+    <audio id="audio20" style="visibility: hidden;" src="Houston.mp3"></audio>
+    <audio id="audio21" style="visibility: hidden;" src="HYPE.mp3"></audio>
+    <audio id="audio22" style="visibility: hidden;" src="Into The Zone.mp3"></audio>
+    <audio id="audio23" style="visibility: hidden;" src="Legacy.mp3"></audio>
+    <audio id="audio24" style="visibility: hidden;" src="Logic Gatekeeper.mp3"></audio>
+    <audio id="audio25" style="visibility: hidden;" src="Long Live The New Fresh.mp3"></audio>
+    <audio id="audio26" style="visibility: hidden;" src="Milky Ways.mp3"></audio>
+    <audio id="audio27" style="visibility: hidden;" src="New Game.mp3"></audio>
+    <audio id="audio28" style="visibility: hidden;" src="On The Run.mp3"></audio>
+    <audio id="audio29" style="visibility: hidden;" src="Once Again.mp3"></audio>
+    <audio id="audio30" style="visibility: hidden;" src="Otis.mp3"></audio>
+    <audio id="audio31" style="visibility: hidden;" src="Paper Dolls.mp3"></audio>
+    <audio id="audio32" style="visibility: hidden;" src="Parallel Processing.mp3"></audio>
+    <audio id="audio33" style="visibility: hidden;" src="Peer Gynt.mp3"></audio>
+    <audio id="audio34" style="visibility: hidden;" src="Rainbow Road.mp3"></audio>
+    <audio id="audio35" style="visibility: hidden;" src="Sevcon.mp3"></audio>
+    <audio id="audio36" style="visibility: hidden;" src="Spectra.mp3"></audio>
+    <audio id="audio37" style="visibility: hidden;" src="Sugar Rush.mp3"></audio>
+    <audio id="audio38" style="visibility: hidden;" src="Tension.mp3"></audio>
+    <audio id="audio39" style="visibility: hidden;" src="Termination Shock.mp3"></audio>
+    <audio id="audio40" style="visibility: hidden;" src="The Art of War.mp3"></audio>
+    <audio id="audio41" style="visibility: hidden;" src="The Lunar Whale.mp3"></audio>
+    <audio id="audio42" style="visibility: hidden;" src="Till It's Over.mp3"></audio>
+    <audio id="audio43" style="visibility: hidden;" src="Tokyo Skies.mp3"></audio>
+    <audio id="audio44" style="visibility: hidden;" src="Try This.mp3"></audio>
+    <audio id="audio45" style="visibility: hidden;" src="Unlocked.mp3"></audio>
+    <audio id="audio46" style="visibility: hidden;" src="Vindicate Me.mp3"></audio>
+    <audio id="audio47" style="visibility: hidden;" src="Wicked.mp3"></audio>
+    <div>Currently playing:</div>
+    <h1 id="title">&nbsp;</h1>
+    <div>- by -</div>
+    <h2 id="artist">&nbsp;</h2>
+    <div>
+      <span id="albumImg"></span>
+    </div>
     <a href="playcounts.html" target="_blank" id="playCtsLink">See play counts</a>
-	</body>
-	<script>
+  </body>
+  <script>
     var playCounts = [0];
     for (var i = 1; i <= 47; i++) {
       if (localStorage.getItem("song" + i) != null) {
@@ -360,318 +364,318 @@
         clearInterval(loading);
       }
     }, 100);
-		var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
-		function change() {
+    var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
+    function change() {
       if (currentSong > 0) {prevSong = currentSong; songs[prevSong].pause(); songs[prevSong].currentTime = 0;}
       currentSong = document.getElementById("song").selectedIndex;
       song = songs[currentSong];
-			song.play();
-			playing();
-			if (p == false) {
-				p = true;
+      song.play();
+      playing();
+      if (p == false) {
+        p = true;
         setTimeout(function() {
           changeTitle();
-				  setInterval(changeTitle, 1000);
+          setInterval(changeTitle, 1000);
         }, 100);
-			}
-		}
-		function restart() {
-			song.currentTime = 0;
-		}
-		function skip(sec) {
-			song.currentTime += sec;
-		}
-		function nextSong() {
-			var songId = Math.floor(Math.random() * 47) + 1;
-			document.getElementById("song").selectedIndex = songId;
+      }
+    }
+    function restart() {
+      song.currentTime = 0;
+    }
+    function skip(sec) {
+      song.currentTime += sec;
+    }
+    function nextSong() {
+      var songId = Math.floor(Math.random() * 47) + 1;
+      document.getElementById("song").selectedIndex = songId;
       change();
-		}
-		function playing() {
-			document.getElementById("title").innerHTML = document.getElementById("song").value;
-			songValue = document.getElementById("song").value;
-			var artist = document.getElementById("artist");
-			var index = (document.getElementById("song").selectedIndex) - 1;
-			var lenElem = document.getElementById("length");
-			switch (index) {
-				case 6: case 25:
-					document.getElementById("album").href = "Album-Art/Music Albums/Caps On, Hats Off.jpg";
-					break;
-				case 3:
-					document.getElementById("album").href = "Album-Art/Music Albums/Checkpoint.jpg";
-					break;
-				case 7:
-					document.getElementById("album").href = "Album-Art/Music Albums/Cool Friends.jpg";
-					break;
-				case 38:
-					document.getElementById("album").href = "Album-Art/Music Albums/Digital Disconnect.jpg";
-					break;
-				case 17: case 27:
-					document.getElementById("album").href = "Album-Art/Music Albums/Dimensions.jpg";
-					break;
-				case 1:
-					document.getElementById("album").href = "Album-Art/Music Albums/Ember.jpg";
-					break;
-				case 15:
-					document.getElementById("album").href = "Album-Art/Music Albums/Final Boss.jpg";
-					break;
-				case 8: case 11: case 37:
-					document.getElementById("album").href = "Album-Art/Music Albums/Ground Zero.jpg";
-					break;
-				case 24:
-					document.getElementById("album").href = "Album-Art/Music Albums/Lunaria.JPG";
-					break;
-				case 26:
-					document.getElementById("album").href = "Album-Art/Music Albums/Monstercat - Best of 2014.jpg";
-					break;
-				case 36:
-					document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 014 - Discovery.jpg";
-					break;
-				case 18: case 28: case 33: case 41:
-					document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 016 - Expedition.jpg";
-					break;
-				case 2:
-					document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 017 - Ascension.jpg";
-					break;
-				case 0:
-					document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 022 - Contact.jpg";
-					break;
-				case 5: case 9: case 22: case 23: case 31: case 40:
-					document.getElementById("album").href = "Album-Art/Music Albums/Parallel Processing.jpg";
-					break;
-				case 35: case 39: case 42:
-					document.getElementById("album").href = "Album-Art/Music Albums/Spectra.jpg";
-					break;
-				case 10: case 16: case 29:
-					document.getElementById("album").href = "Album-Art/Music Albums/Super Hexagon EP.jpg";
-					break;
-				case 21:
-					document.getElementById("album").href = "Album-Art/Music Albums/The Arcade Dream.jpg";
-					break;
-				case 4: case 19: case 34: case 45:
-					document.getElementById("album").href = "Album-Art/Music Albums/The Glory Days.jpg";
-					break;
-				case 13: case 14:
-					document.getElementById("album").href = "Album-Art/Music Albums/The Invasion.jpg";
-					break;
-				case 43:
-					document.getElementById("album").href = "Album-Art/Music Albums/Try This.jpg";
-					break;
-				case 12:
-					document.getElementById("album").href = "Album-Art/Music Albums/Ultimate Collection.jpg";
-					break;
-				case 20:
-					document.getElementById("album").href = "Album-Art/Music Albums/HYPE.JPG";
-					break;
-				case 30:
-					document.getElementById("album").href = "Album-Art/Music Albums/Shawn Daley.JPG";
-					break;
-				case 32:
-					document.getElementById("album").href = "Album-Art/Music Albums/cYsmix.JPG";
-					break;
-				case 44:
-					document.getElementById("album").href = "Album-Art/Music Albums/Unlocked.JPG";
-					break;
-				case 46:
-					document.getElementById("album").href = "Album-Art/Music Albums/Avenza.JPG";
-					break;
-			}
-			document.getElementById("albumImg").style.backgroundImage = "url(" + document.getElementById("album").href + ")";
-			switch (index) {
-				case 0:
-					artist.innerHTML = "Noisestorm";
-					length = [4,22,661];
-					break;
-				case 1:
-					artist.innerHTML = "Kubbi";
-					length = [4,20,48];
-					break;
-				case 2: case 15: case 26:
-					artist.innerHTML = "Nitro Fun";
-					if (index == 2) {
-						length = [3,32,349];
-					} else if (index == 15) {
-						length = [5,16,813];
-					} else if (index == 26) {
-						length = [4,19,317];
-					}
-					break;
-				case 3:
-					artist.innerHTML = "Nitro Fun and Hyper Potions";
-					length = [3,43,895];
-					break;
-				case 4: case 19: case 34: case 45:
-					artist.innerHTML = "Big Giant Circles";
-					if (index == 4) {
-						length = [3,29,920];
-					} else if (index == 19) {
-						length = [5,23,500];
-					} else if (index == 34) {
-						length = [4,34,755];
-					} else if (index == 45) {
-						length = [3,26,471];
-					}
-					break;
-				case 5: case 9: case 23: case 31:
-					artist.innerHTML = "Danimal Cannon and Zef";
-					if (index == 5) {
-						length = [4,29,740];
-					} else if (index == 9) {
-						length = [6,16,737];
-					} else if (index == 23) {
-						length = [4,58,736];
-					} else if (index == 31) {
-						length = [8,29,22];
-					}
-					break;
-				case 6: case 25:
-					artist.innerHTML = "Bossfight";
-					if (index == 6) {
-						length = [3,26,942];
-					} else if (index == 25) {
-						length = [3,7,611];
-					}
-					break;
-				case 7:
-					artist.innerHTML = "Silva Hound";
-					length = [3,59,72];
-					break;
-				case 8: case 11: case 37:
-					artist.innerHTML = "Zef";
-					if (index == 8) {
-						length = [4,33,371];
-					} else if (index == 11) {
-						length = [4,1,606];
-					} else if (index == 37) {
-						length = [4,58,109];
-					}
-					break;
-				case 10: case 16: case 29: case 35: case 39: case 42:
-					artist.innerHTML = "chipzel";
-					if (index == 10) {
-						length = [3,11,164];
-					} else if (index == 16) {
-						length = [2,42,847];
-					} else if (index == 29) {
-						length = [2,36,81];
-					} else if (index == 35) {
-						length = [4,0,117];
-					} else if (index == 39) {
-						length = [3,13,280];
-					} else if (index == 42) {
-						length = [3,52,463];
-					}
-					break;
-				case 12:
-					artist.innerHTML = "FantomenK";
-					length = [7,10,158];
-					break;
-				case 13:
-					artist.innerHTML = "Excision and Space Laces";
-					length = [4,30,706];
-					break;
-				case 14:
-					artist.innerHTML = "Excision and Far Too Loud";
-					length = [5,10,177];
-					break;
-				case 17: case 21: case 27:
-					artist.innerHTML = "Shirobon";
-					if (index == 17) {
-						length = [5,17,178];
-					} else if (index == 21) {
-						length = [2,41,462];
-					} else if (index == 27) {
-						length = [4,28,564];
-					}
-					break;
-				case 18:
-					artist.innerHTML = "Lets Be Friends";
-					length = [4,17,671];
-					break;
-				case 20:
-					artist.innerHTML = "Tokyo Machine";
-					length = [3,2,909];
-					break;
-				case 22: case 40:
+    }
+    function playing() {
+      document.getElementById("title").innerHTML = document.getElementById("song").value;
+      songValue = document.getElementById("song").value;
+      var artist = document.getElementById("artist");
+      var index = (document.getElementById("song").selectedIndex) - 1;
+      var lenElem = document.getElementById("length");
+      switch (index) {
+        case 6: case 25:
+          document.getElementById("album").href = "Album-Art/Music Albums/Caps On, Hats Off.jpg";
+          break;
+        case 3:
+          document.getElementById("album").href = "Album-Art/Music Albums/Checkpoint.jpg";
+          break;
+        case 7:
+          document.getElementById("album").href = "Album-Art/Music Albums/Cool Friends.jpg";
+          break;
+        case 38:
+          document.getElementById("album").href = "Album-Art/Music Albums/Digital Disconnect.jpg";
+          break;
+        case 17: case 27:
+          document.getElementById("album").href = "Album-Art/Music Albums/Dimensions.jpg";
+          break;
+        case 1:
+          document.getElementById("album").href = "Album-Art/Music Albums/Ember.jpg";
+          break;
+        case 15:
+          document.getElementById("album").href = "Album-Art/Music Albums/Final Boss.jpg";
+          break;
+        case 8: case 11: case 37:
+          document.getElementById("album").href = "Album-Art/Music Albums/Ground Zero.jpg";
+          break;
+        case 24:
+          document.getElementById("album").href = "Album-Art/Music Albums/Lunaria.JPG";
+          break;
+        case 26:
+          document.getElementById("album").href = "Album-Art/Music Albums/Monstercat - Best of 2014.jpg";
+          break;
+        case 36:
+          document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 014 - Discovery.jpg";
+          break;
+        case 18: case 28: case 33: case 41:
+          document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 016 - Expedition.jpg";
+          break;
+        case 2:
+          document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 017 - Ascension.jpg";
+          break;
+        case 0:
+          document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 022 - Contact.jpg";
+          break;
+        case 5: case 9: case 22: case 23: case 31: case 40:
+          document.getElementById("album").href = "Album-Art/Music Albums/Parallel Processing.jpg";
+          break;
+        case 35: case 39: case 42:
+          document.getElementById("album").href = "Album-Art/Music Albums/Spectra.jpg";
+          break;
+        case 10: case 16: case 29:
+          document.getElementById("album").href = "Album-Art/Music Albums/Super Hexagon EP.jpg";
+          break;
+        case 21:
+          document.getElementById("album").href = "Album-Art/Music Albums/The Arcade Dream.jpg";
+          break;
+        case 4: case 19: case 34: case 45:
+          document.getElementById("album").href = "Album-Art/Music Albums/The Glory Days.jpg";
+          break;
+        case 13: case 14:
+          document.getElementById("album").href = "Album-Art/Music Albums/The Invasion.jpg";
+          break;
+        case 43:
+          document.getElementById("album").href = "Album-Art/Music Albums/Try This.jpg";
+          break;
+        case 12:
+          document.getElementById("album").href = "Album-Art/Music Albums/Ultimate Collection.jpg";
+          break;
+        case 20:
+          document.getElementById("album").href = "Album-Art/Music Albums/HYPE.JPG";
+          break;
+        case 30:
+          document.getElementById("album").href = "Album-Art/Music Albums/Shawn Daley.JPG";
+          break;
+        case 32:
+          document.getElementById("album").href = "Album-Art/Music Albums/cYsmix.JPG";
+          break;
+        case 44:
+          document.getElementById("album").href = "Album-Art/Music Albums/Unlocked.JPG";
+          break;
+        case 46:
+          document.getElementById("album").href = "Album-Art/Music Albums/Avenza.JPG";
+          break;
+      }
+      document.getElementById("albumImg").style.backgroundImage = "url(" + document.getElementById("album").href + ")";
+      switch (index) {
+        case 0:
+          artist.innerHTML = "Noisestorm";
+          length = [4,22,661];
+          break;
+        case 1:
+          artist.innerHTML = "Kubbi";
+          length = [4,20,48];
+          break;
+        case 2: case 15: case 26:
+          artist.innerHTML = "Nitro Fun";
+          if (index == 2) {
+            length = [3,32,349];
+          } else if (index == 15) {
+            length = [5,16,813];
+          } else if (index == 26) {
+            length = [4,19,317];
+          }
+          break;
+        case 3:
+          artist.innerHTML = "Nitro Fun and Hyper Potions";
+          length = [3,43,895];
+          break;
+        case 4: case 19: case 34: case 45:
+          artist.innerHTML = "Big Giant Circles";
+          if (index == 4) {
+            length = [3,29,920];
+          } else if (index == 19) {
+            length = [5,23,500];
+          } else if (index == 34) {
+            length = [4,34,755];
+          } else if (index == 45) {
+            length = [3,26,471];
+          }
+          break;
+        case 5: case 9: case 23: case 31:
+          artist.innerHTML = "Danimal Cannon and Zef";
+          if (index == 5) {
+            length = [4,29,740];
+          } else if (index == 9) {
+            length = [6,16,737];
+          } else if (index == 23) {
+            length = [4,58,736];
+          } else if (index == 31) {
+            length = [8,29,22];
+          }
+          break;
+        case 6: case 25:
+          artist.innerHTML = "Bossfight";
+          if (index == 6) {
+            length = [3,26,942];
+          } else if (index == 25) {
+            length = [3,7,611];
+          }
+          break;
+        case 7:
+          artist.innerHTML = "Silva Hound";
+          length = [3,59,72];
+          break;
+        case 8: case 11: case 37:
+          artist.innerHTML = "Zef";
+          if (index == 8) {
+            length = [4,33,371];
+          } else if (index == 11) {
+            length = [4,1,606];
+          } else if (index == 37) {
+            length = [4,58,109];
+          }
+          break;
+        case 10: case 16: case 29: case 35: case 39: case 42:
+          artist.innerHTML = "chipzel";
+          if (index == 10) {
+            length = [3,11,164];
+          } else if (index == 16) {
+            length = [2,42,847];
+          } else if (index == 29) {
+            length = [2,36,81];
+          } else if (index == 35) {
+            length = [4,0,117];
+          } else if (index == 39) {
+            length = [3,13,280];
+          } else if (index == 42) {
+            length = [3,52,463];
+          }
+          break;
+        case 12:
+          artist.innerHTML = "FantomenK";
+          length = [7,10,158];
+          break;
+        case 13:
+          artist.innerHTML = "Excision and Space Laces";
+          length = [4,30,706];
+          break;
+        case 14:
+          artist.innerHTML = "Excision and Far Too Loud";
+          length = [5,10,177];
+          break;
+        case 17: case 21: case 27:
+          artist.innerHTML = "Shirobon";
+          if (index == 17) {
+            length = [5,17,178];
+          } else if (index == 21) {
+            length = [2,41,462];
+          } else if (index == 27) {
+            length = [4,28,564];
+          }
+          break;
+        case 18:
+          artist.innerHTML = "Lets Be Friends";
+          length = [4,17,671];
+          break;
+        case 20:
+          artist.innerHTML = "Tokyo Machine";
+          length = [3,2,909];
+          break;
+        case 22: case 40:
           artist.innerHTML = "Danimal Cannon";
           document.getElementById("title").innerHTML += " (feat. Zef)";
           if (index == 22) {
-						length = [5,17,74];
+            length = [5,17,74];
           } else if (index == 40) {
-						length = [4,35,826];
-					}
+            length = [4,35,826];
+          }
           break;
         case 24:
-					artist.innerHTML = "Danimal Cannon"; 
+          artist.innerHTML = "Danimal Cannon"; 
           length = [4,27,49];
-					break;
-				case 28: case 41:
-					artist.innerHTML = "Tristam";
-					if (index == 28) {
-						length = [3,46,351];
-					} else if (index == 41) {
-						length = [4,30,863];
-					}
-					break;
-				case 30:
-					artist.innerHTML = "Shawn Daley";
-					length = [2,55,777];
-					break;
-				case 32:
-					artist.innerHTML = "cYsmix";
-					length = [2,21,557];
-					break;
-				case 33:
-					artist.innerHTML = "nanobii";
-					length = [2,53,61];
-					break;
-				case 36:
-					artist.innerHTML = "PIXL";
-					length = [4,44,865];
-					break;
-				case 38:
-					artist.innerHTML = "Sabrepulse";
-					length = [4,50,272];
-					break;
-				case 43:
-					artist.innerHTML = "Pegboard Nerds";
-					length = [3,49,694];
-					break;
-				case 44:
-					artist.innerHTML = "Plesco";
-					length = [3,47,683];
-					break;
-				case 46:
-					artist.innerHTML = "Avenza";
-					length = [3,41,126];
-					break;
-			}
-			document.getElementById("song").selectedIndex = 0;
-			document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2) + "." + ("00" + length[2]).slice(-3);
-			var millis = (length[0] * 60000) + (length[1] * 1000) + length[2];
-			document.getElementById("progress").max = millis;
-			song.addEventListener("ended", function() {
+          break;
+        case 28: case 41:
+          artist.innerHTML = "Tristam";
+          if (index == 28) {
+            length = [3,46,351];
+          } else if (index == 41) {
+            length = [4,30,863];
+          }
+          break;
+        case 30:
+          artist.innerHTML = "Shawn Daley";
+          length = [2,55,777];
+          break;
+        case 32:
+          artist.innerHTML = "cYsmix";
+          length = [2,21,557];
+          break;
+        case 33:
+          artist.innerHTML = "nanobii";
+          length = [2,53,61];
+          break;
+        case 36:
+          artist.innerHTML = "PIXL";
+          length = [4,44,865];
+          break;
+        case 38:
+          artist.innerHTML = "Sabrepulse";
+          length = [4,50,272];
+          break;
+        case 43:
+          artist.innerHTML = "Pegboard Nerds";
+          length = [3,49,694];
+          break;
+        case 44:
+          artist.innerHTML = "Plesco";
+          length = [3,47,683];
+          break;
+        case 46:
+          artist.innerHTML = "Avenza";
+          length = [3,41,126];
+          break;
+      }
+      document.getElementById("song").selectedIndex = 0;
+      document.getElementById("length").innerHTML = length[0] + ":" + ("0" + length[1]).slice(-2) + "." + ("00" + length[2]).slice(-3);
+      var millis = (length[0] * 60000) + (length[1] * 1000) + length[2];
+      document.getElementById("progress").max = millis;
+      song.addEventListener("ended", function() {
         playCounts[currentSong]++;
         localStorage.setItem("song" + currentSong, playCounts[currentSong]);
-				song.pause();
-				nextSong();
-			});
-		}
-		function playProgress() {
-			var currentPos = Math.floor(song.currentTime * 1000);
-			var c_m = Math.floor(currentPos / 60000);
-			var c_s = Math.floor((currentPos % 60000) / 1000);
-			var c_ms= Math.floor(currentPos % 1000);
-			document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2) + "." + ("00" + c_ms).slice(-3);
-			document.getElementById("progress").value = currentPos;
-		}
-		function changeTitle() {
-			document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + "] " + songValue;
+        song.pause();
+        nextSong();
+      });
+    }
+    function playProgress() {
+      var currentPos = Math.floor(song.currentTime * 1000);
+      var c_m = Math.floor(currentPos / 60000);
+      var c_s = Math.floor((currentPos % 60000) / 1000);
+      var c_ms= Math.floor(currentPos % 1000);
+      document.getElementById("currentPos").innerHTML = c_m + ":" + ("0" + c_s).slice(-2) + "." + ("00" + c_ms).slice(-3);
+      document.getElementById("progress").value = currentPos;
+    }
+    function changeTitle() {
+      document.title = "[" + (document.getElementById("currentPos").innerHTML).slice(0,4) + "] " + songValue;
       if (songValue == "Legacy" || songValue == "The Lunar Whale") {
         document.title += " (feat. Zef)";
       }
-		}
-		function toggle() {
-			if (song.paused == true) {song.play();} else if (song.paused == false) {song.pause();}
-		}
-	</script>
+    }
+    function toggle() {
+      if (song.paused == true) {song.play();} else if (song.paused == false) {song.pause();}
+    }
+  </script>
 </html>
