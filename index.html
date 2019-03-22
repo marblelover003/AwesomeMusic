@@ -288,6 +288,7 @@
       document.getElementById("audio47")
     ];
     var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
+    setInterval(playProgress, 0);
     function change() {
       if (currentSong > 0) {prevSong = currentSong; songs[prevSong].pause(); songs[prevSong].currentTime = 0;}
       currentSong = document.getElementById("song").selectedIndex;
