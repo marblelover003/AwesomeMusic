@@ -16,14 +16,15 @@
       button {
         -webkit-appearance: none;
         background: white;
-        border: 1px solid black;
+        outline: 1px solid black;
+        border: none;
         height: 50px;
         min-width: 50px;
         border-radius: 0;
-        transition-duration: 500ms;
+        padding: 0;
       }
       button:hover {
-        background: #d7d7d7;
+        outline: 2px solid black;
       }
       h1 {
         font-weight: 900;
@@ -94,6 +95,14 @@
           font-size: 40px;
         }
       }
+      .play {background-image: url("Play.jpg"); background-size: 50px;}
+      .pause {background-image: url("Pause.jpg"); background-size: 50px;}
+      #restartBtn {background-image: url("Restart.jpg"); background-size: 50px;}
+      #rew15sBtn {background-image: url("Rewind 15 seconds.jpg"); background-size: 50px;}
+      #rew5sBtn {background-image: url("Rewind 5 seconds.jpg"); background-size: 50px;}
+      #skipBtn {background-image: url("Skip song.jpg"); background-size: 50px;}
+      #skip15sBtn {background-image: url("Skip 15 seconds.jpg"); background-size: 50px;}
+      #skip5sBtn {background-image: url("Skip 5 seconds.jpg"); background-size: 50px;}
     </style>
     <meta property="og:title" content="Epic Music Player - Play amazing electro music!"/>
     <meta property="og:site_name" content="Epic Music Player"/>
@@ -153,23 +162,13 @@
     </select><br>
     <div>
       <span id="currentPos">0:00.000</span><span id="length">0:00.000</span><progress value="0" max="1" id="progress"></progress><br>
-      <button onclick="restart()" id="restartBtn">
-        <svg width="40" height="40">
-          <polyline style="stroke: none; fill: black;" points="35,5 10,20 35,35 35,5" />
-          <polyline style="stroke: none; fill: black;" points="5,5 10,5 10,35 5,35 5,5" />
-        </svg>
-      </button>
-      <button onclick="skip(-15)" style="position: relative; top: -21px;" id="rew15sBtn">Rewind<br>15 sec</button>
-      <button onclick="skip(-5)" style="position: relative; top: -21px;" id="rew5sBtn">Rewind<br>5 sec</button>
-      <button onclick="toggle()" style="position: relative; top: -14px;" id="playBtn">Play/Pause</button>
-      <button onclick="skip(5)" style="position: relative; top: -21px;" id="skip5sBtn">Skip<br>5 sec</button>
-      <button onclick="skip(15)" style="position: relative; top: -21px;" id="skip15sBtn">Skip<br>15 sec</button>
-      <button onclick="nextSong()" id="skipBtn">
-        <svg width="40" height="40">
-          <polyline style="stroke: none; fill: black;" points="5,5 30,20 5,35 5,5" />
-          <polyline style="stroke: none; fill: black;" points="30,5 35,5 35,35 30,35 30,5" />
-        </svg>
-      </button>
+      <button onclick="restart()" id="restartBtn"></button>
+      <button onclick="skip(-15)" id="rew15sBtn"></button>
+      <button onclick="skip(-5)" id="rew5sBtn"></button>
+      <button onclick="toggle()" id="playBtn" class="play"></button>
+      <button onclick="skip(5)" id="skip5sBtn"></button>
+      <button onclick="skip(15)" id="skip15sBtn"></button>
+      <button onclick="nextSong()" id="skipBtn"></button>
     </div>
     <audio id="audio1" style="visibility: hidden;" src="Barracuda.mp3"></audio>
     <audio id="audio2" style="visibility: hidden;" src="Cascade.mp3"></audio>
@@ -293,7 +292,7 @@
       if (currentSong > 0) {prevSong = currentSong; songs[prevSong].pause(); songs[prevSong].currentTime = 0;}
       currentSong = document.getElementById("song").selectedIndex;
       song = songs[currentSong];
-      song.play();
+      toggle();
       playing();
       if (p == false) {
         p = true;
@@ -599,7 +598,15 @@
       }
     }
     function toggle() {
-      if (song.paused == true) {song.play();} else if (song.paused == false) {song.pause();}
+      if (song.paused == true) {
+        song.play();
+        document.getElementById("playBtn").classList.remove("play");
+        document.getElementById("playBtn").classList.add("pause");
+      } else if (song.paused == false) {
+        song.pause();
+        document.getElementById("playBtn").classList.add("play");
+        document.getElementById("playBtn").classList.remove("pause");
+      }
     }
   </script>
 </html>
