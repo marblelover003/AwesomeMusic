@@ -8,9 +8,6 @@
       select {
         font-family: Overlock;
       }
-      :focus {
-        outline-color: blue;
-      }
       body {
         font-family: Montserrat;
         margin: 0;
@@ -18,10 +15,11 @@
       }
       button {
         -webkit-appearance: none;
+        background: white;
         outline: 1px solid black;
         border: none;
+        width: 50px;
         height: 50px;
-        min-width: 50px;
         border-radius: 0;
         padding: 0;
       }
@@ -42,6 +40,17 @@
       }
       div {
         text-align: center;
+      }
+      ul {
+        margin-left: -100px;
+      }
+      ul li {
+        list-style-type: none;
+      }
+      ul li div {
+        width: 230px;
+        text-align: left;
+        display: inline-block;
       }
       #currentPos, #length {
         display: inline-block;
@@ -105,11 +114,16 @@
       #skipBtn {background-image: url("Skip song.jpg"); background-size: 50px;}
       #skip15sBtn {background-image: url("Skip 15 seconds.jpg"); background-size: 50px;}
       #skip5sBtn {background-image: url("Skip 5 seconds.jpg"); background-size: 50px;}
+      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto;}
+      #playCountsDiv::-webkit-scrollbar {width: 5px;}
+      #playCountsDiv::-webkit-scrollbar-track {background: white;}
+      #playCountsDiv::-webkit-scrollbar-thumb {background: black;}
+      #queueDiv {position: absolute; bottom: 0; right: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; text-align: left;}
+      #queueDiv::-webkit-scrollbar {width: 5px;}
+      #queueDiv::-webkit-scrollbar-track {background: white;}
+      #queueDiv::-webkit-scrollbar-thumb {background: black;}
+      #queueBtn {height: 19px; width: 95px; font-family: Overlock;}
     </style>
-    <meta property="og:title" content="Epic Music Player - Play amazing electro music!"/>
-    <meta property="og:site_name" content="Epic Music Player"/>
-    <meta property="og:description" content="47 tracks of awesomeness. Want some amazing electro and chiptunes and whatnot? You've come to the right place."/>
-    <meta property="og:image" content="http://marblelover003.github.io/AwesomeMusic/Play Counts 2.jpg"/>
   </head>
   <body>
     <select id="song" onchange="change()">
@@ -226,9 +240,117 @@
     <div>
       <span id="albumImg"></span>
     </div>
-    <a href="playcounts.html" target="_blank" id="playCtsLink">See play counts</a>
+    <div id="playCountsDiv">
+      <h1>Play Counts</h1>
+      <ul id="songs">
+        <li><div>Barracuda</div><span>0</span></li>
+        <li><div>Cascade</div><span>0</span></li>
+        <li><div>Cheat Codes</div><span>0</span></li>
+        <li><div>Checkpoint</div><span>0</span></li>
+        <li><div>Chip Zeal</div><span>0</span></li>
+        <li><div>Chronos</div><span>0</span></li>
+        <li><div>Commando Steve</div><span>0</span></li>
+        <li><div>Cool Friends</div><span>0</span></li>
+        <li><div>Core</div><span>0</span></li>
+        <li><div>Corrupted</div><span>0</span></li>
+        <li><div>Courtesy</div><span>0</span></li>
+        <li><div>Cruise Control</div><span>0</span></li>
+        <li><div>Dance of the Incognizant</div><span>0</span></li>
+        <li><div>Destroid 10 - Funk Hole</div><span>0</span></li>
+        <li><div>Destroid 8 - Annihilate</div><span>0</span></li>
+        <li><div>Final Boss</div><span>0</span></li>
+        <li><div>Focus</div><span>0</span></li>
+        <li><div>FOX</div><span>0</span></li>
+        <li><div>FTW</div><span>0</span></li>
+        <li><div>Houston</div><span>0</span></li>
+        <li><div>HYPE</div><span>0</span></li>
+        <li><div>Into The Zone</div><span>0</span></li>
+        <li><div>Legacy (feat. Zef)</div><span>0</span></li>
+        <li><div>Logic Gatekeeper</div><span>0</span></li>
+        <li><div>Long Live The New Fresh</div><span>0</span></li>
+        <li><div>Milky Ways</div><span>0</span></li>
+        <li><div>New Game</div><span>0</span></li>
+        <li><div>On The Run</div><span>0</span></li>
+        <li><div>Once Again</div><span>0</span></li>
+        <li><div>Otis</div><span>0</span></li>
+        <li><div>Paper Dolls</div><span>0</span></li>
+        <li><div>Parallel Processing</div><span>0</span></li>
+        <li><div>Peer Gynt</div><span>0</span></li>
+        <li><div>Rainbow Road</div><span>0</span></li>
+        <li><div>Sevcon</div><span>0</span></li>
+        <li><div>Spectra</div><span>0</span></li>
+        <li><div>Sugar Rush</div><span>0</span></li>
+        <li><div>Tension</div><span>0</span></li>
+        <li><div>Termination Shock</div><span>0</span></li>
+        <li><div>The Art of War</div><span>0</span></li>
+        <li><div>The Lunar Whale (feat. Zef)</div><span>0</span></li>
+        <li><div>Till It&apos;s Over</div><span>0</span></li>
+        <li><div>Tokyo Skies</div><span>0</span></li>
+        <li><div>Try This</div><span>0</span></li>
+        <li><div>Unlocked</div><span>0</span></li>
+        <li><div>Vindicate Me</div><span>0</span></li>
+        <li><div>Wicked</div><span>0</span></li>
+      </ul>
+    </div>
+    <div id="queueDiv">
+      <select id="queue">
+        <option>Queue a song here!</option>
+        <option id="queue1" value="Barracuda">Barracuda (ID 00)</option>
+        <option id="queue2" value="Cascade">Cascade (ID 01)</option>
+        <option id="queue3" value="Cheat Codes">Cheat Codes (ID 02)</option>
+        <option id="queue4" value="Checkpoint">Checkpoint (ID 03)</option>
+        <option id="queue5" value="Chip Zeal">Chip Zeal (ID 04)</option>
+        <option id="queue6" value="Chronos">Chronos (ID 05)</option>
+        <option id="queue7" value="Commando Steve">Commando Steve (ID 06)</option>
+        <option id="queue8" value="Cool Friends">Cool Friends (ID 07)</option>
+        <option id="queue9" value="Core">Core (ID 08)</option>
+        <option id="queue10" value="Corrupted">Corrupted (ID 09)</option>
+        <option id="queue11" value="Courtesy">Courtesy (ID 10)</option>
+        <option id="queue12" value="Cruise Control">Cruise Control (ID 11)</option>
+        <option id="queue13" value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
+        <option id="queue14" value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
+        <option id="queue15" value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
+        <option id="queue16" value="Final Boss">Final Boss (ID 15)</option>
+        <option id="queue17" value="Focus">Focus (ID 16)</option>
+        <option id="queue18" value="FOX">FOX (ID 17)</option>
+        <option id="queue19" value="FTW">FTW (ID 18)</option>
+        <option id="queue20" value="Houston">Houston (ID 19)</option>
+        <option id="queue21" value="HYPE">HYPE (ID 20)</option>
+        <option id="queue22" value="Into The Zone">Into The Zone (ID 21)</option>
+        <option id="queue23" value="Legacy">Legacy (ID 22)</option>
+        <option id="queue24" value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
+        <option id="queue25" value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
+        <option id="queue26" value="Milky Ways">Milky Ways (ID 25)</option>
+        <option id="queue27" value="New Game">New Game (ID 26)</option>
+        <option id="queue28" value="On The Run">On The Run (ID 27)</option>
+        <option id="queue29" value="Once Again">Once Again (ID 28)</option>
+        <option id="queue30" value="Otis">Otis (ID 29)</option>
+        <option id="queue31" value="Paper Dolls">Paper Dolls (ID 30)</option>
+        <option id="queue32" value="Parallel Processing">Parallel Processing (ID 31)</option>
+        <option id="queue33" value="Peer Gynt">Peer Gynt (ID 32)</option>
+        <option id="queue34" value="Rainbow Road">Rainbow Road (ID 33)</option>
+        <option id="queue35" value="Sevcon">Sevcon (ID 34)</option>
+        <option id="queue36" value="Spectra">Spectra (ID 35)</option>
+        <option id="queue37" value="Sugar Rush">Sugar Rush (ID 36)</option>
+        <option id="queue38" value="Tension">Tension (ID 37)</option>
+        <option id="queue39" value="Termination Shock">Termination Shock (ID 38)</option>
+        <option id="queue40" value="The Art of War">The Art of War (ID 39)</option>
+        <option id="queue41" value="The Lunar Whale">The Lunar Whale (ID 40)</option>
+        <option id="queue42" value="Till It's Over">Till It's Over (ID 41)</option>
+        <option id="queue43" value="Tokyo Skies">Tokyo Skies (ID 42)</option>
+        <option id="queue44" value="Try This">Try This (ID 43)</option>
+        <option id="queue45" value="Unlocked">Unlocked (ID 44)</option>
+        <option id="queue46" value="Vindicate Me">Vindicate Me (ID 45)</option>
+        <option id="queue47" value="Wicked">Wicked (ID 46)</option>
+      </select><button onclick="queueSong()" id="queueBtn">Queue this song</button><br>
+      <h2 id="queueListHeader">0 songs queued</h2>
+      <ol id="queueList">
+      </ol>
+    </div>
   </body>
   <script>
+    var numSongsQueued = 0, nextSongIndex;
+    refreshPlayCounts();
     var playCounts = [0];
     for (var i = 1; i <= 47; i++) {
       if (localStorage.getItem("song" + i) != null) {
@@ -311,8 +433,22 @@
       song.currentTime += sec;
     }
     function nextSong() {
-      var songId = Math.floor(Math.random() * 47) + 1;
-      document.getElementById("song").selectedIndex = songId;
+      var songId;
+      if (document.getElementById("queueList").getElementsByTagName("LI").length == 0) {
+        songId = Math.floor(Math.random() * 47) + 1;
+        document.getElementById("song").selectedIndex = songId;
+      } else {
+        var nextSong = document.getElementById("queueList").getElementsByTagName("LI")[0];
+        songId = nextSong.innerHTML;
+        nextSong.parentNode.removeChild(nextSong);
+        numSongsQueued = document.getElementById("queueList").getElementsByTagName("LI").length;
+        if (numSongsQueued == 1) {
+          document.getElementById("queueListHeader").innerHTML = numSongsQueued + " song queued";
+        } else {
+          document.getElementById("queueListHeader").innerHTML = numSongsQueued + " songs queued";
+        }
+        document.getElementById("song").value = songId;
+      }
       change();
     }
     function playing() {
@@ -581,6 +717,7 @@
       song.addEventListener("ended", function() {
         playCounts[currentSong]++;
         localStorage.setItem("song" + currentSong, playCounts[currentSong]);
+        refreshPlayCounts();
         song.pause();
         nextSong();
       });
@@ -609,6 +746,96 @@
         document.getElementById("playBtn").classList.add("play");
         document.getElementById("playBtn").classList.remove("pause");
       }
+    }
+    function refreshPlayCounts() {
+      var ls = localStorage;
+      var playcounts = [
+        ls.getItem("song1"),
+        ls.getItem("song2"),
+        ls.getItem("song3"),
+        ls.getItem("song4"),
+        ls.getItem("song5"),
+        ls.getItem("song6"),
+        ls.getItem("song7"),
+        ls.getItem("song8"),
+        ls.getItem("song9"),
+        ls.getItem("song10"),
+        ls.getItem("song11"),
+        ls.getItem("song12"),
+        ls.getItem("song13"),
+        ls.getItem("song14"),
+        ls.getItem("song15"),
+        ls.getItem("song16"),
+        ls.getItem("song17"),
+        ls.getItem("song18"),
+        ls.getItem("song19"),
+        ls.getItem("song20"),
+        ls.getItem("song21"),
+        ls.getItem("song22"),
+        ls.getItem("song23"),
+        ls.getItem("song24"),
+        ls.getItem("song25"),
+        ls.getItem("song26"),
+        ls.getItem("song27"),
+        ls.getItem("song28"),
+        ls.getItem("song29"),
+        ls.getItem("song30"),
+        ls.getItem("song31"),
+        ls.getItem("song32"),
+        ls.getItem("song33"),
+        ls.getItem("song34"),
+        ls.getItem("song35"),
+        ls.getItem("song36"),
+        ls.getItem("song37"),
+        ls.getItem("song38"),
+        ls.getItem("song39"),
+        ls.getItem("song40"),
+        ls.getItem("song41"),
+        ls.getItem("song42"),
+        ls.getItem("song43"),
+        ls.getItem("song44"),
+        ls.getItem("song45"),
+        ls.getItem("song46"),
+        ls.getItem("song47")
+      ];
+      var playCountsSpanElems = document.getElementById("songs").getElementsByTagName("SPAN");
+      for (var x = 0; x < 47; x++) {
+        playCountsSpanElems[x].innerHTML = playcounts[x];
+      }
+      var list, i, switching, b, shouldSwitch;
+      list = document.getElementById("songs");
+      switching = true;
+      while (switching) {
+        switching = false;
+        b = list.getElementsByTagName("LI");
+        for (i = 0; i < (b.length - 1); i++) {
+          shouldSwitch = false;
+          if (Number(playCountsSpanElems[i].innerHTML) < Number(playCountsSpanElems[i + 1].innerHTML)) {
+            shouldSwitch = true;
+            break;
+          }
+        }
+        if (shouldSwitch) {
+          b[i].parentNode.insertBefore(b[i + 1], b[i]);
+          switching = true;
+        }
+      }
+    }
+    function queueSong() {
+      var songToQueue = document.getElementById("queue").value;
+      var queueList = document.getElementById("queueList");
+      var newItem = document.createElement("LI");
+      numSongsQueued = queueList.getElementsByTagName("LI").length + 1;
+      nextSongIndex = document.getElementById("queue").selectedIndex;
+      newItem.appendChild(document.createTextNode(songToQueue));
+      queueList.appendChild(newItem);
+      if (numSongsQueued == 1) {
+        document.getElementById("queueListHeader").innerHTML = numSongsQueued + " song queued";
+        if (currentSong == 0) {nextSong();}
+      } else {
+        document.getElementById("queueListHeader").innerHTML = numSongsQueued + " songs queued";
+      }
+      document.getElementById("queue").selectedIndex = 0;
     }
   </script>
 </html>
