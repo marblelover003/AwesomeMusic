@@ -83,29 +83,6 @@
         background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Music.jpg");
         background-size: 360px;
       }
-      #playCtsLink {
-        position: absolute;
-        bottom: 5px;
-        left: 5px;
-        font-size: 20px;
-      }
-      a, a:visited {
-        color: blue;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      @media screen and (max-width: 520px) {
-        #albumImg {
-          width: 300px;
-          height: 300px;
-          background-size: 300px;
-        }
-        #playCtsLink {
-          font-size: 40px;
-        }
-      }
       .play {background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Play.jpg"); background-size: 50px;}
       .pause {background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Pause.jpg"); background-size: 50px;}
       #restartBtn {background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Restart.jpg"); background-size: 50px;}
@@ -114,15 +91,39 @@
       #skipBtn {background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Skip song.jpg"); background-size: 50px;}
       #skip15sBtn {background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Skip 15 seconds.jpg"); background-size: 50px;}
       #skip5sBtn {background-image: url("C:/Users/scott.carroll/Downloads/Music Albums/Skip 5 seconds.jpg"); background-size: 50px;}
-      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto;}
+      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; background: white;}
       #playCountsDiv::-webkit-scrollbar {width: 5px;}
       #playCountsDiv::-webkit-scrollbar-track {background: white;}
       #playCountsDiv::-webkit-scrollbar-thumb {background: black;}
-      #queueDiv {position: absolute; bottom: 0; right: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; text-align: left;}
+      #queueDiv {position: absolute; bottom: 0; right: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; text-align: left; background: white;}
       #queueDiv::-webkit-scrollbar {width: 5px;}
       #queueDiv::-webkit-scrollbar-track {background: white;}
       #queueDiv::-webkit-scrollbar-thumb {background: black;}
       #queueBtn {height: 19px; width: 95px; font-family: Overlock;}
+      @media screen and (max-width: 1082px) {
+        #albumImg {
+          width: 290px;
+          height: 290px;
+          background-size: 100%;
+          position: absolute;
+          bottom: 200px;
+          right: 0;
+        }
+        #playCountsDiv, #queueDiv {width: 50%; height: 200px;}
+        .songInfo, #title, #artist {width: 600px;}
+        @media screen and (max-width: 890px) {
+          .songInfo {font-size: 12.8px;}
+          .songInfo, #title, #artist {width: 480px;}
+          h1 {font-size: 32px; font-weight: 700;}
+          h2 {font-size: 24px; font-weight: 500;}
+          @media screen and (max-width: 770px) {
+            .songInfo {font-size: 9.6px;}
+            .songInfo, #title, #artist {width: 360px;}
+            h1 {font-size: 24px; font-weight: 700;}
+            h2 {font-size: 18px; font-weight: 500;}
+          }
+        }
+      }
     </style>
   </head>
   <body>
