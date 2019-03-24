@@ -294,57 +294,59 @@
       </ul>
     </div>
     <div id="queueDiv">
-      <select id="queue">
-        <option>Queue a song here!</option>
-        <option id="queue1" value="Barracuda">Barracuda (ID 00)</option>
-        <option id="queue2" value="Cascade">Cascade (ID 01)</option>
-        <option id="queue3" value="Cheat Codes">Cheat Codes (ID 02)</option>
-        <option id="queue4" value="Checkpoint">Checkpoint (ID 03)</option>
-        <option id="queue5" value="Chip Zeal">Chip Zeal (ID 04)</option>
-        <option id="queue6" value="Chronos">Chronos (ID 05)</option>
-        <option id="queue7" value="Commando Steve">Commando Steve (ID 06)</option>
-        <option id="queue8" value="Cool Friends">Cool Friends (ID 07)</option>
-        <option id="queue9" value="Core">Core (ID 08)</option>
-        <option id="queue10" value="Corrupted">Corrupted (ID 09)</option>
-        <option id="queue11" value="Courtesy">Courtesy (ID 10)</option>
-        <option id="queue12" value="Cruise Control">Cruise Control (ID 11)</option>
-        <option id="queue13" value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
-        <option id="queue14" value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
-        <option id="queue15" value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
-        <option id="queue16" value="Final Boss">Final Boss (ID 15)</option>
-        <option id="queue17" value="Focus">Focus (ID 16)</option>
-        <option id="queue18" value="FOX">FOX (ID 17)</option>
-        <option id="queue19" value="FTW">FTW (ID 18)</option>
-        <option id="queue20" value="Houston">Houston (ID 19)</option>
-        <option id="queue21" value="HYPE">HYPE (ID 20)</option>
-        <option id="queue22" value="Into The Zone">Into The Zone (ID 21)</option>
-        <option id="queue23" value="Legacy">Legacy (ID 22)</option>
-        <option id="queue24" value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
-        <option id="queue25" value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
-        <option id="queue26" value="Milky Ways">Milky Ways (ID 25)</option>
-        <option id="queue27" value="New Game">New Game (ID 26)</option>
-        <option id="queue28" value="On The Run">On The Run (ID 27)</option>
-        <option id="queue29" value="Once Again">Once Again (ID 28)</option>
-        <option id="queue30" value="Otis">Otis (ID 29)</option>
-        <option id="queue31" value="Paper Dolls">Paper Dolls (ID 30)</option>
-        <option id="queue32" value="Parallel Processing">Parallel Processing (ID 31)</option>
-        <option id="queue33" value="Peer Gynt">Peer Gynt (ID 32)</option>
-        <option id="queue34" value="Rainbow Road">Rainbow Road (ID 33)</option>
-        <option id="queue35" value="Sevcon">Sevcon (ID 34)</option>
-        <option id="queue36" value="Spectra">Spectra (ID 35)</option>
-        <option id="queue37" value="Sugar Rush">Sugar Rush (ID 36)</option>
-        <option id="queue38" value="Tension">Tension (ID 37)</option>
-        <option id="queue39" value="Termination Shock">Termination Shock (ID 38)</option>
-        <option id="queue40" value="The Art of War">The Art of War (ID 39)</option>
-        <option id="queue41" value="The Lunar Whale">The Lunar Whale (ID 40)</option>
-        <option id="queue42" value="Till It's Over">Till It's Over (ID 41)</option>
-        <option id="queue43" value="Tokyo Skies">Tokyo Skies (ID 42)</option>
-        <option id="queue44" value="Try This">Try This (ID 43)</option>
-        <option id="queue45" value="Unlocked">Unlocked (ID 44)</option>
-        <option id="queue46" value="Vindicate Me">Vindicate Me (ID 45)</option>
-        <option id="queue47" value="Wicked">Wicked (ID 46)</option>
-      </select><button onclick="queueSong()" id="queueBtn">Queue this song</button><br>
-      <h2 id="queueListHeader">0 songs queued</h2>
+      <span style="position: sticky; top: 0; background: white;">
+        <select id="queue">
+          <option>Queue a song here!</option>
+          <option id="queue1" value="Barracuda">Barracuda (ID 00)</option>
+          <option id="queue2" value="Cascade">Cascade (ID 01)</option>
+          <option id="queue3" value="Cheat Codes">Cheat Codes (ID 02)</option>
+          <option id="queue4" value="Checkpoint">Checkpoint (ID 03)</option>
+          <option id="queue5" value="Chip Zeal">Chip Zeal (ID 04)</option>
+          <option id="queue6" value="Chronos">Chronos (ID 05)</option>
+          <option id="queue7" value="Commando Steve">Commando Steve (ID 06)</option>
+          <option id="queue8" value="Cool Friends">Cool Friends (ID 07)</option>
+          <option id="queue9" value="Core">Core (ID 08)</option>
+          <option id="queue10" value="Corrupted">Corrupted (ID 09)</option>
+          <option id="queue11" value="Courtesy">Courtesy (ID 10)</option>
+          <option id="queue12" value="Cruise Control">Cruise Control (ID 11)</option>
+          <option id="queue13" value="Dance of the Incognizant">Dance of the Incognizant (ID 12)</option>
+          <option id="queue14" value="Destroid 10 - Funk Hole">Destroid 10 - Funk Hole (ID 13)</option>
+          <option id="queue15" value="Destroid 8 - Annihilate">Destroid 8 - Annihilate (ID 14)</option>
+          <option id="queue16" value="Final Boss">Final Boss (ID 15)</option>
+          <option id="queue17" value="Focus">Focus (ID 16)</option>
+          <option id="queue18" value="FOX">FOX (ID 17)</option>
+          <option id="queue19" value="FTW">FTW (ID 18)</option>
+          <option id="queue20" value="Houston">Houston (ID 19)</option>
+          <option id="queue21" value="HYPE">HYPE (ID 20)</option>
+          <option id="queue22" value="Into The Zone">Into The Zone (ID 21)</option>
+          <option id="queue23" value="Legacy">Legacy (ID 22)</option>
+          <option id="queue24" value="Logic Gatekeeper">Logic Gatekeeper (ID 23)</option>
+          <option id="queue25" value="Long Live The New Fresh">Long Live The New Fresh (ID 24)</option>
+          <option id="queue26" value="Milky Ways">Milky Ways (ID 25)</option>
+          <option id="queue27" value="New Game">New Game (ID 26)</option>
+          <option id="queue28" value="On The Run">On The Run (ID 27)</option>
+          <option id="queue29" value="Once Again">Once Again (ID 28)</option>
+          <option id="queue30" value="Otis">Otis (ID 29)</option>
+          <option id="queue31" value="Paper Dolls">Paper Dolls (ID 30)</option>
+          <option id="queue32" value="Parallel Processing">Parallel Processing (ID 31)</option>
+          <option id="queue33" value="Peer Gynt">Peer Gynt (ID 32)</option>
+          <option id="queue34" value="Rainbow Road">Rainbow Road (ID 33)</option>
+          <option id="queue35" value="Sevcon">Sevcon (ID 34)</option>
+          <option id="queue36" value="Spectra">Spectra (ID 35)</option>
+          <option id="queue37" value="Sugar Rush">Sugar Rush (ID 36)</option>
+          <option id="queue38" value="Tension">Tension (ID 37)</option>
+          <option id="queue39" value="Termination Shock">Termination Shock (ID 38)</option>
+          <option id="queue40" value="The Art of War">The Art of War (ID 39)</option>
+          <option id="queue41" value="The Lunar Whale">The Lunar Whale (ID 40)</option>
+          <option id="queue42" value="Till It's Over">Till It's Over (ID 41)</option>
+          <option id="queue43" value="Tokyo Skies">Tokyo Skies (ID 42)</option>
+          <option id="queue44" value="Try This">Try This (ID 43)</option>
+          <option id="queue45" value="Unlocked">Unlocked (ID 44)</option>
+          <option id="queue46" value="Vindicate Me">Vindicate Me (ID 45)</option>
+          <option id="queue47" value="Wicked">Wicked (ID 46)</option>
+        </select><button onclick="queueSong()" id="queueBtn">Queue this song</button><br>
+        <h2 id="queueListHeader">0 songs queued</h2>
+      </span>
       <ol id="queueList">
       </ol>
     </div>
