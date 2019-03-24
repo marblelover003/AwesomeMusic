@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Epic Music Player</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Overlock">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Overlock">
     <link rel="icon" href="Album-Art/Music Albums/Unknown.jpg" id="album">
     <style>
       select {
@@ -91,11 +91,11 @@
       #skipBtn {background-image: url("Skip song.jpg"); background-size: 50px;}
       #skip15sBtn {background-image: url("Skip 15 seconds.jpg"); background-size: 50px;}
       #skip5sBtn {background-image: url("Skip 5 seconds.jpg"); background-size: 50px;}
-      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; background: white;}
+      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; background: white; text-align: left;}
       #playCountsDiv::-webkit-scrollbar {width: 5px;}
       #playCountsDiv::-webkit-scrollbar-track {background: white;}
       #playCountsDiv::-webkit-scrollbar-thumb {background: black;}
-      #queueDiv {position: absolute; bottom: 0; right: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; text-align: left; background: white;}
+      #queueDiv {position: absolute; bottom: 0; right: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; text-align: left; background: white; text-align: left;}
       #queueDiv::-webkit-scrollbar {width: 5px;}
       #queueDiv::-webkit-scrollbar-track {background: white;}
       #queueDiv::-webkit-scrollbar-thumb {background: black;}
@@ -234,9 +234,9 @@
     <audio id="audio45" style="visibility: hidden;" src="Unlocked.mp3"></audio>
     <audio id="audio46" style="visibility: hidden;" src="Vindicate Me.mp3"></audio>
     <audio id="audio47" style="visibility: hidden;" src="Wicked.mp3"></audio>
-    <div>Currently playing:</div>
+    <div class="songInfo">Currently playing:</div>
     <h1 id="title">&nbsp;</h1>
-    <div>- by -</div>
+    <div class="songInfo">- by -</div>
     <h2 id="artist">&nbsp;</h2>
     <div>
       <span id="albumImg"></span>
