@@ -68,8 +68,8 @@ The songs you can choose from are as follows. The title of the song is in **bold
 | 39 | **The Art of War** | *chipzel* | ***Spectra*** | 3:13.280 |
 | 40 | **The Lunar Whale (feat. Zef)** | *Danimal Cannon* | ***Parallel Processing*** | 4:35.826 |
 | 41 | **Till It's Over** | *Tristam* | ***Monstercat 016 - Expedition*** | 4:30.863 |
-| 42 | ** ** | * * | *** *** |  |
-| 43 | ** ** | * * | *** *** |  |
-| 44 | ** ** | * * | *** *** |  |
-| 45 | ** ** | * * | *** *** |  |
+| 42 | **Tokyo Skies** | *chipzel* | ***Spectra*** | 3:52.463 |
+| 43 | **Try This** | *Pegboard Nerds* | ***Try This \[Monstercat Release\]*** | 3:49.694 |
+| 44 | **Unlocked** | *Plesco* | ***Unlocked \[Wolf Beats Release\]*** |  |
+| 45 | **Vindicate Me** | *Big Giant Circles* | ***The Glory Days*** |  |
 | 46 | ** ** | * * | *** *** |  |
