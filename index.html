@@ -181,6 +181,7 @@
       <option id="song45" value="Unlocked">Unlocked (ID 44)</option>
       <option id="song46" value="Vindicate Me">Vindicate Me (ID 45)</option>
       <option id="song47" value="Wicked">Wicked (ID 46)</option>
+      <option id="song48" value="Livewire">Livewire (ID 47)</option>
     </select><br>
     <div>
       <span id="currentPos">0:00.000</span><span id="length">0:00.000</span><progress value="0" max="1" id="progress"></progress><br>
@@ -239,6 +240,7 @@
     <audio id="audio45" style="visibility: hidden;" src="Unlocked.mp3"></audio>
     <audio id="audio46" style="visibility: hidden;" src="Vindicate Me.mp3"></audio>
     <audio id="audio47" style="visibility: hidden;" src="Wicked.mp3"></audio>
+    <audio id="audio48" style="visibility: hidden;" src="Livewire.mp3"></audio>
     <div class="songInfo">Currently playing:</div>
     <h1 id="title">&nbsp;</h1>
     <div class="songInfo">- by -</div>
@@ -296,6 +298,7 @@
         <li><div>Unlocked</div><span>0</span></li>
         <li><div>Vindicate Me</div><span>0</span></li>
         <li><div>Wicked</div><span>0</span></li>
+        <li><div>Livewire</div><span>0</span></li>
       </ul>
     </div>
     <div id="queueDiv">
@@ -349,6 +352,7 @@
           <option id="queue45" value="Unlocked">Unlocked (ID 44)</option>
           <option id="queue46" value="Vindicate Me">Vindicate Me (ID 45)</option>
           <option id="queue47" value="Wicked">Wicked (ID 46)</option>
+          <option id="queue48" value="Livewire">Livewire (ID 47)</option>
         </select><button onclick="queueSong()" id="queueBtn">Queue this song</button><br>
       </span>
       <h2 id="queueListHeader">0 songs queued</h2>
@@ -356,6 +360,16 @@
     </div>
   </body>
   <script>
+    document.getElementById("queue").addEventListener("keypress", function(event) {
+      if (event.keyCode === 13) {
+        /* If the ENTER key is pressed and
+         * the dropdown to queue songs is
+         * in focus, trigger a click of
+         * the "Queue song" button
+         */
+        document.getElementById("queueBtn").click();
+      }
+    });
     var numSongsQueued = 0, nextSongIndex;
     refreshPlayCounts();
     var playCounts = [0];
@@ -415,7 +429,8 @@
       document.getElementById("audio44"),
       document.getElementById("audio45"),
       document.getElementById("audio46"),
-      document.getElementById("audio47")
+      document.getElementById("audio47"),
+      document.getElementById("audio48")
     ];
     var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
     setInterval(playProgress, 0);
@@ -446,7 +461,7 @@
     function nextSong() {
       var songId;
       if (document.getElementById("queueList").getElementsByTagName("LI").length == 0) {
-        songId = Math.floor(Math.random() * 47) + 1;
+        songId = Math.floor(Math.random() * 48) + 1;
         document.getElementById("song").selectedIndex = songId;
       } else {
         var nextSong = document.getElementById("queueList").getElementsByTagName("LI")[0];
@@ -490,7 +505,7 @@
         case 15:
           document.getElementById("album").href = "Album-Art/Music Albums/Final Boss.jpg";
           break;
-        case 8: case 11: case 37:
+        case 8: case 11: case 37: case 48:
           document.getElementById("album").href = "Album-Art/Music Albums/Ground Zero.jpg";
           break;
         case 24:
@@ -611,7 +626,7 @@
           artist.innerHTML = "Silva Hound";
           length = [3,59,72];
           break;
-        case 8: case 11: case 37:
+        case 8: case 11: case 37: case 48:
           artist.innerHTML = "Zef";
           if (index == 8) {
             length = [4,33,371];
@@ -619,6 +634,8 @@
             length = [4,1,606];
           } else if (index == 37) {
             length = [4,58,109];
+          } else if (index == 48) {
+            length = [5,42,413];
           }
           break;
         case 10: case 16: case 29: case 35: case 39: case 42:
@@ -808,7 +825,8 @@
         ls.getItem("song44"),
         ls.getItem("song45"),
         ls.getItem("song46"),
-        ls.getItem("song47")
+        ls.getItem("song47"),
+        ls.getItem("song48")
       ];
       var playCountsSpanElems = document.getElementById("songs").getElementsByTagName("SPAN");
       var list = document.getElementById("songs"), i, switching, b, shouldSwitch;
@@ -828,7 +846,7 @@
           switching = true;
         }
       }
-      for (var x = 0; x < 47; x++) {
+      for (var x = 0; x < 48; x++) {
         playCountsSpanElems[x].innerHTML = playcounts[x];
       }
       switching = true;
