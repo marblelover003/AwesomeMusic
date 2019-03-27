@@ -125,6 +125,11 @@
         }
       }
     </style>
+    <meta property="og:title" content="Epic Music Player">
+    <meta property="og:description" content="Want some amazing electro and chiptunes and whatnot? Here is a list jam-packed with 47 songs, a mix of electro, techno, and chiptunes. LET THE BEAT DROP!!!">
+    <meta property="og:image" content="http://marblelover003.github.io/AwesomeMusic/Image.png">
+    <meta property="og:url" content="http://marblelover003.github.io/AwesomeMusic">
+    <meta property="og:site_name" content="Epic Music Player">
   </head>
   <body>
     <select id="song" onchange="change()">
@@ -294,7 +299,7 @@
       </ul>
     </div>
     <div id="queueDiv">
-      <span style="position: sticky; top: 0; background: white;">
+      <span style="position: sticky; top: 0; background: white; text-align: center; display: inline-block; width: 100%; padding: 3px; border-bottom: 1px solid black;">
         <select id="queue">
           <option>Queue a song here!</option>
           <option id="queue1" value="Barracuda">Barracuda (ID 00)</option>
@@ -347,8 +352,7 @@
         </select><button onclick="queueSong()" id="queueBtn">Queue this song</button><br>
       </span>
       <h2 id="queueListHeader">0 songs queued</h2>
-      <ol id="queueList">
-      </ol>
+      <ol id="queueList"></ol>
     </div>
   </body>
   <script>
@@ -726,6 +730,7 @@
         localStorage.setItem("song" + currentSong, playCounts[currentSong]);
         refreshPlayCounts();
         song.pause();
+        song.currentTime = 0;
         nextSong();
       });
     }
