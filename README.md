@@ -3,7 +3,7 @@ You may never have heard of some of these songs. Or maybe you have.
 
 But either way, I think they are awesome songs, so you should definitely check it out by clicking [here](https://marblelover003.github.io/AwesomeMusic).
 
-There are 47 songs to choose from by various artists, and I have even included the image of the album that each song is from.
+There are 48 songs to choose from by various artists, and I have even included the image of the album that each song is from.
 
 When you first load the page, you will see a dropdown on the top-left corner, a time below the dropdown on the left and right, and below that a cyan bar with a black vertical bar on the left.
 
@@ -29,7 +29,7 @@ The songs you can choose from are as follows. The title of the song is in **bold
 | 00 | **Barracuda** | *Noisestorm* | ***Monstercat 022 - Contact*** | 4:22.661 |
 | 01 | **Cascade** | *Kubbi* | ***Ember*** | 4:20.048 |
 | 02 | **Cheat Codes** | *Nitro Fun* | ***Monstercat 017 - Ascension*** | 3:32.349 |
-| 03 | **Checkpoint** | *Nitro Fun & Hyper Potions* | ***Checkpoint \[Monstercat Release\]*** | 3:43.895 |
+| 03 | **Checkpoint** | *Nitro Fun & Hyper Potions* | ***Monstercat 027 - Cataclysm*** | 3:43.895 |
 | 04 | **Chip Zeal** | *Big Giant Circles* | ***The Glory Days*** | 3:29.920 |
 | 05 | **Chronos** | *Danimal Cannon & Zef* | ***Parallel Processing*** | 4:29.740 |
 | 06 | **Commando Steve** | *Bossfight* | ***Caps On, Hats Off*** | 3:26.942 |
@@ -41,18 +41,18 @@ The songs you can choose from are as follows. The title of the song is in **bold
 | 12 | **Dance of the Incognizant** | *FantomenK* | ***The Massacre*** | 7:10.158 |
 | 13 | **Destroid 10 - Funk Hole** | *Excision & Space laces* | ***The Invasion*** | 4:30.706 |
 | 14 | **Destroid 8 - Annihilate** | *Excision & Far Too Loud* | ***The Invasion*** | 5:10.177 |
-| 15 | **Final Boss** | *Nitro Fun* | ***Final Boss \[Monstercat Release\]*** | 5:16.813 |
+| 15 | **Final Boss** | *Nitro Fun* | ***Monstercat 023 - Voyage*** | 5:16.813 |
 | 16 | **Focus** | *chipzel* | ***Super Hexagon EP*** | 2:42.847 |
 | 17 | **FOX** | *Shirobon* | ***Dimensions*** | 5:17.178 |
 | 18 | **FTW** | *lets Be Friends* | ***Monstercat 016 - Expedition*** | 4:17.671 |
 | 19 | **Houston** | *Big Giant Circles* | ***The Glory Days*** | 5:23.500 |
-| 20 | **HYPE** | *Tokyo Machine* | ***HYPE \[Monstercat Release\]*** | 3:02.909 |
+| 20 | **HYPE** | *Tokyo Machine* | ***Monstercat 030 - Finale*** | 3:02.909 |
 | 21 | **Into The Zone** | *Shirobon* | ***The Arcade Dream*** | 2:41.462 |
 | 22 | **Legacy (feat. Zef)** | *Danimal Cannon* | ***Parallel Processing*** | 5:17.074 |
 | 23 | **Logic Gatekeeper** | *Danimal Cannon & Zef* | ***Parallel Processing*** | 4:58.736 |
 | 24 | **Long Live The New Fresh** | *Danimal Cannon* | ***Lunaria*** | 4:27.049 |
 | 25 | **Milky Ways** | *Bossfight* | ***Caps On, Hats Off*** | 3:07.611 |
-| 26 | **New Game** | *Nitro Fun* | ***Monstercat - Best of 2014*** | 4:19.317 |
+| 26 | **New Game** | *Nitro Fun* | ***Monstercat 016 - Expedition*** | 4:19.317 |
 | 27 | **On The Run** | *Shirobon* | ***Dimensions*** | 4:28.564 |
 | 28 | **Once Again** | *Tristam* | ***Monstercat 016 - Expedition*** | 3:46.351 |
 | 29 | **Otis** | *chipzel* | ***Super Hexagon EP*** | 2:36.081 |
@@ -69,7 +69,8 @@ The songs you can choose from are as follows. The title of the song is in **bold
 | 40 | **The Lunar Whale (feat. Zef)** | *Danimal Cannon* | ***Parallel Processing*** | 4:35.826 |
 | 41 | **Till It's Over** | *Tristam* | ***Monstercat 016 - Expedition*** | 4:30.863 |
 | 42 | **Tokyo Skies** | *chipzel* | ***Spectra*** | 3:52.463 |
-| 43 | **Try This** | *Pegboard Nerds* | ***Try This \[Monstercat Release\]*** | 3:49.694 |
-| 44 | **Unlocked** | *Plesco* | ***Unlocked \[Wolf Beats Release\]*** |  |
-| 45 | **Vindicate Me** | *Big Giant Circles* | ***The Glory Days*** |  |
-| 46 | ** ** | * * | *** *** |  |
+| 43 | **Try This** | *Pegboard Nerds* | ***Monstercat 022 - Contact*** | 3:49.694 |
+| 44 | **Unlocked** | *Plesco* | ***Unlocked \[Wolf Beats Release\]*** | 3:47.683 |
+| 45 | **Vindicate Me** | *Big Giant Circles* | ***The Glory Days*** | 3:26.471 |
+| 46 | **Wicked** | *Avenza* | ***Avenza*** | 3:41.126 |
+| 47 | **Livewire** | *Zef* | ***Ground Zero*** | 5:42.413 |
