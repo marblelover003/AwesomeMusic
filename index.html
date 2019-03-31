@@ -53,7 +53,7 @@
         text-align: center;
       }
       ul {
-        margin-left: -30%;
+        margin-left: 5px;
       }
       ul li {
         list-style-type: none;
@@ -105,7 +105,7 @@
       .controlBtn {margin-right: 5px; margin-left: 5px; margin-top: 5px; transition-duration: 200ms;}
       .controlBtn:hover {outline: 5px solid black;}
       .controlBtn:focus {outline: 5px solid blue;}
-      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto;}
+      #playCountsDiv {position: absolute; bottom: 0; left: 0; outline: 1px solid black; height: 360px; width: 360px; overflow-y: auto; text-align: left;}
       #playCountsDiv::-webkit-scrollbar {width: 15px;}
       #playCountsDiv::-webkit-scrollbar-track {background: white;}
       #playCountsDiv::-webkit-scrollbar-thumb {background: black;}
@@ -264,6 +264,7 @@
     </div>
     <div id="playCountsDiv">
       <h1>Play Counts</h1>
+      <button style="background: red; color: white; height: 80px; font: 50px Overlock; width: 40px; position: fixed; left: 0; bottom: 0;" onclick="resetPlayCts()">&#x1f5d1;</button>
       <ul id="songs">
         <li><div>Barracuda</div><span>0</span></li>
         <li><div>Cascade</div><span>0</span></li>
@@ -381,16 +382,12 @@
     var numSongsQueued = 0, nextSongIndex, playCounts = [0];
     refreshPlayCounts();
     for (var i = 1; i <= 48; i++) {
-      /*
       if (localStorage.getItem("song" + i) != null) {
         playCounts[i] = parseInt(localStorage.getItem("song" + i));
       } else {
         playCounts[i] = 0;
         localStorage.setItem("song" + i, playCounts[i]);
       }
-      */
-      playCounts[i] = 0;
-      localStorage.setItem("song" + i, playCounts[i]);
     }
     var songs = [
       0,
@@ -887,6 +884,23 @@
           document.getElementById("queueListHeader").innerHTML = numSongsQueued + " songs queued";
         }
         document.getElementById("queue").selectedIndex = 0;
+      }
+    }
+    function resetPlayCts() {
+      if (song.paused == false) {toggle();}
+      var confirmReset = confirm("Reset Play Counts\n\nThis will reset your play counts to zero! Are you sure you wish to reset them?");
+      if (confirmReset == true) {
+        for (var i = 0; i <= 48; i++) {
+          playCounts[i] = 0;
+          localStorage.setItem("song" + i, playCounts[i]);
+        }
+        refreshPlayCounts();
+        var songsQueued = document.getElementById("queueList").getElementsByTagName("LI").length;
+        for (var i = 0; i < songsQueued; i++) {
+          setTimeout(function() {nextSong(); toggle();}, i * 20);
+        }
+        setTimeout(function() {alert("Play counts successfully reset.");}, songsQueued * 20);
+        setTimeout(function() {toggle();}, 3000 + songsQueued * 20);
       }
     }
   </script>
