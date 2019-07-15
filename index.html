@@ -196,6 +196,7 @@
       <option id="song46" value="Unlocked">Unlocked (ID 45) [Plesco]</option>
       <option id="song47" value="Vindicate Me">Vindicate Me (ID 46) [Big Giant Circles]</option>
       <option id="song48" value="Wicked">Wicked (ID 47) [Avenza]</option>
+      <option id="song49" value="Astrocat">Astrocat (ID 48) [PIXL]</option>
     </select><br>
     <div>
       <span id="currentPos">0:00.000</span><span id="length">0:00.000</span><progress value="0" max="1" id="progress"></progress><br>
@@ -255,6 +256,7 @@
     <audio id="audio46" style="visibility: hidden;" src="Unlocked.mp3"></audio>
     <audio id="audio47" style="visibility: hidden;" src="Vindicate Me.mp3"></audio>
     <audio id="audio48" style="visibility: hidden;" src="Wicked.mp3"></audio>
+    <audio id="audio49" style="visibility: hidden;" src="https://marblelover003.github.io/Visimusic/Astrocat.mp3"></audio>
     <div class="songInfo">Currently playing:</div>
     <h1 id="title">&nbsp;</h1>
     <div class="songInfo">- by -</div>
@@ -314,6 +316,7 @@
         <li><div>Unlocked</div><span>0</span></li>
         <li><div>Vindicate Me</div><span>0</span></li>
         <li><div>Wicked</div><span>0</span></li>
+        <li><div>Astrocat</div><span>0</span></li>
       </ul>
     </div>
     <div id="queueDiv">      
@@ -371,6 +374,7 @@
           <option id="queue46" value="Unlocked">Unlocked (ID 45)</option>
           <option id="queue47" value="Vindicate Me">Vindicate Me (ID 46)</option>
           <option id="queue48" value="Wicked">Wicked (ID 47)</option>
+          <option id="queue49" value="Astrocat">Astrocat (ID 48)</option>
         </select><button onclick="queueSong()" id="queueBtn">Queue this song</button>
       </span>
     </div>
@@ -381,7 +385,7 @@
     });
     var numSongsQueued = 0, nextSongIndex, playCounts = [0];
     refreshPlayCounts();
-    for (var i = 1; i <= 48; i++) {
+    for (var i = 1; i <= 49; i++) {
       if (localStorage.getItem("song" + i) != null) {
         playCounts[i] = parseInt(localStorage.getItem("song" + i));
       } else {
@@ -438,7 +442,8 @@
       document.getElementById("audio45"),
       document.getElementById("audio46"),
       document.getElementById("audio47"),
-      document.getElementById("audio48")
+      document.getElementById("audio48"),
+      document.getElementById("audio49")
     ];
     var length = 0, p = false, currentSong = 0, prevSong = 0, song, songValue;
     setInterval(playProgress, 0);
@@ -480,7 +485,7 @@
         }
         document.getElementById("song").value = songId;
       } else {
-        songId = Math.floor(Math.random() * 48) + 1;
+        songId = Math.floor(Math.random() * 49) + 1;
         document.getElementById("song").selectedIndex = songId;
       }
       change();
@@ -518,6 +523,9 @@
           break;
         case 25:
           document.getElementById("album").href = "Album-Art/Music Albums/Lunaria.JPG";
+          break;
+        case 48:
+          document.getElementById("album").href = "https://marblelover003.github.io/Visimusic/Music-Albums/Monstercat 013 - Awakening.JPG";
           break;
         case 37:
           document.getElementById("album").href = "Album-Art/Music Albums/Monstercat 014 - Discovery.jpg";
@@ -719,9 +727,13 @@
           artist.innerHTML = "nanobii";
           length = [2,53,61];
           break;
-        case 37:
+        case 37: case 48:
           artist.innerHTML = "PIXL";
-          length = [4,44,865];
+          if (index == 37) {
+            length = [4,44,865];
+          } else if (index == 48) {
+            length = [5,21,619];
+          }
           break;
         case 39:
           artist.innerHTML = "Sabrepulse";
@@ -828,7 +840,8 @@
         ls.getItem("song45"),
         ls.getItem("song46"),
         ls.getItem("song47"),
-        ls.getItem("song48")
+        ls.getItem("song48"),
+        ls.getItem("song49")
       ];
       var playCountsSpanElems = document.getElementById("songs").getElementsByTagName("SPAN");
       var list = document.getElementById("songs"), i, switching, b, shouldSwitch;
